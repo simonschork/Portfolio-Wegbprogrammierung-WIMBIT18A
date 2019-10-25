@@ -10035,4 +10035,42 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
+#topbtn {
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  display:none;
+  color: #999;
+}
+.fixed {
+  position: fixed;
+}
+/* sidebar */
+.bs-docs-sidebar {
+  padding-left: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+/* all links */
+.bs-docs-sidebar .nav>li>a {
+  color: black;
+  padding: 4px 20px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.bs-docs-sidebar .nav>li>a:hover{
+  background-color: #ddd;
+}
+/* nested links */
+.bs-docs-sidebar .nav .nav>li>a {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 30px;
+  font-size: 12px;
+}
+.bs-docs-sidebar .nav>.active>a {
+  color: #563d7c;
+}
+
 /*# sourceMappingURL=bootstrap.css.map */

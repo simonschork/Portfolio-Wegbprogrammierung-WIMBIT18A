@@ -12,6 +12,32 @@
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
   Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
 
+  // To Top Button:
+  $(document).ready(function(){
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 50) {
+        $('#topbtn').fadeIn();
+      } else {
+        $('#topbtn').fadeOut();
+      }
+    });
+    // scroll body to 0px on click
+    $('#topbtn').click(function () {
+      $('#topbtn').tooltip('hide');
+      $('body,html').animate({
+        scrollTop: 0
+      }, 800);
+      return false;
+    });
+  });
+
+  //Navbar
+  //Scrollspy
+  $('body').scrollspy({
+    target: '.bs-docs-sidebar',
+    offset: 40
+  });
+
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
       var descriptor = props[i];
