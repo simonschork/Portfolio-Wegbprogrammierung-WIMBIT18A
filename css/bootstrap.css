@@ -10043,14 +10043,12 @@ a.text-dark:hover, a.text-dark:focus {
   display:none;
   color: #999;
 }
-.fixed {
-  position: fixed;
-}
 /* sidebar */
 .bs-docs-sidebar {
   padding-left: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
+  top: 50px;
 }
 /* all links */
 .bs-docs-sidebar .nav>li>a {
@@ -10059,6 +10057,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-size: 13px;
   font-weight: 400;
 }
+/*background when hovered*/
 .bs-docs-sidebar .nav>li>a:hover{
   background-color: #ddd;
 }
@@ -10071,6 +10070,9 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .bs-docs-sidebar .nav>.active>a {
   color: #563d7c;
+}
+body {
+    position: relative;
 }
 
 /*# sourceMappingURL=bootstrap.css.map */

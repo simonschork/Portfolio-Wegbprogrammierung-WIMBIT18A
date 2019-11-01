@@ -13,7 +13,7 @@
   Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
 
   // To Top Button:
-  $(document).ready(function(){
+  $(document).ready(function() {
     $(window).scroll(function () {
       if ($(this).scrollTop() > 50) {
         $('#topbtn').fadeIn();
@@ -21,22 +21,25 @@
         $('#topbtn').fadeOut();
       }
     });
-    // scroll body to 0px on click
-    $('#topbtn').click(function () {
-      $('#topbtn').tooltip('hide');
-      $('body,html').animate({
-        scrollTop: 0
-      }, 800);
-      return false;
-    });
+  });
+  // scroll body to 0px on click
+  $('#topbtn').click(function () {
+    $('#topbtn').tooltip('hide');
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
   });
 
-  //Navbar
+  //Sidebar
   //Scrollspy
-  $('body').scrollspy({
-    target: '.bs-docs-sidebar',
-    offset: 40
-  });
+  $('body').scrollspy({ target: '#sidebar' })
+
+  /*event wenn higlited by scrollspy
+  $('[data-spy="scroll"]').on('activate.bs.scrollspy', function () {
+    // do something…
+  })
+  */
 
   function _defineProperties(target, props) {
     for (var i = 0; i < props.length; i++) {
