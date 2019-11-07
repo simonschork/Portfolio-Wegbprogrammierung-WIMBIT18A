@@ -61,6 +61,8 @@ body {
   color: #212529;
   text-align: left;
   background-color: #fff;
+  position: relative;
+  overflow: auto;
 }
 
 [tabindex="-1"]:focus {
@@ -10060,24 +10062,54 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 400;
 }
 /*background when hovered*/
-.bs-docs-sidebar .nav>li>a:hover{
+.bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a:active {
   color: white;
   background-color: rgb(105, 105, 105);
 }
-/* nested links */
-.bs-docs-sidebar .nav .nav>li>a {
-  padding-top: 1px;
-  padding-bottom: 1px;
-  padding-left: 30px;
-  font-size: 12px;
-}
-.bs-docs-sidebar .nav>.active>a {
-  color: #563d7c;
-}
-body {
-    position: relative;
+.bs-docs-sidebar .nav>li>a {
+  color: black;
 }
 
-
+/*zurück nach oben button*/
+#return-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  -webkit-border-radius: 35px;
+  -moz-border-radius: 35px;
+  border-radius: 35px;
+  display: none;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top i {
+  color: #fff;
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  font-size: 19px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#return-to-top:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+  color: #fff;
+  top: 5px;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */

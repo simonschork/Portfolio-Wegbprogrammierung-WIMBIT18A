@@ -9,12 +9,19 @@
     <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#sidebar" data-offset="20">
+
+<!--Top-Button-->
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainnav">
     <div class="container">
         <a class="navbar-brand" href="#">Web-Programmierung</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -100,7 +107,7 @@
 <!--Content-->
 <div class="container">
     <div class="row">
-        <div class="col-xl-12 text-justify align-content-center" data-spy="scroll" data-target="sidebar" data-offset="0">
+        <div class="col-xl-12 text-justify align-content-center" id="content">
             <h4 class="mt-5" id="webfirst">Webanwendungen - Web first?</h4>
                 <p> 
                     Webanwendungen sind Anwendungsprogramme, die auf einer Client-Server-Architektur basieren. Die Anwendung liegt auf einem Server, 
@@ -117,7 +124,7 @@
                     Ein enormer Vorteil solcher Webanwendungen ist die Plattformunabhängigkeit. Internetbrowser sind auf den meisten Geräten vertreten und 
                     bieten somit eine einheitliche Schnittstelle. Dies mindert auch den Entwicklungsaufwand enorm. Änderungen müssen einzig auf dem Webserver vorgenommen werden und 
                     sind unabhängig von den jeweiligen Betriebssystemen der Nutzer.<br>
-                    <div class="text-center" style="padding: 20px;"><img src="bilder/geraeteunabhängig.png" width="500px"><br></div>
+                    <div class="text-center" style="padding: 20px;"><img src="bilder/geraeteunabhängig.png" height="500px"><br></div>
                     Nachteil hingegen ist die Notwendigkeit einer Verbindung zum Webserver. Diese ist abhängig von Standort und Gerät des Nutzers. 
                     Offlinenutzung von Webanwendungen ist somit unmöglich.<br>
                 </p>
@@ -133,7 +140,7 @@
                     Nutzer. Vor allem wenn die Webseite für ein Unternehmen oder seriöses Vorhaben sein soll, lässt das Design schon erste Vermutungen über den Charakter 
                     des Unternehmens oder Vorhabens zu. Nutzerfreundlichkeit ist eben so unerlässlich, eine schlecht zu "surfende" Webseite kann einiges an Frustration 
                     bergen und wird unwahrscheinlich ein zweites mal besucht.
-                    <div class="text-center" style="padding: 20px;"><img src="bilder/webdesign.png"><br></div>
+                    <div class="text-center" style="padding: 20px;"><img src="bilder/webdeveloper.jpg"><br></div>
                     Zuerst ist es sinnvoll sich über die Gliederung und den Einstieg in die Webseite gedanken zu machen. Der Nutzer sollte nicht als erstes mit einem 
                     Werbebanner oder einem langen Textblock konfrontiert werden. Die Startseite sollte eher einen Überblick über die Inhalte der Seite verschaffen. 
                     gleichzeitig ist es sinnvoll sie möglichst simpel zu halten, da zu viel Information oder auch Animation den Nutzer "erschlagen" könnte. Es ist 
@@ -152,8 +159,6 @@
         </div>
     </div>
 </div>
-
-<!--Top-Button-->
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
