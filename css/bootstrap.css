@@ -87,6 +87,7 @@ p {
   margin-bottom: 1rem;
   font-family: 'Roboto', serif;
   font-size: large;
+  line-height: 200%;
 }
 
 abbr[title],

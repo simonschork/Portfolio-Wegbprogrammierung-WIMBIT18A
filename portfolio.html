@@ -50,7 +50,7 @@
                     <img src="bilder/slide01-trimmed.jpg" class="d-block w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block text-justify">
                         <h1>Portfolio</h1>
-                        <p>Auseinandersetzung mit den Inhalten des Semsters und darüber hinaus</p>
+                        <p>Auseinandersetzung mit den Inhalten des Semesters und darüber hinaus</p>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -87,7 +87,7 @@
     <nav class="bs-docs-sidebar" id="sidebar">
         <ul class="nav flex-column text-decoration mt-5">
             <li><a href="#mainnav" style="text-decoration:none;">Zurück an den Anfang</a></li>
-            <li><a href="#webfirst" style="text-decoration:none;">Webanwendungen - Web first?</a></li>
+            <li><a href="#webfirst" style="text-decoration:none;">Webanwendungen und System-Architektur</a></li>
             <li><a href="#browserclient" style="text-decoration:none;">Der Browser als Client</a></li>
             <li><a href="#htmlcss" style="text-decoration:none;">HTML und CSS</a></li>
             <li><a href="#javascript" style="text-decoration: none;">Javascript - Java's kleiner Bruder?</a></li>
@@ -102,39 +102,57 @@
     <div class="container">
         <div class="row">
             <div class="col-xl-12 text-justify align-content-center" id="webfirst">
-                <h4 class="mt-5">Webanwendungen - Web first?</h4>
+                <h4 class="mt-5">Webanwendungen und System-Architektur</h4>
                 <p>
-                    Webanwendungen sind Anwendungsprogramme, die auf einer Client-Server-Architektur basieren. Die
-                    Anwendung liegt auf einem Server,
-                    dort werden die Rechenoperationen und Datenverarbeitungsprozesse ausgeführt.
-                    Die Verteilung, welche Teile der Anwendung auf dem Server und welche im Client ausgeführt werden,
-                    kann der Entwickler im möglichen Rahmen selbst bestimmen.<br>
-                    Der Nutzer selbst greift über seinen Client in Form eines Internetbrowsers oder einer ähnlichen
-                    Applikation,
-                    die als Schnittstelle dient auf die eigentliche Anwendung zu. Dies geschieht über verschiedenste
-                    Protokolle.
-                    Beim Beispiel des Webbrowsers über das HTTP-Protokoll. Neben HTTP gibt es zum Beispiel FTP,
-                    welches das Übertragen von Dateien regelt oder SSH was den Zugriff und die Steuerung verschiedener
-                    Server ermöglicht.<br>
-                    Als Abgrenzung, eine Webanwendung muss nicht zwingend über einen Browser und HTTP erreichbar sein.
-                    Dieser Irrtum rührt von der Verwechslung des Begriffe Internet und World Wide Web. Webseiten und
-                    andere Anwendungen, die über einen Hyperlink im HTTP-Format erreichbar sind,
-                    sind im World Wide Web. Handelt es sich um eine Anwendung der oben genannten Beispielprotokolle, wie
-                    E-Mail oder Datentransfer via FTP,
-                    so ist diese auch im Internet und somit eine Webanwendung, jedoch nicht im World Wide Web.
-                </p>
-                <div class="text-center" style="padding: 20px;">
-                    <img src="bilder/geraeteunabhängig.png" height="500px">
-                </div>
-                <p>
-                    Ein enormer Vorteil solcher Webanwendungen ist die Plattformunabhängigkeit. Internetbrowser sind auf
-                    den meisten Geräten vertreten und
-                    bieten somit eine einheitliche Schnittstelle. Dies mindert auch den Entwicklungsaufwand enorm.
-                    Änderungen müssen einzig auf dem Webserver vorgenommen werden und
-                    sind unabhängig von den jeweiligen Betriebssystemen der Nutzer.<br>
-                    Nachteil hingegen ist die Notwendigkeit einer Verbindung zum Webserver. Diese ist abhängig von
-                    Standort und Gerät des Nutzers.
-                    Offlinenutzung von Webanwendungen ist somit unmöglich.<br>
+                    Webanwendungen sind Anwendungsprogramme, die auf einer Client-Server-Architektur basieren.
+                    Vergleicht man Webanwendungen mit nativen Anwendungen stößt man abgesehen von der Entwicklung sofort
+                    auf einen markanten Vorteil, nämlich die Distribution der Software. Bei einer nativen Anwendung muss
+                    eine Kopie einer Installationsdatei verteilt werden. Eine Webanwendung hingegen ist unter den
+                    nötigen Voraussetzungen, wie Internetverbindung und Laufzeitumgebung in Form eines Browsers,
+                    jederzeit, und geräteunabhängig aufrufbar. Sie muss nicht installiert werden. <br>
+                    Stattdessen wird auf das Server-Client-Prinzip als Architektur zurückgegriffen. Der Client bietet
+                    hauptsächlich die Benutzeroberfläche während der Server die Ausführung der Rechenoperationen und
+                    Datenverarbeitungsprozesse übernimmt. Dem Entwickler steht größtenteils frei, in welchem Ausmaß er
+                    Teile der Software im Client oder auf dem Server ausführen lässt. <br>
+                    Am Beispiel einer Internetseite in der einfachsten Form sendet der Internetbrowser einen
+                    HTTP-Request an den Webserver, dieser stellt daraufhin die HTML-Dokumente bereit und sendet sie
+                    zurück an den Client, der sie interpretiert und darstellt.
+                    Ist eine Webseite so vielseitig, dass sie nicht in jeder Variation als HTML-Dokument gespeichert
+                    werden kann, gibt es ein Modell, in dem die Daten auf einer Datenbank gespeichert werden. Diese ist
+                    nach Stichworten organisiert und liefert auf Abfrage eine Liste mit Links. Aus diesen erstellt der
+                    Server ein HTML-Dokument, was er anschließend an den Client sendet. Beliebte Programmiersprachen für
+                    serverseitige Programmierung sind z.B. Java, Perl und PHP. Wird Inhalt auf dem Client interaktiv
+                    dargestellt geschieht das meist unter Einbindung von Javascript-Code. <br><br>
+                    Um die vorher genannte Architektur von Webanwendungen erneut aufzugreifen, man kann die
+                    Programmierung hauptsächlich client-seitig vollziehen, dies nennt man eine Rich-/Thick-/Fat Client
+                    Architektur. Wobei der Großteil der Anwendung auf dem Client ausgeführt wird. Oft werden hierfür
+                    Laufzeitumgebungen von Drittanbietern erfordert, wie z.B. der Flash-Player, der lange Zeit sehr
+                    beliebt war. Diese müssen allerdings wieder auf dem Rechner des Nutzers installiert werden. Zu ihren
+                    Vorteilen gehört eine schnellere Verarbeitung da keine Requests an Server geschickt werden müssen
+                    und somit auch weniger Auslastung von Server und Netzwerk. Außerdem ist es einfacher Aufwendige GUIs
+                    zu entwickeln, da viele der Frameworks vielseitige APIs besitzen. Nachteil hingegen ist die erhöhte
+                    Belastung des Clients, somit auch eventuell längere Ladezeiten in Abhängigkeit des genutzten Clients
+                    und Sicherheitslücken, die durch die Nutzung der Drittanbieter-Software entstehen können. <br>
+                    Eine weitere Möglichkeit ist die gesamte Anwendung server-seitig zu implementieren. In der
+                    sogenannten Thin Client Architektur dient der Client nur noch als Ein- und Ausgabemedium, mit dem
+                    der Nutzer interagiert. Das Programm wird vollständig auf einem Server ausgeführt und die Ergebnisse
+                    an den Client gesendet. Vorteil ist hier du Unabhängigkeit. Der Kern des Programms kann in einer
+                    beliebigen Sprache geschrieben sein und das Ergebnis für den Client entsprechend übersetzt. Es muss
+                    jedoch klar sein, dass bei einer großen Anzahl an Anfragen der Server stark belastet wird und
+                    entsprechende Kapazitäten benötigt. <br>
+                    Heute mir oftmals eine Mischung aus beiden Architekturen eingesetzt. Um die Vorteile zu kombinieren
+                    und die Nachteile möglichst zu neutralisieren. Gerade bei der Erstellung interaktiver Webanwendungen
+                    ist es schneller und spart Serverkapazität, wenn man die Verarbeitung und Interpretation der Inhalte
+                    dem Client überlässt. Auf der anderen Seite ist es mit Hilfe des Servers und oft auch Datenbanken
+                    möglich, der Anfrage entsprechend, unterschiedliche HTML-Dokumente zurückzugeben. Zum Beispiel bei
+                    Suchanfragen können die Ergebnisse baukastenartig zusammengesetzt werden. <br> Ein weiterer Vorteil
+                    ist
+                    die Plattformunabhängigkeit. Da Internetbrowser auf fast allen Plattformen vertreten sind, bieten
+                    sie eine einheitliche Schnittstelle und Laufzeitumgebung und mindern den Entwicklungsaufwand enorm.
+                    Ein gravierender Nachteil hingegen ist meiner Meinung nach der Notwendigkeit einer
+                    Internetverbindung. Diese hängt stark von Standort und weiteren Umweltfaktoren ab und ohne eine
+                    bestehende Verbindung zum Webserver ist die aktive Nutzung einer Webanwendung nicht möglich.
+
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="browserclient">
