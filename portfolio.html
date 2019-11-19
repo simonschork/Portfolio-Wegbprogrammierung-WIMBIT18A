@@ -15,7 +15,7 @@
 
 
     <!-- Navigation -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="mainnav">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="mainnav">
         <div class="container">
             <a class="navbar-brand" href="#">Web-Programmierung</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -91,6 +91,7 @@
             <li><a href="#browserclient" style="text-decoration:none;">Der Browser als Client</a></li>
             <li><a href="#htmlcss" style="text-decoration:none;">HTML und CSS</a></li>
             <li><a href="#javascript" style="text-decoration: none;">Javascript - Java's kleiner Bruder?</a></li>
+            <li><a href="#objekte" style="text-decoration: none;">Objekte in Javascript</a></li>
             <li><a href="#ide" style="text-decoration: none;">Integrated Development Environment</a></li>
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
             <li><a href="#bootstrap" style="text-decoration: none;">Webprogrammierung mit Bootstrap</a></li>
@@ -201,7 +202,31 @@
                     anhand des Inhalts vom Javascript-Interpreter bestimmt.
                     Ein für mich neues Konzept ist der „Konditional-Operator ?:“. Mit ihm lässt sich eine
                     if-else-Abfrage kompakter definieren. Der Syntax ist wie folgt: <br>
-                    (<em>Bedingung</em>) ? <em>AktionWennZutreffend</em> : <em>AktionWennNichtZutreffend</em>
+                    <code>(<em>Bedingung</em>) ? <em>AktionWennZutreffend</em> : <em>AktionWennNichtZutreffend</em></code>
+
+                </p>
+            </div>
+            <div class="col-xl-12 text-justify align-content-center" id="objekte">
+                <h4 class="mt-5">Objekte in Javascript</h4>
+                <p class="mt-4">
+                    Für das Erzeugen von Objekten gibt es in Javascript drei Möglichkeiten, alle nutzen einen
+                    Konstruktor. Dies kann erstens der allgemeine Konstruktor sein, hierbei wird zuerst ein leeres
+                    Objekt erzeugt <code>Adresse = new Object();</code>, anschließend können Variablen und Methoden für
+                    das Objekt per Punktnotation definiert werden z.B. <code>Adresse.name = ‘Müller‘</code> und
+                    <code>Adresse.bewohnerAusgeben = function() {console.log(‘Hier wohnt‘, this.name);};</code>. Diese
+                    Variablen und Methoden können ebenso wieder durch den Punktoperator aufgerufen werden
+                    <code>Adresse.bewohnerAusgeben();</code>. <br><br>
+                    Zweitens kann ein Objekt in der Literalschreibweise, also als JSON-Objekt erzeugt werden. JSON steht
+                    für JavaScript Object Notation. Man hat die Möglichkeit ein leeres Objekt zu erzeugen
+                    <code>var  Adresse = {}</code> oder direkt Variablen und Methoden mitzugeben <br>
+                    <code>&emsp;var Adresse = {<br>
+                        &emsp;&emsp;name: ‘Müller‘,<br>
+                        &emsp;&emsp;bewohnerAusgeben: function() {<br>
+                            &emsp;&emsp;&emsp;console.log(‘Hier wohnt‘, this.name);<br>
+                            &emsp;&emsp;};<br>
+                        &emsp;};</code>.<br>
+                    Der Aufruf erfolgt unverändert über Punktnotation. <br><br>
+                    Drittens kann ein Objekt auch über einen spezialisierten Konstruktor erstellt werden.
 
                 </p>
             </div>
@@ -284,13 +309,13 @@
             <div class="col-xl-12 text-justify align-content-center" id="unternehmen">
                 <h4 class="mt-5">Webanwendungen im Unternehmen</h4>
             </div>
+            </>
         </div>
-    </div>
 
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.js"></script>
 </body>
 
 </html>
