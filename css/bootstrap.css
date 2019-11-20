@@ -4576,6 +4576,9 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
 
 .card > hr {
@@ -10082,6 +10085,14 @@ a.text-dark:hover, a.text-dark:focus {
 .bs-docs-sidebar .nav>li>a {
   color: black;
 }
-
+/*page header*/
+.pageheader {
+  height: 100vh;
+  min-height: 400px;
+  background-image: url('https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 /*# sourceMappingURL=bootstrap.css.map */
