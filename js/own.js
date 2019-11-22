@@ -1,5 +1,29 @@
+
+$(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $('#back-to-top').fadeIn();
+        } else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-to-top').click(function () {
+        $('#back-to-top').tooltip('hide');
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+    $('#back-to-top').tooltip('show');
+
+});
+
 //scrollspy
 function scrollspy() {
+    var scropTop = $(window).scropTop();
+    var elementOffset = $('#webfirst').offset().top,
+        distance = (elementOffset - scrollTop);
 
-    var div_webanwendung = 1;
 };
