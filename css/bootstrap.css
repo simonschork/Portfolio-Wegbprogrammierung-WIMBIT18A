@@ -10053,46 +10053,6 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-.right-content {
-  display: none;
-  position: fixed;
-  top: 180px;
-  right: 30px;
-  z-index: 99;
-  width: 250px;
-}
-/* sidebar */
-.bs-docs-sidebar {
-  padding-left: 75px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  top: 50px;
-  float: left;
-  position: sticky;
-}
-/* all links */
-.bs-docs-sidebar .nav>li>a {
-  color: black;
-  padding: 4px 18px;
-  font-size: 13px;
-  font-weight: 400;
-}
-/*background when hovered*/
-.bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a:active {
-  color: white;
-  background-color: rgb(105, 105, 105);
-}
-.bs-docs-sidebar .nav>li>a {
-  color: black;
-}
-/*page header*/
-.pageheader {
-  height: 100vh;
-  min-height: 400px;
-  background-image: url('https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+
 
 /*# sourceMappingURL=bootstrap.css.map */
