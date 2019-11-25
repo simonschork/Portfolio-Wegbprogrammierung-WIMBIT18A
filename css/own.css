@@ -1,6 +1,6 @@
 /* sidebar */
 .bs-docs-sidebar {
-    padding-left: 75px;
+    padding-left: 70px;
     margin-top: 20px;
     margin-bottom: 20px;
     top: 50px;
@@ -15,17 +15,18 @@
     font-weight: 400;
 }
 /*background when hovered*/
-.bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a:active {
+.bs-docs-sidebar .nav>li>a:hover, .bs-docs-sidebar .nav>li>a.active {
     color: white;
     background-color: rgb(105, 105, 105);
 }
-.bs-docs-sidebar .nav>li>a {
-    color: black;
+.sidebaractive {
+    color: white;
+    background-color: rgb(105, 105, 105);
 }
 /*page header*/
 .pageheader {
     height: 100vh;
-    min-height: 400px;
+    min-height: 200px;
     background-image: url('https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background-size: cover;
     background-position: center;
@@ -50,4 +51,8 @@
     color: #fff;
     background-color: #404040;
     border-color: #404040;
+}
+
+body {
+    position: relative;
 }

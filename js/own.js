@@ -18,12 +18,7 @@ $(document).ready(function () {
 
     $('#back-to-top').tooltip('show');
 
+    //scrollspy
+    $('body').scrollspy({ target: '#sidebar' })
+
 });
-
-//scrollspy
-function scrollspy() {
-    var scropTop = $(window).scropTop();
-    var elementOffset = $('#webfirst').offset().top,
-        distance = (elementOffset - scrollTop);
-
-};

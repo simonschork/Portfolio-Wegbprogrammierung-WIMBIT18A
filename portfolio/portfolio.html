@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#sidebar" data-offset="10">
 
 
     <!-- Navigation -->
@@ -55,9 +55,10 @@
     <!--Side Navigation Bar-->
     <nav class="bs-docs-sidebar" id="sidebar">
         <ul class="nav flex-column text-decoration mt-5">
-            <li><a href="#mainnav" style="text-decoration:none;">Zurück an den Anfang</a></li>
-            <li><a href="#webfirst" style="text-decoration:none;">Webanwendungen und System-Architektur</a></li>
-            <li><a href="#browserclient" style="text-decoration:none;">Der Browser als Client</a></li>
+            <li><a href="#webfirst" style="text-decoration:none;" id="webfirstnav">Webanwendungen und
+                    System-Architektur</a></li>
+            <li><a href="#browserclient" style="text-decoration:none;" id="browserclientnav">Der Browser als Client</a>
+            </li>
             <li><a href="#htmlcss" style="text-decoration:none;">HTML und CSS</a></li>
             <li><a href="#javascript" style="text-decoration: none;">Javascript - Java's kleiner Bruder?</a></li>
             <li><a href="#objekte" style="text-decoration: none;">Objekte in Javascript</a></li>
@@ -288,7 +289,7 @@
         </div>
 
         <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
-            data-toggle="tooltip" data-placement="left">TOP</span></a>
+            data-toggle="tooltip" data-placement="left">/\</a>
 
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
