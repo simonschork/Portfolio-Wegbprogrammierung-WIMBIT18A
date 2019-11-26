@@ -53,6 +53,8 @@
     border-color: #404040;
 }
 
-body {
-    position: relative;
-}
+.code-text{
+    color: #e83e8c;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 15.75px;
+  }

@@ -193,13 +193,6 @@ samp {
   color: #e83e8c;
 }
 
-/*Custom code*/
-.code-text{
-  color: #e83e8c;
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 15.75px;
-}
-
 pre {
   margin-top: 0;
   margin-bottom: 1rem;

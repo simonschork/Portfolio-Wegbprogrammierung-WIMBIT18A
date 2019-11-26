@@ -198,12 +198,29 @@
                         var Adresse = {
                             name: ‘Müller‘,
                             bewohnerAusgeben: function() {
-                               console.log(‘Hier wohnt‘, this.name);
+                               console.log(‘Hier wohnt: ‘, this.name);
                             };
                         };
                     </code></pre>
                     Der Aufruf erfolgt unverändert über Punktnotation. <br><br>
-                    Drittens kann ein Objekt auch über einen spezialisierten Konstruktor erstellt werden. [...]
+                    Drittens kann ein Objekt auch über einen spezialisierten Konstruktor erstellt werden. Hierbei wird
+                    der Konstruktor vom Programmierer spezialisiert indem der mitgegebene Wert über <code>this</code>
+                    dem erzeugten Objekt als Instanzvariable und/oder -methode zugewiesen wird. Dies könnte wie folgt
+                    aussehen:
+                    <pre class="code-text"><code class="code-text">
+                        function ErzeugeAdresse(eingabe){
+                            this.name = eingabe;
+                            this.bewohnerAusgeben = function {
+                                console.log('Hier wohnt: ', this.name);
+                            };
+                        }
+
+                        //Erzeugen einer Instanz
+                        var neueAdresse1 = new ErzeugeAdresse('Maxim');
+
+                        //Aufruf der Instanzmethoden
+                        neueAdresse1.bewohnerAusgeben();
+                    </code></pre>
 
                 </p>
             </div>
