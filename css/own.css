@@ -25,13 +25,17 @@
 }
 /*page header*/
 .pageheader {
-    height: 100vh;
-    min-height: 200px;
-    background-image: url('https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    min-height: 640px;
+    background-image: url('/bilder/web-slim.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+/*
+.header-text {
+    font-size: 500%;
+}
+*/
 /*top-button*/
 .back-to-top {
     cursor: pointer;

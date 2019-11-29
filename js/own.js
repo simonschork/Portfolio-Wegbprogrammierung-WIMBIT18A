@@ -18,7 +18,4 @@ $(document).ready(function () {
 
     $('#back-to-top').tooltip('show');
 
-    //scrollspy
-    $('body').scrollspy({ target: '#sidebar' })
-
 });
