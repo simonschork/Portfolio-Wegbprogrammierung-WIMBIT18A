@@ -25,17 +25,13 @@
 }
 /*page header*/
 .pageheader {
-    min-height: 640px;
-    background-image: url('/bilder/web-slim.jpg');
+    min-height: 100%;
+    background-image: url('/bilder/slide01.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-/*
-.header-text {
-    font-size: 500%;
-}
-*/
+
 /*top-button*/
 .back-to-top {
     cursor: pointer;
@@ -57,6 +53,7 @@
     border-color: #404040;
 }
 
+/*styling code snippets*/
 .code-text{
     color: #e83e8c;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
