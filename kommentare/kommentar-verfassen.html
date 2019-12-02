@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width = device-width, initial-scale = 1">
-    <title>Kommentare</title>
+    <title>Kommentar verfassen</title>
 
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../css/own.css">
@@ -33,7 +33,7 @@
                         <a class="nav-link" href="../schwerpunkt/schwerpunkt.html">Schwerpunkt</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="kommentare.html">Kommentare</a>
+                        <a class="nav-link" href="kommentare.html">Kommentare</a>
                     </li>
                 </ul>
             </div>
@@ -42,9 +42,17 @@
 
     <div class="container mt-5">
         <form>
+            <div class="form-group">
+                <label for="input_name">Ihr Name:</label>
+                <input type="text" class="form-control" id="input_name" placeholder="Nachname, Vorname">
+            </div>
+            <div class="form-group">
+                <label for="input_comment">Ihr Kommentar:</label>
+                <textarea class="form-control" id="input_comment" cols="30" rows="10"
+                    placeholder="Kommentartext"></textarea>
+            </div>
             <div class="form-group text-center">
-                <button type='button' class='submit-btn' id="kom-verfasse-btn" onclick='kommentarVerfassen()'>Kommentar
-                    verfassen</button>
+                <button type="submit" class="submit-btn">Absenden</button>
             </div>
         </form>
     </div>
