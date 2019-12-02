@@ -1,4 +1,6 @@
-
+/*
+*Calling the functions
+*/
 $(document).ready(function () {
     //Top-Button
     //Make visible
@@ -25,6 +27,9 @@ $(document).ready(function () {
 
 });
 
+/*
+*Implementation of the functions
+*/
 //Kommentar senden
 function kommentarSenden() {
     var kommentartext = document.getElementById('commentinput').value;
