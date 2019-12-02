@@ -18,8 +18,15 @@ $(document).ready(function () {
 
     $('#back-to-top').tooltip('show');
 
-    //eventhandler kommentar verfassen
+    $('#sendcomment').click(function () {
+        var kommentartext = document.getElementById('commentinput').value;
+
+        document.getElementById('commentoutput').innerHTML = kommentartext;
+    });
+
+    /*eventhandler kommentar verfassen
     $('#kom-verfasse-btn').click(function () {
         window.location.href = '../kommentare/kommentar-verfassen.html';
     });
+    */
 });

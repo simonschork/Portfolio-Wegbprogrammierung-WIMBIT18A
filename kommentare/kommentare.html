@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/own.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,8 +33,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../schwerpunkt/schwerpunkt.html">Schwerpunkt</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="kommentare.html">Kommentare</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="kommentare.html">Kommentare</a>
                     </li>
                 </ul>
             </div>
@@ -42,11 +43,20 @@
 
     <div class="container mt-5">
         <form>
+            <div class="form-group">
+                <label for="commentinput">Ihr Kommentar:</label>
+                <textarea class="form-control" id="commentinput" cols="30" rows="10"
+                    placeholder="Kommentartext"></textarea>
+            </div>
             <div class="form-group text-center">
-                <button type='button' class='submit-btn' id="kom-verfasse-btn" onclick='kommentarVerfassen()'>Kommentar
-                    verfassen</button>
+                <button type="button" class="submit-btn" id="sendcomment">Absenden</button>
             </div>
         </form>
+        <div class="mt-5" id="kommentarsektion">
+            <h3 class="text-center">Kommentare:</h3>
+            <h5 id=nameoutput></h5>
+            <p id="commentoutput"></p>
+        </div>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
