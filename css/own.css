@@ -55,13 +55,23 @@
 
 /*styling code snippets*/
 .code-text{
+    margin-top: 16px;
     color: #e83e8c;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     font-size: 15.75px;
-  }
+}
+
+/*codebox*/
+.code-box{
+    border-radius: 10px;
+    margin-top: 16px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #e9ecef66;
+}
  
-  /*submit button comments*/
-  .submit-btn{
+/*submit button comments*/
+.submit-btn{
     color: #fff;
     background-color: #212529;
     border-color: #212529;

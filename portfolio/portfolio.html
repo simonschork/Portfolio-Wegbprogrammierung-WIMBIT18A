@@ -175,15 +175,16 @@
                     deklariert, welchen Datentyp die Variable annimmt und wie viel Speicherplatz reserviert wird, wird
                     anhand des Inhalts vom Javascript-Interpreter bestimmt.
                     Ein für mich neues Konzept ist der „Konditional-Operator ?:“. Mit ihm lässt sich eine
-                    if-else-Abfrage kompakter definieren. Der Syntax ist wie folgt: <br>
-                    <pre style="color: #e83e8c;">
-                        <code>
-                            function logIn(isMember) {
-                                (isMember ? "Eingeloggt" : "Zugang verweigert")
-                            }
-                        </code>
-                    </pre>
+                    if-else-Abfrage kompakter definieren. Der Syntax ist wie folgt:
                 </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        function logIn(isMember) {
+                            (isMember ? "Eingeloggt" : "Zugang verweigert")
+                        }
+                    </pre>
+                </figure>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="objekte">
                 <h4 class="mt-5">Objekte in Javascript</h4>
@@ -198,20 +199,28 @@
                     Zweitens kann ein Objekt in der Literalschreibweise, also als JSON-Objekt erzeugt werden. JSON steht
                     für JavaScript Object Notation. Man hat die Möglichkeit ein leeres Objekt zu erzeugen
                     <code>var  Adresse = {}</code> oder direkt Variablen und Methoden mitzugeben:
-                    <pre class="code-text"><code class="code-text">
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
                         var Adresse = {
                             name: ‘Müller‘,
                             bewohnerAusgeben: function() {
                                console.log(‘Hier wohnt: ‘, this.name);
                             };
                         };
-                    </code></pre>
-                    Der Aufruf erfolgt unverändert über Punktnotation. <br><br>
+                    </pre>
+                </figure>
+                <p>
+                    Der Aufruf erfolgt unverändert über Punktnotation. <br>
                     Drittens kann ein Objekt auch über einen spezialisierten Konstruktor erstellt werden. Hierbei wird
                     der Konstruktor vom Programmierer spezialisiert indem der mitgegebene Wert über <code>this</code>
                     dem erzeugten Objekt als Instanzvariable und/oder -methode zugewiesen wird. Dies könnte wie folgt
                     aussehen:
-                    <pre class="code-text"><code class="code-text">
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
                         function ErzeugeAdresse(eingabe){
                             this.name = eingabe;
                             this.bewohnerAusgeben = function {
@@ -221,10 +230,12 @@
 
                         //Erzeugen einer Instanz
                         var neueAdresse1 = new ErzeugeAdresse('Maxim');
-
+    
                         //Aufruf der Instanzmethoden
                         neueAdresse1.bewohnerAusgeben();
-                    </code></pre>
+                    </pre>
+                </figure>
+                <p>
                     Hier wird beim Erzeugen der Instanz, zuerst eine Objekt (Type: Object) erzeugt und anschließend mit
                     entsprechenden Methoden und Variablen ergänzt.
                 </p>
@@ -318,15 +329,16 @@
                 <h4 class="mt-5">Webanwendungen im Unternehmen</h4>
             </div>
         </div>
+    </div>
 
-        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
-            data-toggle="tooltip" data-placement="left">/\</a>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
+        data-toggle="tooltip" data-placement="left">/\</a>
 
 
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/bootstrap.js"></script>
-        <script src="../js/own.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/own.js"></script>
 </body>
 
 </html>
