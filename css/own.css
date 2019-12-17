@@ -65,9 +65,10 @@
 .code-box{
     border-radius: 10px;
     margin-top: 16px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     background-color: #e9ecef66;
+    text-align: left;
 }
  
 /*submit button comments*/
