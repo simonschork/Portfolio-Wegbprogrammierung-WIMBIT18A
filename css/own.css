@@ -78,3 +78,16 @@
     border-color: #212529;
     border-radius: 0.25rem;
   }
+
+figure {
+    position: relative;
+}
+
+figure img {
+    max-width: 100%;
+}
+
+figcaption {
+    caption-side: bottom;
+}
+  
