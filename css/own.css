@@ -96,3 +96,7 @@ body {
     background-color: rgba(247, 242, 234, 0.836);
 }
   
+li {
+    font-size: large;
+    font-family: Roboto;
+}
