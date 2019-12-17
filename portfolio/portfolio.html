@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/own.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -58,15 +59,13 @@
         <ul class="nav flex-column text-decoration mt-5">
             <li><a href="#webfirst" style="text-decoration:none;" id="webfirstnav">Webanwendungen und
                     System-Architektur</a></li>
-            <li><a href="#browserclient" style="text-decoration:none;" id="browserclientnav">Der Browser als Client</a>
-            </li>
             <li><a href="#htmlcss" style="text-decoration:none;">HTML und CSS</a></li>
             <li><a href="#javascript" style="text-decoration: none;">Javascript - Java's kleiner Bruder?</a></li>
             <li><a href="#objekte" style="text-decoration: none;">Objekte in Javascript</a></li>
             <li><a href="#dom" style="text-decoration: none;">DOM - Document Object Model</a></li>
             <li><a href="#jquery" style="text-decoration: none;">jQuery</a></li>
             <li><a href="#ajax" style="text-decoration: none;">Ajax</a></li>
-            <li><a href="#ide" style="text-decoration: none;">Integrated Development Environment</a></li>
+            <li><a href="#ide" style="text-decoration: none;">Entwicklungsumgebung für Webentwicklung</a></li>
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
             <li><a href="#bootstrap" style="text-decoration: none;">Webprogrammierung mit Bootstrap</a></li>
             <li><a href="#sicherheit" style="text-decoration: none;">Sicherheit von Webanwendungen</a></li>
@@ -85,7 +84,7 @@
                     auf einen markanten Vorteil, nämlich die Distribution der Software. Bei einer nativen Anwendung muss
                     eine Kopie einer Installationsdatei verteilt werden. Eine Webanwendung hingegen ist unter den
                     nötigen Voraussetzungen, wie Internetverbindung und Laufzeitumgebung in Form eines Browsers,
-                    jederzeit, und geräteunabhängig aufrufbar. Sie muss nicht installiert werden. <br>
+                    jederzeit, und geräteunabhängig aufrufbar. Sie muss nicht installiert werden.
                     Stattdessen wird auf das Server-Client-Prinzip als Architektur zurückgegriffen. Der Client bietet
                     hauptsächlich die Benutzeroberfläche während der Server die Ausführung der Rechenoperationen und
                     Datenverarbeitungsprozesse übernimmt. Dem Entwickler steht größtenteils frei, in welchem Ausmaß er
@@ -98,44 +97,151 @@
                     nach Stichworten organisiert und liefert auf Abfrage eine Liste mit Links. Aus diesen erstellt der
                     Server ein HTML-Dokument, was er anschließend an den Client sendet. Beliebte Programmiersprachen für
                     serverseitige Programmierung sind z.B. Java, Perl und PHP. Wird Inhalt auf dem Client interaktiv
-                    dargestellt geschieht das meist unter Einbindung von Javascript-Code. <br><br>
+                    dargestellt geschieht das meist unter Einbindung von Javascript-Code.
+                </p>
+                <figure role="group" style="width: 48%;" class="float-left mr-4">
+                    <img src="../bilder/rich-client.PNG" alt="Rich-Client Architecture">
+                    <figcaption class="text-center">Quelle: Stefan Noll</figcaption>
+                </figure>
+                <p>
                     Um die vorher genannte Architektur von Webanwendungen erneut aufzugreifen, man kann die
-                    Programmierung hauptsächlich client-seitig vollziehen, dies nennt man eine Rich-/Thick-/Fat Client
-                    Architektur. Wobei der Großteil der Anwendung auf dem Client ausgeführt wird. Oft werden hierfür
-                    Laufzeitumgebungen von Drittanbietern erfordert, wie z.B. der Flash-Player, der lange Zeit sehr
-                    beliebt war. Diese müssen allerdings wieder auf dem Rechner des Nutzers installiert werden. Zu ihren
-                    Vorteilen gehört eine schnellere Verarbeitung da keine Requests an Server geschickt werden müssen
-                    und somit auch weniger Auslastung von Server und Netzwerk. Außerdem ist es einfacher Aufwendige GUIs
-                    zu entwickeln, da viele der Frameworks vielseitige APIs besitzen. Nachteil hingegen ist die erhöhte
-                    Belastung des Clients, somit auch eventuell längere Ladezeiten in Abhängigkeit des genutzten Clients
-                    und Sicherheitslücken, die durch die Nutzung der Drittanbieter-Software entstehen können. <br>
+                    Programmierung hauptsächlich client-seitig vollziehen, dies nennt man eine Rich-/Thick-/Fat
+                    Client Architektur. Wobei der Großteil der Anwendung auf dem Client ausgeführt wird. Oft werden
+                    hierfür Laufzeitumgebungen von Drittanbietern erfordert, wie z.B. der Flash-Player, der lange Zeit
+                    sehr beliebt war. Diese müssen allerdings wieder auf dem Rechner des Nutzers installiert werden.
+                    Zu ihren Vorteilen gehört eine schnellere Verarbeitung da keine Requests an Server geschickt werden
+                    müssen und somit auch weniger Auslastung von Server und Netzwerk. Außerdem ist es einfacher
+                    Aufwendige GUIs zu entwickeln, da viele der Frameworks vielseitige APIs besitzen. Nachteil hingegen
+                    ist die
+                    erhöhte Belastung des Clients, somit auch eventuell längere Ladezeiten in Abhängigkeit des genutzten
+                    Clients und Sicherheitslücken, die durch die Nutzung der Drittanbieter-Software entstehen können.
+                </p>
+                <figure role="group" style="width: 48%;" class="float-right ml-4">
+                    <img src="../bilder/server-seitig.PNG" alt="Server-seitige Architecture">
+                    <figcaption class="text-center">Quelle: Stefan Noll</figcaption>
+                </figure>
+                <p>
                     Eine weitere Möglichkeit ist die gesamte Anwendung server-seitig zu implementieren. In der
                     sogenannten Thin Client Architektur dient der Client nur noch als Ein- und Ausgabemedium, mit dem
                     der Nutzer interagiert. Das Programm wird vollständig auf einem Server ausgeführt und die Ergebnisse
                     an den Client gesendet. Vorteil ist hier du Unabhängigkeit. Der Kern des Programms kann in einer
                     beliebigen Sprache geschrieben sein und das Ergebnis für den Client entsprechend übersetzt. Es muss
                     jedoch klar sein, dass bei einer großen Anzahl an Anfragen der Server stark belastet wird und
-                    entsprechende Kapazitäten benötigt. <br>
+                    entsprechende Kapazitäten benötigt.
+                </p>
+                <figure role="group" style="width: 48%;" class="float-left mr-4">
+                    <img src="../bilder/both-archis.PNG" alt="Mixed Architecture">
+                    <figcaption class="text-center">Quelle: Stefan Noll</figcaption>
+                </figure>
+                <p>
                     Heute mir oftmals eine Mischung aus beiden Architekturen eingesetzt. Um die Vorteile zu kombinieren
                     und die Nachteile möglichst zu neutralisieren. Gerade bei der Erstellung interaktiver Webanwendungen
                     ist es schneller und spart Serverkapazität, wenn man die Verarbeitung und Interpretation der Inhalte
                     dem Client überlässt. Auf der anderen Seite ist es mit Hilfe des Servers und oft auch Datenbanken
                     möglich, der Anfrage entsprechend, unterschiedliche HTML-Dokumente zurückzugeben. Zum Beispiel bei
-                    Suchanfragen können die Ergebnisse baukastenartig zusammengesetzt werden. <br> Ein weiterer Vorteil
-                    ist
+                    Suchanfragen können die Ergebnisse baukastenartig zusammengesetzt werden.Ein weiterer Vorteil ist
                     die Plattformunabhängigkeit. Da Internetbrowser auf fast allen Plattformen vertreten sind, bieten
                     sie eine einheitliche Schnittstelle und Laufzeitumgebung und mindern den Entwicklungsaufwand enorm.
                     Ein gravierender Nachteil hingegen ist meiner Meinung nach der Notwendigkeit einer
                     Internetverbindung. Diese hängt stark von Standort und weiteren Umweltfaktoren ab und ohne eine
                     bestehende Verbindung zum Webserver ist die aktive Nutzung einer Webanwendung nicht möglich.
-
                 </p>
-            </div>
-            <div class="col-xl-12 text-justify align-content-center" id="browserclient">
-                <h4 class="mt-5">Der Browser als Client</h4>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="htmlcss">
                 <h4 class="mt-5">HTML und CSS</h4>
+                <p>
+                    <b>Hypertext Markup Language</b> oder <b>HTML</b> ist eine Auszeichnungssprache zur Strukturierung
+                    von Dokumenten. Sie dient als Grundlage für Webseiten im <b>World Wide Web</b> und wird von
+                    Webbrowsern dargestellt. Zur Veraunschaulichung im Folgenden das Grundgerüst dieser Webseite mit
+                    einigen Beispieltexten:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+                        &lt;!--Definiert die Dokumentenart-->
+                        &lt;!DOCTYPE html>
+                        &lt;!--Definiert die Sprache des Dokuments-->
+                        &lt;html lang="en">
+                        
+                        &lt;!--Header: Enthält wesentliche Informationen über das im Body folgende Dokument-->
+                        &lt;head>
+                            &lt;!--Kodierung des Textes-->
+                            &lt;meta charset="UTF-8">
+                            &lt;!--Sorgt für Anpassung der Seite an Gerät-->
+                            &lt;meta name="viewport" content="width = device-width, initial-scale = 1">
+                            &lt;!--Im Tab des Browsers angezeigter Seitenname-->
+                            &lt;title>PLatzhalter&lt;/title>
+                            
+                            &lt;!--Importiert .css-Datei für die optische Darstellung der Seite-->
+                            &lt;link rel="stylesheet" type="text/css" href="...">
+                            &lt;!--Importiert die Schriftart-->
+                            &lt;link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" 
+                                rel="stylesheet">
+                        &lt;/head>
+                        
+                        &lt;!--Body: Anzuzeigender Inhalt des Dokument-->
+                        &lt;body>
+                            &lt;!--Überschrift-->
+                            &lt;h1>Überschrift&lt;/h1>
+                            &lt;!--Inhalte-->
+                            &lt;p>Beispieltext&lt;/p>
+                            
+                            &lt;!--Importiert jQuery-->
+                            &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&lt;/script>
+                            &lt;!--Importiert .js-Datei mit Funktionen die aufgerufen werden können-->
+                            &lt;script src="..."><&lt;/script>
+                        &lt;/body>
+                        &lt;/html>
+                    </pre>
+                </figure>
+                <p>
+                    Wie im Beispiel gezeigt arbeitet HTML mit <b>Tags</b> <code>&lt;Tagname></code> gearbeitet, anhand
+                    dieser interpretiertder Browser Aufbau und Struktur des Textes. So können unter anderem
+                    Überschriften und Absätze hervorgehoben oder Links und Bilder platziert werden. Jeder geöffnete Tag
+                    muss anschließend wieder durch einen Tag <code>&lt;/Tagname></code> geschlossen werden.
+                </p>
+                <p>
+                    Um die Darstellung eines HTML-Dokuments zu verbessern, verwendet man <b>Cascading Style Sheets</b>,
+                    beziehungsweise <b>CSS</b>. Der Syntax von CSS ist ein komplett anderer im Vergleich zu HTML,
+                    dennoch kann es leicht in das HTML-Dokument integriert werden. Entweder man definiert die
+                    verschiedenen CSS-Klassen in einem <code>&lt;style>...&lt;/style></code> -Tag im <b>Head</b>, oder
+                    man schreibt sie in einer seperaten .css-Datei und importiert diese wie oben beschrieben.
+                </p>
+                <p>
+                    Mit CSS kann man auf ein oder mehrere Elemente des HTML-Dokuments, über einen Selektor zugreifen und
+                    deren aussehen verändern:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        body {
+                            background-color: #fff;
+                            margin-left: 20%;
+                            margin-rigt: 20%;
+                            font-family: Roboto;
+                        }
+                    </pre>
+                </figure>
+                <p>
+                    Eine weitere Option ist das schreiben von Klassen, welche später innerhalb des HTML-Tags aufgerufen
+                    werden können:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        .red-fonts {
+                            color: red;
+                        }
+                        
+                        [...]
+                        
+                        &lt;p class="red-fonts">Diese Schrift ist rot!&lt;/p>
+                    </pre>
+                </figure>
+                <p>
+                    Hierbei ist zu beachten, dass es innerhalb des Dokuments Vererbung gibt. Wenn die Schriftart des
+                    <b>Body</b> verändert wird gilt dies auch für alle <b>Paragraphen</b> innerhalb des Bodys. Es
+                    sei denn man definiert für die Paragraphen eine eigene Klasse.
+                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="javascript">
                 <h4 class="mt-5">Javascript - Java's kleiner Bruder?</h4>
@@ -154,19 +260,31 @@
                     und verlassen sich auf die Nutzung existierender Funktionen. Durch die schwächeren semantischen
                     Regeln erscheinen sie einfacher und es ist meistens einfacher sie zu erlernen. Mit der Zeit wurden
                     sie aber zu vollständigen Sprachen, die den klassischen Programmiersprachen in nichts nachstehen.
-                    <br>
+                </p>
+                <figure role="group" style="width: 48%;" class="float-left mr-4">
+                    <img src="../bilder/ieee-sprachen.jpeg" alt="IEEE Programmiersprachen">
+                    <figcaption class="text-center">Quelle: <a target="_blank"
+                            href="https://spectrum.ieee.org/image/MzM2NjYxNQ.jpeg">
+                            https://spectrum.ieee.org/image/MzM2NjYxNQ.jpeg</a>
+                    </figcaption>
+                </figure>
+                <p>
                     Das beliebteste Beispiel ist wahrscheinlich Python. Python wurde 2019 in einer Studie der IEEE
                     erneut als beliebteste Programmiersprache ausgezeichnet. Python folgen Java auf Platz 2 und C auf
                     Platz 3, Javascript ist auf Platz 6. Sie war auch für mich die erste Programmiersprache, mit der ich
                     Kontakt hatte, es gibt deutlicher weniger Syntaxregeln zu beachten was sie für Anfänger besonders
                     attraktiv macht. Aktuell ist sie besonders im Bereich maschinelles Lernen sehr beliebt, da es eine
                     große Anzahl an Libaries gibt, die bereits fertige Algorithmen enthalten sie nur noch implementiert
-                    werden müssen. <br><br>
+                    werden müssen.
+                </p>
+                <p>
                     Javascript wurde mit dem Fokus auf Webprogrammierung entwickelt. Sie kann vom Webbrowser
                     interpretiert und über den &lt;script&gt;-Tag direkt in HTML-Code eingebunden werden. Sie bildet die
                     Basis für dynamische Webentwicklung, also Funktionen und interaktive Elemente innerhalb der
                     Webseite. Nur als Beispiel können Nutzereingaben in Textform oder Interaktionen mit Buttons
-                    aufgefangen und verarbeitet werden. <br><br>
+                    aufgefangen und verarbeitet werden.
+                </p>
+                <p>
                     Alternativ zu direkter Einbindung in den HTML-Code, können die Funktionen in einer .js-Datei
                     geschrieben und diese über <code>&lt;script src="Beispiel.js"&gt;&lt;/script&gt;</code> aufgerufen
                     werden.
@@ -181,7 +299,7 @@
                     <pre class="code-text">
 
                         function logIn(isMember) {
-                            (isMember ? "Eingeloggt" : "Zugang verweigert")
+                            (isMember ? "Eingeloggt" : "Zugang verweigert");
                         }
                     </pre>
                 </figure>
@@ -221,7 +339,7 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        function ErzeugeAdresse(eingabe){
+                        function ErzeugeAdresse(eingabe) {
                             this.name = eingabe;
                             this.bewohnerAusgeben = function {
                                 console.log('Hier wohnt: ', this.name);
@@ -239,9 +357,67 @@
                     Hier wird beim Erzeugen der Instanz, zuerst eine Objekt (Type: Object) erzeugt und anschließend mit
                     entsprechenden Methoden und Variablen ergänzt.
                 </p>
+                <p>
+                    Bisher konnten wir den Objekten nur über ihre Instanzierung neue Eigenschaften und Methoden
+                    zugewiesen.
+                    Um nicht ständig den Konstruktor eines Obejektes verändern zu müssen gibt es in Javascript für jedes
+                    Objekt und jede Funktion die Eigenschaft <code>prototype</code>. Mit ihr kann dem <b>prototypischen
+                        Objekt</b>, eines Konstruktors, eine neue Funktion oder Eigenschaft zugewiesen werden.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        function Hund () {}
+
+                        Hund.prototype.wuff = function () {
+                            alert("Wuff!");
+                        };
+
+                        var bello = new Hund();
+                        bello.wuff();
+                    </pre>
+                </figure>
+                <p>
+                    Mit <code>.prototype</code> können nicht nur eigene Kontruktoren, sondern auch
+                    <b>Standardklassen</b>
+                    von Javaskript oder DOM und bereits <b>existierende Objekte</b> erweitert werden. Im Prinzip wird
+                    das
+                    Objekt wie in der klassenbasierten Vererbung von z.B. Java um neue Eigenschaften und Methoden
+                    erweitert. Dennoch ersetzt Prototyping diese klassenbasierte Vererbung durch prototypenbasierte
+                    Vererbung. Somit der Entwickler einen größeren Einfluss auf das Verhalten von Objekten.
+                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="dom">
                 <h4 class="mt-5">DOM - Document Object Model</h4>
+                <p>
+                    Das <b>D</b>ocument <b>O</b>bject <b>M</b>odel ist eine Repäsentation der Dokumentenstruktur.
+                    Diese wird vom Browser erstellt und im Arbeitsspeicher abgelegt. <b>DOM</b> ist die Schnittstelle
+                    zwischen HTML und Javaskript. Alle Elemente werden zu Objekten (Knoten) innderhalb des DOMs, auf
+                    die dynamisch zugegriffen werden kann und welche gegebenenfalls manipuliert werden können.
+                </p>
+                <p>
+                    Während der Browser den HTML-Code empfängt, verarbeitet er ihn Schritt für Schritt und legt dabei
+                    die
+                    Objektstruktur an und legt sie in Form eines Baumes ab:
+                </p>
+                <figure role="group">
+                    <img src="../bilder/dom.png" alt="Document Object Model">
+                    <figcaption class="text-center">
+                        Quelle: <a target="_blank"
+                            href="https://wiki.selfhtml.org/images/thumb/0/01/DOM-1.svg/1000px-DOM-1.svg.png">
+                            https://wiki.selfhtml.org/images/thumb/0/01/DOM-1.svg/1000px-DOM-1.svg.png</a>
+                    </figcaption>
+                </figure>
+                <p>
+                    Sobald dies einmal durchgeführt wurde nutzt der Browser nur noch die Objektstruktur und greift
+                    nicht mehr auf den Quellcode zu.
+                </p>
+                <p>
+                    Die zuvor genannten Knoten können verschiedenen Kategorien angehören, beispielhaft sind:
+                    <span style="background-color: #dfac20;">Elementknoten</span>, <span
+                        style="background-color: #3983ab;">Attributknoten</span>und <span
+                        style="background-color: #c32e04;">Textknoten</span>.
+                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="jquery">
                 <h4 class="mt-5">jQuery</h4>
@@ -250,7 +426,7 @@
                 <h4 class="mt-5">Ajax</h4>
             </div>
             <div class=" col-xl-12 text-justify align-content-center" id="ide">
-                <h4 class="mt-5">Integrated Development Environment</h4>
+                <h4 class="mt-5">Entwicklungsumgebung für Webentwicklung</h4>
                 <p class="mt-4">
                     Debugging im Browser
                 </p>
@@ -268,7 +444,9 @@
                     Design schon erste Vermutungen über den Charakter
                     des Unternehmens oder Vorhabens zu. Nutzerfreundlichkeit ist eben so unerlässlich, eine schlecht zu
                     "surfende" Webseite kann einiges an Frustration
-                    bergen und wird unwahrscheinlich ein zweites mal besucht.<br><br>
+                    bergen und wird unwahrscheinlich ein zweites mal besucht.
+                </p>
+                <p>
                     Zuerst ist es sinnvoll sich über die Gliederung und den Einstieg in die Webseite gedanken zu machen.
                     Der Nutzer sollte nicht als erstes mit einem
                     Werbebanner oder einem langen Textblock konfrontiert werden. Die Startseite sollte eher einen
@@ -281,7 +459,9 @@
                     Bei der weiteren Gliederung ist es wichtig eine allgemein logische Einteilung der Inhalte
                     vorzunehmen. Diese sollte am Besten auch von Kollegen,
                     oder bei einem privatem Projekt, Bekannten gezeigt werden, um eine zu einseitig subjektive Annahme
-                    auszuschließen.<br><br>
+                    auszuschließen.
+                </p>
+                <p>
                     Ebenso nützlich ist es sich von Anfang an auf ein Layout und Schreibstil festzulegen. Es macht einen
                     unseriösen und "zusammengewürfelten" Eindruck,
                     wenn jede Seite der Webseite unterschiedlich aussieht. Außerdem ist die Anordnung verschiedener
@@ -299,7 +479,8 @@
                     Ein häufiger Fehler ist unter Anderem zu viele "eye catcher" einzubbauen, denn auch eine optische
                     Überforderung ist möglich und sollte vermieden werden. Je einfacher eine Webseite oder Anwendung
                     gestaltet ist desto wahrscheinlicher ist ein anhaltender und wiederkehrender Aufenthalt von Nutzern.
-                    <br><br>
+                </p>
+                <p>
                     Als letztes möchte ich auf den Punkt User Interface zu sprechen kommen, bzw. auf das Thema
                     Usability.
                     Schluss endlich beschreiben die zuvor genannten Themen nichts Anderes. Der Begriff Usability ist ein
@@ -332,7 +513,7 @@
     </div>
 
     <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
-        data-toggle="tooltip" data-placement="left">/\</a>
+        data-toggle="tooltip" data-placement="left"><i class="material-icons">arrow_upward</i></a>
 
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
