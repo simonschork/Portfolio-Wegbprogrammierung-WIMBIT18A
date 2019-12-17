@@ -417,15 +417,38 @@
                     Die zuvor genannten Knoten können verschiedenen Kategorien angehören, beispielhaft sind:
                     <span style="background-color: #dfac20;">Elementknoten</span>, <span
                         style="background-color: #3983ab;">Attributknoten</span>und <span
-                        style="background-color: #c32e04;">Textknoten</span>. Um auf diese Knote zu zugreifen
-                    gibt es verschiedene Möglichkeiten:
-                    <ol>
-                        <li>
-                            <i>getElementById()</i>: Greift über die ID, die der Entwickler mithilfe von
-                            <i>id="..."</i> innerhalb des ersten Tags festlegen kann zu.
-                        </li>
-                    </ol>
+                        style="background-color: #c32e04;">Textknoten</span>. Der Programmierer kann auf
+                    verschiedene Arten auf ein solches Objekt bzw. Knoten zugreifen:
                 </p>
+                <ol>
+                    <li>
+                        <i>document.getElementById()</i>: Greift über die <b>ID</b>, die der Entwickler mithilfe von
+                        <i>&lt;div id="..."&gt;</i> innerhalb des ersten Tags festlegen kann zu. Die ID eines Elements
+                        ist
+                        einzigartig und somit eindeutig.
+                    </li>
+                    <br>
+                    <li>
+                        <i>document.getElementByTagName()</i>: Greift über den <b>Tag</b> auf mehrere Elemente zu.
+                        Die verschiedenen Elemente werden in einer Liste, vergleichbar mit einem Array gespeichert.
+                        Sie besitzen die <i>lengt</i>-Eigenschaft und der Entwickler kann über sie iterieren.
+                    </li>
+                </ol>
+                <p>
+                    Eine beliebte Methode ist oft genutzte Referenzen in Variablen zu speicher um so den Zugriff zu
+                    erleichtern. Nach dem Speichern in einer Variable können auch beide oben genannten Möglichkeiten
+                    per Punktnotation miteinander verküpft werden. Da die Objekte als Baum strukturiert sind, lässt
+                    sich über verschiedene Methoden, auch auf Elter-, Kind- und Geschwisterknoten zugreifen.
+                </p>
+                <p>
+                    Hat man nun erfolgreich die gewünschte Komponente erreicht gibt es eine Vielzahl von
+                    Manipuationsmöglichkeiten:
+                </p>
+                <ol>
+                    <li>
+
+                    </li>
+                </ol>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="jquery">
                 <h4 class="mt-5">jQuery</h4>
