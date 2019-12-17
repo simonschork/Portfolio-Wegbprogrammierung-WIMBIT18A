@@ -1,6 +1,6 @@
 /* sidebar */
 .bs-docs-sidebar {
-    padding-left: 3%;
+    padding-left: 1.75%;
     margin-top: 20px;
     margin-bottom: 20px;
     top: 50px;
@@ -11,7 +11,7 @@
 .bs-docs-sidebar .nav>li>a {
     color: black;
     padding: 4px 18px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
 }
 /*background when hovered*/
@@ -67,8 +67,9 @@
     margin-top: 16px;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: #e9ecef66;
+    background-color: #f0f0f0;
     text-align: left;
+    box-shadow: 5px 5px 5px rgba(143, 143, 143, 0.5);
 }
  
 /*submit button comments*/
@@ -89,5 +90,9 @@ figure img {
 
 figcaption {
     caption-side: bottom;
+}
+
+body {
+    background-color: rgba(247, 242, 234, 0.836);
 }
   
