@@ -48,17 +48,19 @@
         <div class="row">
             <div class="mt-3 row col-lg-12 align-content-center">
                 <img class="logo align-content-center" src="../bilder/tensorflow-logo.png" alt="Tensorflow Logo">
-                <h1 class="mt-5 text-center">Tensorflow.js</h1>
+                <h1 class="mt-5 text-center">Toxicity Detection mit Tensorflow.js</h1>
             </div>
             <div class="col-lg-12 text-justify" id="deeplearning">
                 <h3 class="mt-5 text-center">Deep Learning</h3>
                 <p class="mt-4">
-                    <b>Deep Learning</b> ist ein Bereich des <b>Machine Learning</b>, indem <b>künstliche neurale
-                        Netzwerke</b> verwendet werden. um die gewünschten Ergebnisse zu erzielen. Ein solches Netz
+                    <b>Deep Learning (DL)</b> ist ein Bereich des <b>Machine Learning(ML)</b>, indem <b>künstliche
+                        neurale
+                        Netzwerke (NN)</b> verwendet werden. um die gewünschten Ergebnisse zu erzielen. Ein solches Netz
                     besteht aus mehreren <b>Layern</b>. Ein Layer wiederum besteht aus mehren <b>Neuronen</b>, welche
                     die kleinste Struktur im Netzwerk darstellen. Jedes Neuron besteht im wesentlichen aus einer
-                    Funktion, die mit dem Input eine mathematische Berechnung durchführt. Input und Output eines Neurons
-                    könnten z.B. Vektoren sein. Der erste Layer eines Netzwerkes ist der <b>Input Layer</b>. Er erhält
+                    Funktion, die mit dem Input eine mathematische Berechnung durchführt. Für diese Berechnungen müssen
+                    die Daten <b>vektorisiert</b> werden, da ein NN mit Vektoren und Matrizen arbeitet. Der erste Layer
+                    eines Netzwerkes ist der <b>Input Layer</b>. Er erhält
                     den Input vom
                     Entwickler, meistens in Form eines Datensatzes, bestehend aus Beispielen. Dieser wird <b>Train
                         Set</b> genannt. Der letzte Layer, der <b>Output Layer</b>, kann je nach Art des Netzwerks
@@ -96,9 +98,150 @@
                     Präzision des Algorithmus annähert, durch Hinzufügen von Hidden Layern gesteigert werden. Nachteil
                     hierbei ist jedoch: Größere Netzwerke benötigen mehr Zeit für das Training.
                 </p>
-                <p>
-
+            </div>
+            <div class="col-lg-12 text-justify" id="rnn">
+                <h3 class="mt-5 text-center">Recurrent Neural Network</h3>
+                <p class="mt-4">
+                    Bei einem <b>Recurrent Neural Network (RNN)</b> handelt es sich um eine Art Neurales Netzwerk, das
+                    sich
+                    besonders gut zur Verarbeitung unstrukturierter und sequenzieller Daten eignet, wie es zum Beispiel
+                    Sprachen bzw. Schrift ist. Die Beudeutung eines neuen Wortes hängt stark von dem vorherigen Wort ab.
+                    Ein RNN merkt sich das Ergebnis der Berechnung, also den Output Layer und verwendet ihn also
+                    zusätzlichen Input.
                 </p>
+                <figure role="group" style="width: 70%;" class="float-right ml-4">
+                    <img src="../bilder/rnn-simple.PNG" alt="Simplified RNN">
+                    <figcaption class="text-center">Quelle: <a href="https://www.youtube.com/watch?v=UNmqTiOnRfg"
+                            target="_blank">Luis
+                            Serrano</a></figcaption>
+                </figure>
+                <p>
+                    Die Pfeile stellen verschiedene Rechenoperationen dar, welche von der Art des NN abhängen und vorher
+                    festgelegt werden. Während die Kreise die vektorisierten Inputdaten darstellen. Sie könnten z.B. für
+                    ein Wort in einem Satz stehen. Die erste Reihe Vektoren ist der Input Layer.
+                </p>
+                <p>Dieser wird mit einer vorher festgelegte Matrix mutlipliziert, die beim Beispiel Wörter für eine
+                    Gewichtung der verschiedenen Wörter in einem Satz stehen kann (ein <i>und</i> hat wahrscheinlich
+                    weniger Einfluss auf die Bedeutung des Satzen als ein Adjektiv).
+                </p>
+                <p>
+                    Anschließend werden die Ergebnisse addiert, um auf einen Entscheidungsvektor zu kommen, der die
+                    Inputdaten beider Quellen mit einbezieht. Dieser wird in eine nicht-lineare Funktion eingefügt,
+                    welche für den höchsten Wert eine <b>1</b> und für alle anderen Werte eine <b>0</b> zurückgibt.
+                    Somit werden unwichtige Komponenten eliminiert (an dieser Stelle könnte das <i>und</i> vollständig
+                    elimniert werden, wenn es auf den Sinn des Satzes keinen Einfluss hat). Die
+                    Mergemap verbindet schlussendlich die Ergebnisverktoren beider Inputs und gibt den Output, welcher
+                    erneut als Input genutzt wird.
+                </p>
+            </div>
+            <div class="col-lg-12 text-justify" id="nlp">
+                <h3 class="mt-5 text-center">Natural Language Processing</h3>
+                <p class="mt-4">xyz</p>
+            </div>
+            <div class="col-lg-12 text-justify" id="toxicitydetection">
+                <h3 class="mt-5 text-center">Toxicity Detection by tfjs/models</h3>
+                <p class="mt-4">
+                    Google bietet mit <b>Tensorflow</b> ein Framework, was bei der Implementierung von NNs unterstützt.
+                    Außerdem stellen sie seit neustem trainierte Modelle zur Verfügung, die nur noch in eine
+                    Webanwendung eingebunden werden müssen. Zur Zeit stehen auf der <span><a
+                            href="https://www.tensorflow.org/js/models/?hl=de"
+                            target="_blank">Tensorflow.js-Webseite</a></span> acht
+                    Modelle zur Verfügung. Unter anderem ein "Text toxicity detection"-Modell. Mit Hilfe dieses Modells
+                    möchte ich den Ansatz einer Kommentarfunktion umsetzen, welche
+                    den Nutzer warnt,
+                    wenn er einen möglicherweise beleidigenden Text verfasst und ihn an der Veröffentlichung des
+                    Kommentars hindert. Der Code des Modells ist
+                    vollständig auf <span><a href="https://github.com/tensorflow/tfjs-models/tree/master/toxicity"
+                            target="_blank">Github</a></span>
+                    verfügbar und musste nur noch auf folgende Weisen angepasst werden:
+                </p>
+                <p class="text-center">
+                    Der Eingabewert des Textfeldes wurde einem Array zugewiesen, nur so kann das Modell den Text
+                    verarbeiten.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        var kommentartext = document.getElementById('commentinput').value;
+                        var kommentar = Array(kommentartext);
+                    </pre>
+                </figure>
+                <p class="text-center">
+                    Anschließend wurde ein Grenzwert festgelegt (das Modell muss sich zu 0.9 sicher sein, dass die
+                    Klassifizierung stimmt, erst dann wird sie zurückgegeben) und ein Objekt deklariert, welches später
+                    die Ergebnisse in Form eines JSON-Objektes enthält.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        //Minimale Vorhersagesicherheit
+                        const grenzwert = 0.9;
+                        //Objekt für Klassifizierung deklarieren
+                        var classification = new Object();
+                    </pre>
+                </figure>
+                <p class="text-center">
+                    Nun musste das Modell mit dem festgelegten Grenzwert und Input geladen
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        classification = await toxicity.load(grenzwert).then(async model => {
+                            //Kommentar als modelinput
+                            var saetze = kommentar;
+                            var modeloutput = new Object();
+                    </pre>
+                </figure>
+                <p class="text-center">
+                    und schließlich die Klassifizierung des Kommentars durchgeführt und zurückgegeben werden.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                            //Vorhersage
+                            modeloutput = await model.classify(saetze);
+                            //Vorhersage übergeben
+                            return modeloutput;
+                        });
+                    </pre>
+                </figure>
+                <p class="text-center">
+                    Nachdem die Klassifizierung erfolgreich durchgeführt wurde wird geprüft, ob eine der möglichen
+                    Klassifizierungen ein <i>match == true</i> hat. Ist dies der Fall wird der Nutzer benachrichtigt,
+                    wenn nicht wird sein Kommentar veröffentlicht.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        //Toxicity prüfen
+                        if (classification[0].results[0].match == true) {
+                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else if (classification[1].results[0].match == true) {
+                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else if (classification[2].results[0].match == true) {
+                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else if (classification[3].results[0].match == true) {
+                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else if (classification[4].results[0].match == true) {
+                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else if (classification[5].results[0].match == true) {
+                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else if (classification[6].results[0].match == true) {
+                             alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+                        } else {
+                            //Kommentar veröffentlichen
+                            document.getElementById('commentoutput').innerHTML = kommentar;
+                        }
+                    </pre>
+                </figure>
+                <p>
+                    Die größte Herrausforderung stellte für mich das Übergeben des Modelloutputs dar. Mir war zu Anfang
+                    nicht klar, das diese Implementierung nur in einer asynchronen Funktion funktioniert, in der man mit
+                    dem Schlüsselwort <i>await</i>, auf die erfolgreiche Ausführung des Modells warten kann. Ohne das
+                    konnte der Output nicht aus der Funktion übergeben werden.
+                </p>
+                <div class="mt-5"><br></div>
+                <div class="mt-5"><br></div>
             </div>
         </div>
     </div>
