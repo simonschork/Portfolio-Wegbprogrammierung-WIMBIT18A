@@ -64,12 +64,8 @@
             <li><a href="#objekte" style="text-decoration: none;">Objekte in Javascript</a></li>
             <li><a href="#dom" style="text-decoration: none;">DOM - Document Object Model</a></li>
             <li><a href="#jquery" style="text-decoration: none;">jQuery - DOM-Handling</a></li>
-            <li><a href="#ajax" style="text-decoration: none;">Ajax</a></li>
-            <li><a href="#ide" style="text-decoration: none;">Entwicklungsumgebung für Webentwicklung</a></li>
+            <li><a href="#ajax" style="text-decoration: none;">Ajax - Asynchronous JavaScript and XML</a></li>
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
-            <li><a href="#bootstrap" style="text-decoration: none;">Webprogrammierung mit Bootstrap</a></li>
-            <li><a href="#sicherheit" style="text-decoration: none;">Sicherheit von Webanwendungen</a></li>
-            <li><a href="#unternehmen" style="text-decoration: none;">Webanwendungen im Unternehmen</a></li>
         </ul>
     </nav>
 
@@ -546,7 +542,7 @@
                     Validierung von Eingaben.
                 </p>
                 <p>
-                    Um den Vorteil von jQuery gegenüber der klassischen Schreibweise zu betohnen folgt ein Beispiel mit
+                    Um den Vorteil von jQuery gegenüber der klassischen Schreibweise zu betonen folgt ein Beispiel mit
                     direktem Vergleich:
                 </p>
                 <figure class="code-box">
@@ -573,14 +569,54 @@
                             });
                     </pre>
                 </figure>
+                <p>
+                    Das Objekt am Anfang des Statements wird als primäre Kollektion bezeichnet. In ihr können
+                    verschiedene HTML-Elemente verkapselt werden. <i>$('#jquery p')</i> Greift per <b>ID-Selektor und
+                        Elementselektor</b> auf alle Absätze des
+                    Containers mit der ID "jquery" zu, also unter anderem genau diesen Text. Durch
+                    Punktnotation kann
+                    diese primäre Kollektion mit n Methoden erweitert werden (n-te Kollektion).
+                    Alternativ können auch andere <b>Selektoren</b> verwendet werden: Der <b>Klassenselektor</b>
+                    <i>$('.back-to-top')</i> greift auf alle Elemente der CSS-Klasse "back-to-top" zu, welche in diesem
+                    Fall Buttons sind. Zuletzt gibt es noch den <b>Elementselektor</b> <i>$('h4')</i>, hiermit werden
+                    alle Überschriften vom Typ vier im DOM ausgewählt.
+                </p>
+                <p>
+                    Die <b>Methoden</b> von jQuery lassen sich in drei Kategorien einordnen:
+                </p>
+                <ol>
+                    <li><b>Transparente Methoden</b> sind ohne Einschränkung verkettbar, Rückgabewert ist ein, der
+                        Eingabe-Kollektion entsprechendes jQuery-Objekt. Mit ihnen kann man die Elemente der Kollektion
+                        verändern, die Kollektion wird aber unverändert an die nächste Kollektion weitergegeben.</li>
+                    <br>
+                    <li><b>Destruktive Methoden</b> haben als Rückgabewert eine reduzierte, erweiterte oder ganz andere
+                        Kollektion. Sie sind auch ohne Einschänkung verkettbar.</li>
+                    <br>
+                    <li><b>Terminierende Methoden</b> geben kein jQuery-Objekt, sondern z.B. DOM-Knoten oder einen
+                        beliebigen anderen Datentypen zurück. Da keinen Kollektion zurückgegeben wird, kann keine
+                        jQuery-Methoden angewendet und diese so nicht verkettet werden.</li>
+                </ol>
+                <p>
+                    Dies ist nur eine kleine Auswahl und einfachste Beispiele. jQuery bietet enorm viele Möglichkeiten
+                    wie Filter oder das Verändern von Tagattributen (z.B. Klassen).
+                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="ajax">
-                <h4 class="mt-5">Ajax</h4>
-            </div>
-            <div class=" col-xl-12 text-justify align-content-center" id="ide">
-                <h4 class="mt-5">Entwicklungsumgebung für Webentwicklung</h4>
+                <h4 class="mt-5">Ajax - Asynchronous JavaScript and XML</h4>
                 <p class="mt-4">
-                    Debugging im Browser
+                    Asynchrones Javascript and XML oder <b>Ajax</b> verspricht interaktivere, reaktionsschnellere und
+                    einfacher nutzbare Webanwendungen, die sich wie Desktopanwendungen anfühlen. Dies soll durch eine
+                    asynchrone Datenübertragung zwischen Browser und Webserver ermöglicht wernden. Das bedeutet die
+                    beiden Komponenten sind nicht aufeinander abgestimmt, man spricht von einer Absichtlichen zeitlichen
+                    Versetzung. Ajax greift das typische Problem der Webanwendungen auf: Da jede Benutzerinteraktion
+                    eine Anfrage an den Webserver darstellt ist die Stabilität und Wartezeit der Anwendung von der
+                    Verbindung und der sofortigen Antwort stark abhängig. Des Weiteren muss der Webserver bei
+                    Veränderung eine neu generierte Webseite and den Browser senden, was bei schlechter Verbindung
+                    ebenfalls träge wirken kann.
+                </p>
+                <p>
+                    Ajax-Anwendungen hingegen fordern nur die tatsächlich benötigten Daten vom Server an, während dieser
+                    die Daten läd kann der Nutzer weiter mit der Anwendung interagieren.
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="webdesign">
