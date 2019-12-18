@@ -195,16 +195,16 @@
                     </pre>
                 </figure>
                 <p>
-                    Wie im Beispiel gezeigt arbeitet HTML mit <b>Tags</b> <code>&lt;Tagname></code> gearbeitet, anhand
+                    Wie im Beispiel gezeigt arbeitet HTML mit <b>Tags</b> <i>&lt;Tagname></i> gearbeitet, anhand
                     dieser interpretiertder Browser Aufbau und Struktur des Textes. So können unter anderem
                     Überschriften und Absätze hervorgehoben oder Links und Bilder platziert werden. Jeder geöffnete Tag
-                    muss anschließend wieder durch einen Tag <code>&lt;/Tagname></code> geschlossen werden.
+                    muss anschließend wieder durch einen Tag <i>&lt;/Tagname></i> geschlossen werden.
                 </p>
                 <p>
                     Um die Darstellung eines HTML-Dokuments zu verbessern, verwendet man <b>Cascading Style Sheets</b>,
                     beziehungsweise <b>CSS</b>. Der Syntax von CSS ist ein komplett anderer im Vergleich zu HTML,
                     dennoch kann es leicht in das HTML-Dokument integriert werden. Entweder man definiert die
-                    verschiedenen CSS-Klassen in einem <code>&lt;style>...&lt;/style></code> -Tag im <b>Head</b>, oder
+                    verschiedenen CSS-Klassen in einem <i>&lt;style>...&lt;/style></i> -Tag im <b>Head</b>, oder
                     man schreibt sie in einer seperaten .css-Datei und importiert diese wie oben beschrieben.
                 </p>
                 <p>
@@ -287,7 +287,7 @@
                 </p>
                 <p>
                     Alternativ zu direkter Einbindung in den HTML-Code, können die Funktionen in einer .js-Datei
-                    geschrieben und diese über <code>&lt;script src="Beispiel.js"&gt;&lt;/script&gt;</code> aufgerufen
+                    geschrieben und diese über <i>&lt;script src="Beispiel.js"&gt;&lt;/script&gt;</i> aufgerufen
                     werden.
                     Eine weitere Besonderheit von Javascript ist die Typisierung, hier wird nämlich „Dynamische
                     Typisierung“ oder „loose typing“ verwendet. Die Variablen werden nur mit dem Schlüsselwort „var“
@@ -310,14 +310,16 @@
                 <p class="mt-4">
                     Für das Erzeugen von Objekten gibt es in Javascript drei Möglichkeiten, alle nutzen einen
                     Konstruktor. Dies kann erstens der allgemeine Konstruktor sein, hierbei wird zuerst ein leeres
-                    Objekt erzeugt <code>Adresse = new Object();</code>, anschließend können Variablen und Methoden für
-                    das Objekt per Punktnotation definiert werden z.B. <code>Adresse.name = ‘Müller‘</code> und
-                    <code>Adresse.bewohnerAusgeben = function() {console.log(‘Hier wohnt‘, this.name);};</code>. Diese
+                    Objekt erzeugt <i>Adresse = new Object();</i>, anschließend können Variablen und Methoden für
+                    das Objekt per Punktnotation definiert werden z.B. <i>Adresse.name = ‘Müller‘</i> und
+                    <i>Adresse.bewohnerAusgeben = function() {console.log(‘Hier wohnt‘, this.name);};</i>. Diese
                     Variablen und Methoden können ebenso wieder durch den Punktoperator aufgerufen werden
-                    <code>Adresse.bewohnerAusgeben();</code>. <br><br>
+                    <i>Adresse.bewohnerAusgeben();</i>.
+                </p>
+                <p>
                     Zweitens kann ein Objekt in der Literalschreibweise, also als JSON-Objekt erzeugt werden. JSON steht
                     für JavaScript Object Notation. Man hat die Möglichkeit ein leeres Objekt zu erzeugen
-                    <code>var  Adresse = {}</code> oder direkt Variablen und Methoden mitzugeben:
+                    <i>var Adresse = {}</i> oder direkt Variablen und Methoden mitzugeben:
                 </p>
                 <figure class="code-box">
                     <pre class="code-text">
@@ -333,7 +335,7 @@
                 <p>
                     Der Aufruf erfolgt unverändert über Punktnotation. <br>
                     Drittens kann ein Objekt auch über einen spezialisierten Konstruktor erstellt werden. Hierbei wird
-                    der Konstruktor vom Programmierer spezialisiert indem der mitgegebene Wert über <code>this</code>
+                    der Konstruktor vom Programmierer spezialisiert indem der mitgegebene Wert über <i>this</i>
                     dem erzeugten Objekt als Instanzvariable und/oder -methode zugewiesen wird. Dies könnte wie folgt
                     aussehen:
                 </p>
@@ -362,7 +364,7 @@
                     Bisher konnten wir den Objekten nur über ihre Instanzierung neue Eigenschaften und Methoden
                     zugewiesen.
                     Um nicht ständig den Konstruktor eines Obejektes verändern zu müssen gibt es in Javascript für jedes
-                    Objekt und jede Funktion die Eigenschaft <code>prototype</code>. Mit ihr kann dem <b>prototypischen
+                    Objekt und jede Funktion die Eigenschaft <i>prototype</i>. Mit ihr kann dem <b>prototypischen
                         Objekt</b>, eines Konstruktors, eine neue Funktion oder Eigenschaft zugewiesen werden.
                 </p>
                 <figure class="code-box">
@@ -379,7 +381,7 @@
                     </pre>
                 </figure>
                 <p>
-                    Mit <code>.prototype</code> können nicht nur eigene Kontruktoren, sondern auch
+                    Mit <i>.prototype</i> können nicht nur eigene Kontruktoren, sondern auch
                     <b>Standardklassen</b>
                     von Javaskript oder DOM und bereits <b>existierende Objekte</b> erweitert werden. Im Prinzip wird
                     das
