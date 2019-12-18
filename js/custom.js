@@ -48,6 +48,7 @@ async function kommentarSenden() {
         //Kommentar als modelinput
         var saetze = kommentar;
         var modeloutput = new Object();
+
         //Vorhersage
         modeloutput = await model.classify(saetze);
         //Vorhersage übergeben
