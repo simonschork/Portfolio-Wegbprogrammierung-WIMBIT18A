@@ -502,6 +502,77 @@
                     <li><b>Große Entwicklergemeinde:</b> Auch durch die kostenfreie Nutzung gibt es Tausende Entwickler
                         die sich mit der Bibliothek beschäftigen und sie so laufend verbessern.</li>
                 </ul>
+                <p>
+                    Um jQuery in der Webseite zu verwenden, muss man die Datei <i>jquery.js</i> importieren, welche auf
+                    <i>http://www.jquery.com/</i> frei zum Download verfügbar ist. Man kann sie dort in unkomprimierter,
+                    komprimierter oder minimierter Form herunterladen. Interessant ist hier die minimierte Form, ein
+                    Konzept, welches ich zum ersten Mal in Zusammenhang mit Webprogrammierung hörte. Sie ist etwas
+                    größer
+                    als die gepackte Datei, muss dafür aber nicht jedes mal entpackt werden. Schaut man sich eine solche
+                    Datei an wirkt sie auf den ersten Blick sehr verwirrend. Es handelt sich um genau den selben Code
+                    nur werden jegliche Form und Leerzeichen, die für den Syntax nicht essenziell sind gelöscht. Der
+                    Code wird in einem langen Block dargestellt. Das und die wegfallende Entpackung verringert die
+                    Ladezeit der Webseite. Auf dieser Seite habe ich mir das Runterladen von jQuery gespart und
+                    importiere
+                    die minimierte Datei über eine URL von Google. Diese vorgehensweise macht mich allerdings abhängig
+                    von deren Webserver und der Verfügbarkeit des Links.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&lt;/script>
+                    </pre>
+                </figure>
+                <p>
+                    Bevor ich genauer auf die Möglichkeiten von jQuery eingehe, was ist überhaupt ein Framework?
+                </p>
+                <figure role="group" class="float-right ml-4">
+                    <img src="../bilder/framework.PNG" alt="Framework">
+                    <figcaption class="text-center">Quelle: Stefan Noll</figcaption>
+                </figure>
+                <p>
+                    Bei einem <b>Framework</b> handelt es sich, wie der Name schon andeutet um einen Rahmen, durch den
+                    sowohl Client als auch der Programmierer auf bereitgestellten Code zugreifen. Es gibt somit im
+                    Wesentlichen die Anwendungsarchitektur vor und stellt Klassen und Funktionen zur Verfügung.
+                    Zur Erstellung dieser Webseite nutze ich ein Framework namens Bootstrap. Ich kann problemlos
+                    vordefinierte Klassen in meine HTML-Struktur einfügen und spare mit so einiges and Arbeit. Ebenso
+                    problemlos kann ich diese Klassen überschreiben oder neue Klassen definieren. Ein Framework zu
+                    nutzen eignet sich besonders für Anfänger, da man schneller Fortschritte sieht und nicht zu tief in
+                    die Funktionalitäten der verschiedenen Sprachen gehen muss. In anderen Fällen ist es aber auch
+                    unerlässlich, so würde ich behaupten keiner schreibt die Funktionen und Strukture die mit jQuery
+                    nutzbar werden selbst. Mittlerweile sind Frameworks für die Webentwicklung essentiell geworden.
+                    Sie unterstützen den Nutzer bei der Erstellung dynamischer Webseiten mit hierarchisch aufgebauter,
+                    zuverlässiger Navigation, bei der Behandlung verschiedener Events (Nutzer und Browser) und bei der
+                    Validierung von Eingaben.
+                </p>
+                <p>
+                    Um den Vorteil von jQuery gegenüber der klassischen Schreibweise zu betohnen folgt ein Beispiel mit
+                    direktem Vergleich:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+                        HTML:
+                            &lt;button type="button" class="submit-btn" id="sendcomment">Absenden&lt;/button>
+                            &lt;textarea class="form-control" id="commentinput" cols="30" rows="10"
+                                 placeholder="Kommentartext">&lt;/textarea>
+                            &lt;p id="commentoutput"></p>
+
+                        Javascript:
+                            var sendcomment = document.getElementById('sendcomment');
+                            var commentinput = document.getElementById('commentinput');
+                            var commentouput = document.getElementById('commentouput');
+
+                            sendbutton.onclick = function () {
+                                commentouput.innerHTML = commentinput.value;
+                            };
+                        
+                        Javascript mit jQuery:
+                            $('#sendcomment').onclick(function () {
+                                $('#commentoutput').innerHTML = $('#commentinput').value;
+                            });
+                    </pre>
+                </figure>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="ajax">
                 <h4 class="mt-5">Ajax</h4>
@@ -580,15 +651,6 @@
                     ist also Empathie und die Fähigkeit sich in verschiedenste Typen von möglichen Nutzern
                     hineinzuversetzen.
                 </p>
-            </div>
-            <div class="col-xl-12 text-justify align-content-center" id="bootstrap">
-                <h4 class="mt-5">Webprogrammierung mit Bootstrap</h4>
-            </div>
-            <div class="col-xl-12 text-justify align-content-center" id="sicherheit">
-                <h4 class="mt-5">Sicherheit von Webanwendungen</h4>
-            </div>
-            <div class="col-xl-12 text-justify align-content-center" id="unternehmen">
-                <h4 class="mt-5">Webanwendungen im Unternehmen</h4>
             </div>
         </div>
     </div>
