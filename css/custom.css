@@ -43,14 +43,14 @@
 
 .btn-primary {
     color: #fff;
-    background-color: #808080;
-    border-color: #808080;
+    background-color: #404040;
+    border-color: #404040;
 }
   
 .btn-primary:hover {
     color: #fff;
-    background-color: #404040;
-    border-color: #404040;
+    background-color: #212529;
+    border-color: #212529;
 }
 
 /*styling code snippets*/
