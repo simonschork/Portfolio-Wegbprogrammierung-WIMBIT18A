@@ -63,7 +63,7 @@
             <li><a href="#javascript" style="text-decoration: none;">Javascript - Java's kleiner Bruder?</a></li>
             <li><a href="#objekte" style="text-decoration: none;">Objekte in Javascript</a></li>
             <li><a href="#dom" style="text-decoration: none;">DOM - Document Object Model</a></li>
-            <li><a href="#jquery" style="text-decoration: none;">jQuery</a></li>
+            <li><a href="#jquery" style="text-decoration: none;">jQuery - DOM-Handling</a></li>
             <li><a href="#ajax" style="text-decoration: none;">Ajax</a></li>
             <li><a href="#ide" style="text-decoration: none;">Entwicklungsumgebung für Webentwicklung</a></li>
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
@@ -383,7 +383,7 @@
                 <p>
                     Mit <i>.prototype</i> können nicht nur eigene Kontruktoren, sondern auch
                     <b>Standardklassen</b>
-                    von Javaskript oder DOM und bereits <b>existierende Objekte</b> erweitert werden. Im Prinzip wird
+                    von Javascript oder DOM und bereits <b>existierende Objekte</b> erweitert werden. Im Prinzip wird
                     das
                     Objekt wie in der klassenbasierten Vererbung von z.B. Java um neue Eigenschaften und Methoden
                     erweitert. Dennoch ersetzt Prototyping diese klassenbasierte Vererbung durch prototypenbasierte
@@ -395,7 +395,7 @@
                 <p class="mt-4">
                     Das <b>D</b>ocument <b>O</b>bject <b>M</b>odel ist eine Repäsentation der Dokumentenstruktur.
                     Diese wird vom Browser erstellt und im Arbeitsspeicher abgelegt. <b>DOM</b> ist die Schnittstelle
-                    zwischen HTML und Javaskript. Alle Elemente werden zu Objekten (Knoten) innderhalb des DOMs, auf
+                    zwischen HTML und Javascript. Alle Elemente werden zu Objekten (Knoten) innderhalb des DOMs, auf
                     die dynamisch zugegriffen werden kann und welche gegebenenfalls manipuliert werden können.
                 </p>
                 <p>
@@ -442,16 +442,49 @@
                 </p>
                 <p>
                     Hat man nun erfolgreich die gewünschte Komponente erreicht gibt es eine Vielzahl von
-                    Manipuationsmöglichkeiten:
+                    Manipuationsmöglichkeiten hier zwei Beispiele wie man Inhalt einer Seite verädnern kann:
                 </p>
                 <ol>
                     <li>
-
+                        Die erste Option ist <i>document.wirte()</i>. Mit dieser Methode können neue Inhalte
+                        hinzugefügt, allerdings keine bestehenden verändert werden. Au&szlig;erdem funktioniert
+                        dies nur während des Ladens der Seite. <br>
+                    </li>
+                    <br>
+                    <li>
+                        Mit <i>.innerHTML()</i> funktioniert das wesentlich einfacher und dynamischer. Damit greift
+                        man auf den HTML-Code eines vor dem Punkt definierten Knoten zu und kann diesen wie gewünscht
+                        verändern. Zusätzlich ist es möglich den Inhalt des Knoten in Variablen zu speichern und
+                        innerhalb des Javascriptcodes weiterzuverwenden.
                     </li>
                 </ol>
+                <p>
+                    Für ein Beispiel praktischer Anwendung schauen Sie sich die Kommentarseite dieser Webseite und den
+                    Javascriptcode der Funktion <i>kommentarSenden()</i> an.
+                </p>
+                <p>
+                    Trotz des großen Nutzen den der DOM mit sich bringt gibt es auch einige Probleme:
+                </p>
+                <ul>
+                    <li>Es ist äußerst Zeitaufwendig sich innerhalb der Baumstruktur von Knoten zu Knote zu bewegen.
+                    </li>
+                    <li>Es gibt keine Möglichkeit alle Tags mit einer bestimmten Klasse auszuwählen.</li>
+                    <li>Die verschiedenen Browser interpretieren z.B. Events innerhalb des DOM oder auch Tabulatoren und
+                        Leerzeichen unterschiedlich.</li>
+                </ul>
+                <p>
+                    Als Lösung stehen uns verschiedene Javascript-Bibliotheken zur Verfügung, die diese Probleme
+                    behandeln, so dass der Entwickler seine Zeit effektiver Nutzen kann. Ein Beispiel hierfür ist
+                    <b>jQuery</b>, was im nächsten Abschnitt detaillierter erläutert wird.
+                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="jquery">
-                <h4 class="mt-5">jQuery</h4>
+                <h4 class="mt-5">jQuery - DOM-Handling</h4>
+                <p>
+                    <b>jQuery</b> ist die mit Abstand meistverwendete Javascript-Bibliothek, laut W3C nutzt die Hälfte
+                    der Webseiten jQuery. Daher wird es auch in viele CM-Systemen (z.B. Wordpress) und Webframeworks
+                    mitgeliefert.
+                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="ajax">
                 <h4 class="mt-5">Ajax</h4>
