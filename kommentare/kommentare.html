@@ -45,7 +45,10 @@
     <div class="container mt-5">
         <form>
             <div class="form-group">
-                <label for="commentinput">Ihr Kommentar:</label>
+                <label for="commentinput">Ihr Name:</label>
+                <textarea class="form-control" id="nameinput" cols="30" rows="1"
+                    placeholder="Nachname, Vorname"></textarea>
+                <label class="mt-3" for="commentinput">Ihr Kommentar:</label>
                 <textarea class="form-control" id="commentinput" cols="30" rows="10"
                     placeholder="Kommentartext"></textarea>
             </div>
@@ -53,10 +56,10 @@
                 <button type="button" class="submit-btn" id="sendcomment">Absenden</button>
             </div>
         </form>
-        <div class="mt-5" id="kommentarsektion">
+        <div class="mt-5 commentbox" id="kommentarsektion">
             <h3 class="text-center">Kommentare:</h3>
             <h5 id=nameoutput></h5>
-            <p id="commentoutput"></p>
+            <p style="margin-left: 50px;" id="commentoutput"></p>
         </div>
     </div>
 
