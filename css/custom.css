@@ -94,6 +94,7 @@ figcaption {
 
 body {
     background-color: rgba(247, 242, 234, 0.836);
+    font-family: Roboto;
 }
   
 li {
@@ -104,4 +105,21 @@ li {
 .card {
     border-radius: 10px;
     box-shadow: 5px 5px 5px rgba(143, 143, 143, 0.5);
+}
+
+.parallax {
+    background-image: url("../bilder/slide01.jpg");
+    height: 875px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mygrey {
+    background-color: #343a40;
+}
+
+.white {
+    color: #fff;
 }
