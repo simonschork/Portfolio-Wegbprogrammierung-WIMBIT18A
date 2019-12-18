@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 
@@ -63,7 +64,24 @@
                     kann je nach Art des Netzwerks unterschiedlich aussehen. Im hier angewendeten Fall entspricht die
                     Anzahl der Neuronen im Output Layer wahrscheinlich den möglichen Klassifizierungen, also sieben.
                     Zwischen diesen beiden können theoretisch unendlich viele <b>Hidden Layer</b> liegen, praktisch wird
-                    die Anzahl durch die verfügbare Rechenleistung eingeschränkt. So wird
+                    die Anzahl durch die verfügbare Rechenleistung eingeschränkt. So wird im Idealfall das Ergebnis mit
+                    jedem Layer genauer.
+                </p>
+                <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-10">
+                        <figure role="group" style="width: 70%;">
+                            <img src="../bilder/simple-nn.png" alt="Basic Neural Network">
+                            <figcaption class="text-center">Quelle: <a target="_blank"
+                                    href="https://de.wikipedia.org/wiki/K%C3%BCnstliches_neuronales_Netz#/media/Datei:Neural_network.svg">
+                                    Wikipedia</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <p>
+                    Diese Überlegung und die dazugehörigen Algorithmen existieren schon sehr lange, das Konzept kam zum
+                    ersten Mal 1943 auf. Doch damals war es unmöglich es umzusetzen.
                 </p>
             </div>
         </div>
@@ -74,29 +92,31 @@
         <div class="container text-center text-md-left">
             <div class="row">
                 <div class="col-md-9 mt-md-0 mt-3">
-                    <h5 class="text-uppercase white">Portfolio zur Vorlesung Webprogrammierung</h5>
-                    <p class="white">Diese Webseite wurde im Rahmen einer Prüfungsleistung erstellt. Der Code ist
+                    <h5 class="text-uppercase white footer-font">Portfolio zur Vorlesung Webprogrammierung</h5>
+                    <p class="white footer-font">Diese Webseite wurde im Rahmen einer Prüfungsleistung erstellt. Der
+                        Code ist
                         vollständig auf Github verfügbar. Zur Erstellung wurde das Framework Bootstrap genutzt,
                         angepasst und ergänzt.</p>
                 </div>
                 <hr class="clearfix w-100 d-md-none pb-3">
                 <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase white">Links</h5>
+                    <h5 class="text-uppercase white footer-font">Links</h5>
                     <ul class="list-unstyled white">
-                        <li><a class="white" href="https://github.com/simonschork/webprog-portfolio"
+                        <li><a class="white footer-font" href="https://github.com/simonschork/webprog-portfolio"
                                 target="_blank">Github</a></li>
-                        <li><a class="white" href="https://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+                        <li><a class="white footer-font" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3 white ">© 2019 Copyright:
+        <div class="footer-copyright text-center py-3 white footer-font">© 2019 Copyright:
             <span>Simon Schork</span>
         </div>
     </footer>
 
     <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
-        data-toggle="tooltip" data-placement="left">/\</a>
+        data-toggle="tooltip" data-placement="left"><i class="material-icons">arrow_upward</i></a>
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
