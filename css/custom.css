@@ -134,3 +134,11 @@ li {
 .footer-font {
     font-size: small;
 }
+
+.commentbox {
+    border: 2px solid;
+    border-color: #343a40;
+    border-radius: 16px;
+    background-color: rgba(247, 242, 234, 0.836);
+    box-shadow: 5px 5px 5px rgba(143, 143, 143, 0.5);
+}
