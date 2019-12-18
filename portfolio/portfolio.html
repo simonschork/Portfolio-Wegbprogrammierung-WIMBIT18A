@@ -614,9 +614,48 @@
                     Veränderung eine neu generierte Webseite and den Browser senden, was bei schlechter Verbindung
                     ebenfalls träge wirken kann.
                 </p>
+                <figure role="group" style="width: 55%;" class="float-left mr-4">
+                    <img src="../bilder/ajax.png" alt="Prozessfluss einer Ajax-Anwendungen">
+                    <figcaption class="text-center">Quelle: <a target="_blank"
+                            href="https://de.wikipedia.org/wiki/Ajax_(Programmierung)#/media/Datei:Prozessfluss-ajax.svg">
+                            Wikipedia</a>
+                    </figcaption>
+                </figure>
                 <p>
                     Ajax-Anwendungen hingegen fordern nur die tatsächlich benötigten Daten vom Server an, während dieser
-                    die Daten läd kann der Nutzer weiter mit der Anwendung interagieren.
+                    die Daten läd kann der Nutzer weiter mit der Anwendung interagieren. Hat der Webserver alle Daten
+                    geladen werden sie über eine Javascript-Funktion in die Webseite eingebunden. Das Konzept ist
+                    vergleichbar mit Caching und optimiert die Ladezeiten, sowie die Auslastung des Webservers.
+                    Serverseitig werden <b>PHP-Skripts</b> verwendet um die Fragmente (z.B. HTML) zurückzugeben.
+                    Ein Vorteil ist, dass Ajax wie jQuery frei zugänglich ist und ohne Plug-ins der ähnliches verwendet
+                    werden kann. Es sind jedoch umfangreiche Tests notwendig um zu garantieren das die Ajax-Anwendungen
+                    mit den verschiedenen Browsern kompatibel ist.
+                </p>
+                <p>
+                    Ein Problem bei der Verwendung von Ajax ist die "Zurück"-Funktion der Browser. Diese speichern
+                    normalerweise statische Webseiten in der Historie ab. Zur Lösung müssen Entwickler
+                    Zustandsänderungen dem Browser explizit mitteilen, wozu die meisten Browser mittlerweile eine
+                    <b>Schnittstelle</b> anbieten. Eine weitere Option ist es den aktuellen Zustand in der <b>URL</b>
+                    über einen Hashtag und Clientpfad zu übermitteln. Das selbe Problem und Lösung findet sich beim
+                    Anlegen von Lesezeichen.
+                </p>
+                <p>
+                    Ajax nutzt das <i>XMLHttpRequest</i>-Objekt für die Kommunikation mit dem Server. Es werden unter
+                    anderem die Dateiformate JSON, XML, HTML und Tesxdateien unterstützt. Die Kommunikation läut im
+                    wesentlichen so ab:
+                </p>
+                <p>
+                    Zuerst wird eine Instanz des <b>XMLHttpRequest-Objekt</b>s erzeugt, mit den dazugehörigen Methoden
+                    kann eine Anfrage an den Server generiert und gesendet werden. Hier wird auch festgelegt welche
+                    Javascriptfunktion später die Antwort des Servers behandeln soll.
+                    Anschließend wenn der Wert <i>XMLHttpRequest.Done</i> annimmt, kann die zuvor definierte Funktion
+                    die Antwort entsprechend verarbeiten. Weitere Zustände des Request
+                    <i>(XMLHttpRequest.readyState)</i> sind:
+                    <i>UNSENT</i>,
+                    <i>OPENED</i>,
+                    <i>HEADERS-RECEIVED</i>,
+                    <i>LOADING</i>,
+                    <i>DONE</i>.
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="webdesign">
