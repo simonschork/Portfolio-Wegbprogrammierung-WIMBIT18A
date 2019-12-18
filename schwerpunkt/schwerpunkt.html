@@ -57,15 +57,15 @@
                         Netzwerke</b> verwendet werden. um die gewünschten Ergebnisse zu erzielen. Ein solches Netz
                     besteht aus mehreren <b>Layern</b>. Ein Layer wiederum besteht aus mehren <b>Neuronen</b>, welche
                     die kleinste Struktur im Netzwerk darstellen. Jedes Neuron besteht im wesentlichen aus einer
-                    Funktion, die mit dem Input eine Berechnung durchführt. Der erste Layer eines Netzwerkes ist der
-                    <b>Input Layer</b>. Er erhält den Input vom Entwickler, meistens in Form eines Datensatzes,
-                    bestehend
-                    aus Beispielen. Dieser wird <b>Train Set</b> genannt. Der letzte Layer, der <b>Output Layer</b>,
-                    kann je nach Art des Netzwerks unterschiedlich aussehen. Im hier angewendeten Fall entspricht die
-                    Anzahl der Neuronen im Output Layer wahrscheinlich den möglichen Klassifizierungen, also sieben.
-                    Zwischen diesen beiden können theoretisch unendlich viele <b>Hidden Layer</b> liegen, praktisch wird
-                    die Anzahl durch die verfügbare Rechenleistung eingeschränkt. So wird im Idealfall das Ergebnis mit
-                    jedem Layer genauer.
+                    Funktion, die mit dem Input eine mathematische Berechnung durchführt. Input und Output eines Neurons
+                    könnten z.B. Vektoren sein. Der erste Layer eines Netzwerkes ist der <b>Input Layer</b>. Er erhält
+                    den Input vom
+                    Entwickler, meistens in Form eines Datensatzes, bestehend aus Beispielen. Dieser wird <b>Train
+                        Set</b> genannt. Der letzte Layer, der <b>Output Layer</b>, kann je nach Art des Netzwerks
+                    unterschiedlich aussehen. Im hier angewendeten Fall entspricht die Anzahl der Neuronen im Output
+                    Layer wahrscheinlich den möglichen Klassifizierungen, also sieben. Zwischen diesen beiden können
+                    theoretisch unendlich viele <b>Hidden Layer</b> liegen, praktisch wird die Anzahl durch die
+                    verfügbare Rechenleistung eingeschränkt. So wird im Idealfall das Ergebnis mit jedem Layer genauer.
                 </p>
                 <div class="row">
                     <div class="col-2"></div>
@@ -81,7 +81,23 @@
                 </div>
                 <p>
                     Diese Überlegung und die dazugehörigen Algorithmen existieren schon sehr lange, das Konzept kam zum
-                    ersten Mal 1943 auf. Doch damals war es unmöglich es umzusetzen.
+                    ersten Mal 1943 auf und orientiert sich tatsächlich am Aufbau eines menschlichen Gehirns. Doch
+                    damals war es unmöglich es umzusetzen. Heutzutage haben wir nicht nur genügend Rechenkraft, um
+                    künstliche neurale Netzwerke zu realisieren, die Menge an verfügbaren Daten ist drastisch gestiegen,
+                    was das Training solcher Strukturen erst möglich macht.
+                </p>
+
+                <figure role="group" style="width: 70%;" class="float-left mr-4">
+                    <img src="../bilder/precision-nn.PNG" alt="Precision DL & ML">
+                    <figcaption class="text-center">Quelle: Eigene Darstellung</figcaption>
+                </figure>
+                <p>
+                    Im Gegensatz zu klassischen Algorithmen des maschinellen Lernens kann der Grenzwert, dem sich die
+                    Präzision des Algorithmus annähert, durch Hinzufügen von Hidden Layern gesteigert werden. Nachteil
+                    hierbei ist jedoch: Größere Netzwerke benötigen mehr Zeit für das Training.
+                </p>
+                <p>
+
                 </p>
             </div>
         </div>
