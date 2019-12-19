@@ -65,7 +65,7 @@
                 <p class="mt-4">
                     <b>Deep Learning (DL)</b> ist ein Bereich des <b>Machine Learning(ML)</b>, indem <b>künstliche
                         neurale
-                        Netzwerke (NN)</b> verwendet werden. um die gewünschten Ergebnisse zu erzielen. Ein solches Netz
+                        Netzwerke (NN)</b> verwendet werden, um die gewünschten Ergebnisse zu erzielen. Ein solches Netz
                     besteht aus mehreren <b>Layern</b>. Ein Layer wiederum besteht aus mehren <b>Neuronen</b>, welche
                     die kleinste Struktur im Netzwerk darstellen. Jedes Neuron besteht im wesentlichen aus einer
                     Funktion, die mit dem Input eine mathematische Berechnung durchführt. Für diese Berechnungen müssen
@@ -74,8 +74,8 @@
                     den Input vom
                     Entwickler, meistens in Form eines Datensatzes, bestehend aus Beispielen. Dieser wird <b>Train
                         Set</b> genannt. Der letzte Layer, der <b>Output Layer</b>, kann je nach Art des Netzwerks
-                    unterschiedlich aussehen. Im hier angewendeten Fall entspricht die Anzahl der Neuronen im Output
-                    Layer wahrscheinlich den möglichen Klassifizierungen, also sieben. Zwischen diesen beiden können
+                    unterschiedlich aussehen. Im Unten angewendeten Fall entspricht die Anzahl der Neuronen im Output
+                    Layer den möglichen Klassifizierungen, also sieben. Zwischen diesen beiden können
                     theoretisch unendlich viele <b>Hidden Layer</b> liegen, praktisch wird die Anzahl durch die
                     verfügbare Rechenleistung eingeschränkt. So wird im Idealfall das Ergebnis mit jedem Layer genauer.
                 </p>
@@ -93,8 +93,9 @@
                 </div>
                 <p>
                     Diese Überlegung und die dazugehörigen Algorithmen existieren schon sehr lange, das Konzept kam zum
-                    ersten Mal 1943 auf und orientiert sich tatsächlich am Aufbau eines menschlichen Gehirns. Doch
-                    damals war es unmöglich es umzusetzen. Heutzutage haben wir nicht nur genügend Rechenkraft, um
+                    ersten Mal 1943 auf und orientiert sich am Aufbau eines menschlichen Gehirns. Doch
+                    damals war es unmöglich das Konzept umzusetzen. Heutzutage haben wir nicht nur genügend Rechenkraft,
+                    um
                     künstliche neurale Netzwerke zu realisieren, die Menge an verfügbaren Daten ist drastisch gestiegen,
                     was das Training solcher Strukturen erst möglich macht.
                 </p>
@@ -106,7 +107,7 @@
                 <p>
                     Im Gegensatz zu klassischen Algorithmen des maschinellen Lernens kann der Grenzwert, dem sich die
                     Präzision des Algorithmus annähert, durch Hinzufügen von Hidden Layern gesteigert werden. Nachteil
-                    hierbei ist jedoch: Größere Netzwerke benötigen mehr Zeit für das Training.
+                    hierbei ist jedoch: Je größer das NN, desto mehr Zeit wird für das Training benötigt.
                 </p>
             </div>
             <div class="col-lg-12 text-justify" id="rnn">
@@ -114,8 +115,8 @@
                 <p class="mt-4">
                     Bei einem <b>Recurrent Neural Network (RNN)</b> handelt es sich um eine Art Neurales Netzwerk, das
                     sich
-                    besonders gut zur Verarbeitung unstrukturierter und sequenzieller Daten eignet, wie es zum Beispiel
-                    Sprachen bzw. Schrift ist. Die Beudeutung eines neuen Wortes hängt stark von dem vorherigen Wort ab.
+                    besonders gut zur Verarbeitung unstrukturierter, sequenzieller Daten eignet, wie es zum Beispiel
+                    Sprache bzw. Schrift ist. Die Beudeutung eines neuen Wortes hängt stark von dem vorherigen Wort ab.
                     Ein RNN merkt sich das Ergebnis der Berechnung, also den Output Layer und verwendet ihn also
                     zusätzlichen Input.
                 </p>
@@ -148,7 +149,7 @@
                 <h3 class="mt-5 text-center">Natural Language Processing</h3>
                 <p class="mt-4">
                     <b>Natural Language Processing (NLP)</b> befasst sich mit Aufgabe, die menschliche Kommunikation,
-                    für Maschinen verständlich zu machen. Die Schwierigkeit liegt vor allem darin, einer Maschine die
+                    für Maschinen verständlich zu machen. Die Schwierigkeit liegt vor allem darin einer Maschine, die
                     nach mathematischen Prinzipien arbeitet, die oft subjektiven und selten eindeutigen Regeln unserer
                     Sprache beizubringen. Dennoch gelang es bisher vielen Entwicklern in den Bereichen Klassifizierung
                     und Übersetzung beeindruckende Ergebnis zu erzielen.
@@ -171,20 +172,20 @@
                 </p>
                 <ul>
                     <li><b>Tokenization</b> bricht den Text in einzelne Wörter herunter. Hierzu können verschiedene
-                        Zeichen als Trennung fungieren. Am beliebtesten ist jedoch logischerweise das Leerzeichen
+                        Zeichen als Trennung fungieren. Am beliebtesten ist das Leerzeichen
                     </li>
                     <br>
-                    <li><b>Stemming</b> schneidet Teile von abgeleiteten Wörtern ab. Auf <i>Frei-heit</i> wird
+                    <li><b>Stemming</b> schneidet Teile von abgeleiteten Wörtern ab. Aus <i>Frei-heit</i> wird
                         <i>Frei</i>. Dadurch erhalten manche Wörter jedoch eine anderen Bedeutung als eigentlich die
                         Intention war.</li>
                     <br>
                     <li>Mit <b>N-Grams</b> unterteilt man einen Satz in n Ausdrücke. Ein <i>unigram</i>-Modell
-                        würde einen Satz in jeweils ein Wort unterteilen. Ein <i>bigram</i>-Modell hingegen würde
-                        jeweils Wortpaare bilden.</li>
+                        würde einen Satz in jeweils ein Wort unterteilen. Ein <i>bigram</i>-Modell würde
+                        jeweils Wortpaare bilden usw.</li>
                     <br>
-                    <li><b>TF-IDF</b> gibt den zuvor unterteilten Sätzen nun jeweils ein Gewicht, dass sich aus der
+                    <li><b>TF-IDF</b> gibt den zuvor unterteilten Ausdrücken nun jeweils ein Gewicht, dass sich aus der
                         <i>Term Frequenzy (TF)</i>, wie oft ein Ausdruck in einem Dokument vorkommt und der
-                        <i>Inverse Document Frequenzy (IDF)</i>, wie viel Information ein Audruck hergibt
+                        <i>Inverse Document Frequenzy (IDF)</i>, wie viel Information ein Audruck hergibt,
                         zusammensetzt</li>
                     <br>
                     <li><b>One-Hot Encoding</b> stellt Wörter in einer Matrix dar. Die Spalten sind hier die
@@ -193,7 +194,8 @@
                     <br>
                 </ul>
                 <p>
-                    Dies ist nur ein kleiner und stark verinfachter Auszug der möglichen Ansätze und soll einen Eindruck
+                    Dies ist nur ein kleiner und stark vereinfachter Auszug der möglichen Ansätze und soll einen
+                    Eindruck
                     verschaffen wie sich Worte in Terme umwandeln lassen.
                 </p>
             </div>
@@ -220,9 +222,9 @@
                 </p>
                 <figure class="code-box">
                     <pre class="code-text">
-
-                        var kommentartext = document.getElementById('commentinput').value;
-                        var kommentar = Array(kommentartext);
+    async function kommentarSenden() {
+        var kommentartext = document.getElementById('commentinput').value;
+        var kommentar = Array(kommentartext);
                     </pre>
                 </figure>
                 <p class="text-center">
@@ -233,10 +235,10 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        //Minimale Vorhersagesicherheit
-                        const grenzwert = 0.9;
-                        //Objekt für Klassifizierung deklarieren
-                        var classification = new Object();
+        //Minimale Vorhersagesicherheit
+        const grenzwert = 0.9;
+        //Objekt für Klassifizierung deklarieren
+        var classification = new Object();
                     </pre>
                 </figure>
                 <p class="text-center">
@@ -245,10 +247,10 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        classification = await toxicity.load(grenzwert).then(async model => {
-                            //Kommentar als modelinput
-                            var saetze = kommentar;
-                            var modeloutput = new Object();
+        classification = await toxicity.load(grenzwert).then(async model => {
+            //Kommentar als modelinput
+            var saetze = kommentar;
+            var modeloutput = new Object();
                     </pre>
                 </figure>
                 <p class="text-center">
@@ -257,11 +259,11 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                            //Vorhersage
-                            modeloutput = await model.classify(saetze);
-                            //Vorhersage übergeben
-                            return modeloutput;
-                        });
+            //Vorhersage
+            modeloutput = await model.classify(saetze);
+            //Vorhersage übergeben
+            return modeloutput;
+        });
                     </pre>
                 </figure>
                 <p class="text-center">
@@ -272,31 +274,33 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        //Toxicity prüfen
-                        if (classification[0].results[0].match == true) {
-                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else if (classification[1].results[0].match == true) {
-                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else if (classification[2].results[0].match == true) {
-                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else if (classification[3].results[0].match == true) {
-                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else if (classification[4].results[0].match == true) {
-                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else if (classification[5].results[0].match == true) {
-                            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else if (classification[6].results[0].match == true) {
-                             alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-                        } else {
-                            //Kommentar veröffentlichen
-                            document.getElementById('commentoutput').innerHTML = kommentar;
-                        }
+        //Toxicity prüfen
+        if (classification[0].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else if (classification[1].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else if (classification[2].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else if (classification[3].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else if (classification[4].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else if (classification[5].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else if (classification[6].results[0].match == true) {
+            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
+        } else {
+            //Kommentar veröffentlichen
+            document.getElementById('commentoutput').innerHTML = kommentar;
+        }
+    }
                     </pre>
                 </figure>
                 <p>
                     Die größte Herrausforderung stellte für mich das Übergeben des Modelloutputs dar. Mir war zu Anfang
                     nicht klar, das diese Implementierung nur in einer asynchronen Funktion funktioniert, in der man mit
-                    dem Schlüsselwort <i>await</i>, auf die erfolgreiche Ausführung des Modells warten kann. Ohne das
+                    dem Schlüsselwort <i>await</i>, auf die erfolgreiche Ausführung des Modells warten kann. Ohne diese
+                    Anpassung
                     konnte der Output nicht aus der Funktion übergeben werden.
                 </p>
             </div>

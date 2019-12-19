@@ -55,6 +55,9 @@ async function kommentarSenden() {
         return modeloutput;
     });
 
+    //Ouput auf konsole ausgeben
+    console.log(classification);
+
     //Toxicity prüfen
     if (classification[0].results[0].match == true) {
         alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
