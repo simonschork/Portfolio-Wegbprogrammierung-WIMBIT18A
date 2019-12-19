@@ -50,6 +50,16 @@
                 <img class="logo align-content-center" src="../bilder/tensorflow-logo.png" alt="Tensorflow Logo">
                 <h1 class="mt-5 text-center">Toxicity Detection mit Tensorflow.js</h1>
             </div>
+            <div class="col-lg-qw text-justify" id="intro">
+                <h3 class="mt-5 text-center">Einleitung</h3>
+                <p class="mt-4">
+                    Im Folgenden möchte ich auf die Grundlagen des implementierten Modells eingehen. Zuerst wird
+                    erläutert was Künstliche Neurale Netze sind und welche Art von neuralem Netz sich für die
+                    Verarbeitung von Sprache eignet. Anschließend gehe ich auf den Teilbereich des maschinellen Lernens
+                    ein der sich mit Sprachen befasst und welche Methoden es zur Umwandlung von Sprache gibt. Am Ende
+                    erkläre ich die Implementierung des Modells und Schwierigkeiten, die dabei auftraten.
+                </p>
+            </div>
             <div class="col-lg-12 text-justify" id="deeplearning">
                 <h3 class="mt-5 text-center">Deep Learning</h3>
                 <p class="mt-4">
@@ -136,7 +146,56 @@
             </div>
             <div class="col-lg-12 text-justify" id="nlp">
                 <h3 class="mt-5 text-center">Natural Language Processing</h3>
-                <p class="mt-4">xyz</p>
+                <p class="mt-4">
+                    <b>Natural Language Processing (NLP)</b> befasst sich mit Aufgabe, die menschliche Kommunikation,
+                    für Maschinen verständlich zu machen. Die Schwierigkeit liegt vor allem darin, einer Maschine die
+                    nach mathematischen Prinzipien arbeitet, die oft subjektiven und selten eindeutigen Regeln unserer
+                    Sprache beizubringen. Dennoch gelang es bisher vielen Entwicklern in den Bereichen Klassifizierung
+                    und Übersetzung beeindruckende Ergebnis zu erzielen.
+                </p>
+                <blockquote class="blockquote">
+                    <p class="mb-0" style="color: #6c757d;"><i>"Natural Language Processing is a theoretically motivated
+                            range of computational techniques for analyzing and representing naturally occurring texts
+                            at one or more levels of linguistic analysis for the purpose of achieving human-like
+                            language processing for a range of tasks or applications."</i></p>
+                    <footer class="blockquote-footer text-center">Liddy, Elizabeth D. <cite title="Source Title"><a
+                                href="https://surface.syr.edu/cgi/viewcontent.cgi?article=1019&context=cnlp"
+                                target="_blank" rel="noopener noreferrer">"Natural language
+                                processing"</a> (2001)
+                        </cite>
+                    </footer>
+                </blockquote>
+                <p>
+                    Für das verwenden von Sprache in Algorithmen muss sie eine mathematische Aussage umgewandelt werden.
+                    Das sind drei der beliebtesten Ansätze um diesen Prozess zu erreichen:
+                </p>
+                <ul>
+                    <li><b>Tokenization</b> bricht den Text in einzelne Wörter herunter. Hierzu können verschiedene
+                        Zeichen als Trennung fungieren. Am beliebtesten ist jedoch logischerweise das Leerzeichen
+                    </li>
+                    <br>
+                    <li><b>Stemming</b> schneidet Teile von abgeleiteten Wörtern ab. Auf <i>Frei-heit</i> wird
+                        <i>Frei</i>. Dadurch erhalten manche Wörter jedoch eine anderen Bedeutung als eigentlich die
+                        Intention war.</li>
+                    <br>
+                    <li>Mit <b>N-Grams</b> unterteilt man einen Satz in n Ausdrücke. Ein <i>unigram</i>-Modell
+                        würde einen Satz in jeweils ein Wort unterteilen. Ein <i>bigram</i>-Modell hingegen würde
+                        jeweils Wortpaare bilden.</li>
+                    <br>
+                    <li><b>TF-IDF</b> gibt den zuvor unterteilten Sätzen nun jeweils ein Gewicht, dass sich aus der
+                        <i>Term Frequenzy (TF)</i>, wie oft ein Ausdruck in einem Dokument vorkommt und der
+                        <i>Inverse Document Frequenzy (IDF)</i>, wie viel Information ein Audruck hergibt
+                        zusammensetzt</li>
+                    <br>
+                    <li><b>One-Hot Encoding</b> stellt Wörter in einer Matrix dar. Die Spalten sind hier die
+                        Ausdrücke des untersuchten Satzes und die Zeilen, die bekannten Vokabeln. Überschneidungen
+                        werden mit dem Wert <b>1</b> belegt, ansonsten ist der Wert <b>0</b>.</li>
+                    <br>
+                </ul>
+                <p>
+                    Dies ist nur ein kleiner und stark verinfachter Auszug der möglichen Ansätze und soll einen Eindruck
+                    verschaffen wie sich Worte in Terme umwandeln lassen.
+                </p>
             </div>
             <div class="col-lg-12 text-justify" id="toxicitydetection">
                 <h3 class="mt-5 text-center">Toxicity Detection by tfjs/models</h3>
@@ -207,7 +266,7 @@
                 </figure>
                 <p class="text-center">
                     Nachdem die Klassifizierung erfolgreich durchgeführt wurde wird geprüft, ob eine der möglichen
-                    Klassifizierungen ein <i>match == true</i> hat. Ist dies der Fall wird der Nutzer benachrichtigt,
+                    Kategorien ein <i>match == true</i> hat. Ist dies der Fall wird der Nutzer benachrichtigt,
                     wenn nicht wird sein Kommentar veröffentlicht.
                 </p>
                 <figure class="code-box">
@@ -240,14 +299,32 @@
                     dem Schlüsselwort <i>await</i>, auf die erfolgreiche Ausführung des Modells warten kann. Ohne das
                     konnte der Output nicht aus der Funktion übergeben werden.
                 </p>
-                <div class="mt-5"><br></div>
-                <div class="mt-5"><br></div>
             </div>
+            <div class="col-lg-12 text-justify" id="quellen">
+                <h3 class="mt-5">Quellen</h3>
+                <ul class="mt-4">
+                    <li><a href="https://www.udemy.com/course/machine-learning-komplett/" target="_blank"
+                            rel="noopener noreferrer">Machine Learning </a>[Onlinekurs]</li>
+                    <li><a href="https://www.youtube.com/playlist?list=PLR0bgGon_WTKXxEhSDLwSkDl8SCCCaPoA"
+                            target="_blank" rel="noopener noreferrer">Neural Network (Deep Learning)</a> [Video]</li>
+                    <li><a href="https://github.com/tensorflow/tfjs-models/tree/master/toxicity" target="_blank"
+                            rel="noopener noreferrer">Text toxicity detection</a></li>
+                    <li><a href="https://www.tensorflow.org/js/guide" target="_blank"
+                            rel="noopener noreferrer">Tensorflow Documentation</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=UNmqTiOnRfg" target="_blank"
+                            rel="noopener noreferrer">A friendly introduction to Recurrent Neural Networks </a>[Video]
+                    </li>
+                    <li><a href="https://towardsdatascience.com/natural-language-processing-from-basics-to-using-rnn-and-lstm-ef6779e4ae66"
+                            target="_blank" rel="noopener noreferrer">Natural Language Processing: From Basics to using
+                            RNN and LSTM </a>[Artikel]</li>
+                </ul>
+            </div>
+            <div class="mt-5"><br></div>
         </div>
     </div>
 
     <!--Footer-->
-    <footer class="page-footer font-small mygrey pt-4">
+    <footer class="mt-5 page-footer font-small mygrey pt-4">
         <div class="container text-center text-md-left">
             <div class="row">
                 <div class="col-md-9 mt-md-0 mt-3">
