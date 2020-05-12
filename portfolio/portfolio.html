@@ -60,12 +60,16 @@
             <li><a href="#webfirst" style="text-decoration:none;" id="webfirstnav">Webanwendungen und
                     System-Architektur</a></li>
             <li><a href="#htmlcss" style="text-decoration:none;">HTML und CSS</a></li>
-            <li><a href="#javascript" style="text-decoration: none;">Javascript - Java's kleiner Bruder?</a></li>
+            <li><a href="#javascript" style="text-decoration: none;">Javascript: Java's kleiner Bruder?</a></li>
             <li><a href="#objekte" style="text-decoration: none;">Objekte in Javascript</a></li>
-            <li><a href="#dom" style="text-decoration: none;">DOM - Document Object Model</a></li>
-            <li><a href="#jquery" style="text-decoration: none;">jQuery - DOM-Handling</a></li>
-            <li><a href="#ajax" style="text-decoration: none;">Ajax - Asynchronous JavaScript and XML</a></li>
+            <li><a href="#dom" style="text-decoration: none;">DOM: Document Object Model</a></li>
+            <li><a href="#jquery" style="text-decoration: none;">jQuery: DOM-Handling</a></li>
+            <li><a href="#ajax" style="text-decoration: none;">Ajax: Asynchronous JavaScript and XML</a></li>
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
+            <li><a href=#serverside style="text-decoration: none;">Serverseitige Technologien</a></li>
+            <li><a href=#streamsundserialisierung style="text-decoration: none;">Serialisierung und Streams</a></li>
+            <li><a href=#sockets style="text-decoration: none;">Sockets</a></li>
+            <li><a href=#threads style="text-decoration: none;">Threads</a></li>
         </ul>
     </nav>
 
@@ -154,40 +158,40 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        &lt;!--Definiert die Dokumentenart-->
-                        &lt;!DOCTYPE html>
-                        &lt;!--Definiert die Sprache des Dokuments-->
-                        &lt;html lang="en">
-                        
-                        &lt;!--Header: Enthält wesentliche Informationen über das im Body folgende Dokument-->
-                        &lt;head>
-                            &lt;!--Kodierung des Textes-->
-                            &lt;meta charset="UTF-8">
-                            &lt;!--Sorgt für Anpassung der Seite an Gerät-->
-                            &lt;meta name="viewport" content="width = device-width, initial-scale = 1">
-                            &lt;!--Im Tab des Browsers angezeigter Seitenname-->
-                            &lt;title>PLatzhalter&lt;/title>
-                            
-                            &lt;!--Importiert .css-Datei für die optische Darstellung der Seite-->
-                            &lt;link rel="stylesheet" type="text/css" href="...">
-                            &lt;!--Importiert die Schriftart-->
-                            &lt;link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" 
-                                rel="stylesheet">
-                        &lt;/head>
-                        
-                        &lt;!--Body: Anzuzeigender Inhalt des Dokument-->
-                        &lt;body>
-                            &lt;!--Überschrift-->
-                            &lt;h1>Überschrift&lt;/h1>
-                            &lt;!--Inhalte-->
-                            &lt;p>Beispieltext&lt;/p>
-                            
-                            &lt;!--Importiert jQuery-->
-                            &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&lt;/script>
-                            &lt;!--Importiert .js-Datei mit Funktionen die aufgerufen werden können-->
-                            &lt;script src="..."><&lt;/script>
-                        &lt;/body>
-                        &lt;/html>
+    &lt;!--Definiert die Dokumentenart-->
+    &lt;!DOCTYPE html>
+    &lt;!--Definiert die Sprache des Dokuments-->
+    &lt;html lang="en">
+    
+    &lt;!--Header: Enthält wesentliche Informationen über das im Body folgende Dokument-->
+    &lt;head>
+        &lt;!--Kodierung des Textes-->
+        &lt;meta charset="UTF-8">
+        &lt;!--Sorgt für Anpassung der Seite an Gerät-->
+        &lt;meta name="viewport" content="width = device-width, initial-scale = 1">
+        &lt;!--Im Tab des Browsers angezeigter Seitenname-->
+        &lt;title>PLatzhalter&lt;/title>
+        
+        &lt;!--Importiert .css-Datei für die optische Darstellung der Seite-->
+        &lt;link rel="stylesheet" type="text/css" href="...">
+        &lt;!--Importiert die Schriftart-->
+        &lt;link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" 
+            rel="stylesheet">
+    &lt;/head>
+    
+    &lt;!--Body: Anzuzeigender Inhalt des Dokument-->
+    &lt;body>
+        &lt;!--Überschrift-->
+        &lt;h1>Überschrift&lt;/h1>
+        &lt;!--Inhalte-->
+        &lt;p>Beispieltext&lt;/p>
+        
+        &lt;!--Importiert jQuery-->
+        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&lt;/script>
+        &lt;!--Importiert .js-Datei mit Funktionen die aufgerufen werden können-->
+        &lt;script src="..."><&lt;/script>
+    &lt;/body>
+    &lt;/html>
                     </pre>
                 </figure>
                 <p>
@@ -210,12 +214,12 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        body {
-                            background-color: #fff;
-                            margin-left: 20%;
-                            margin-rigt: 20%;
-                            font-family: Roboto;
-                        }
+    body {
+        background-color: #fff;
+        margin-left: 20%;
+        margin-rigt: 20%;
+        font-family: Roboto;
+    }
                     </pre>
                 </figure>
                 <p>
@@ -225,13 +229,13 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        .red-fonts {
-                            color: red;
-                        }
-                        
-                        [...]
-                        
-                        &lt;p class="red-fonts">Diese Schrift ist rot!&lt;/p>
+    .red-fonts {
+        color: red;
+    }
+    
+    [...]
+    
+    &lt;p class="red-fonts">Diese Schrift ist rot!&lt;/p>
                     </pre>
                 </figure>
                 <p>
@@ -241,7 +245,7 @@
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="javascript">
-                <h4 class="mt-5">Javascript - Java's kleiner Bruder?</h4>
+                <h4 class="mt-5">Javascript: Java's kleiner Bruder?</h4>
                 <p class="mt-4">
                     Javascript ist keinesfalls mit Java zu verwechseln, es handelt sich um zwei vollkommen verschiedene
                     Programmiersprachen. Zur Abgrenzung ist es nützlich in drei Kategorien zu unterteilen:
@@ -295,9 +299,9 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        function logIn(isMember) {
-                            (isMember ? "Eingeloggt" : "Zugang verweigert");
-                        }
+    function logIn(isMember) {
+        (isMember ? "Eingeloggt" : "Zugang verweigert");
+    }
                     </pre>
                 </figure>
             </div>
@@ -320,12 +324,12 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        var Adresse = {
-                            name: ‘Müller‘,
-                            bewohnerAusgeben: function() {
-                               console.log(‘Hier wohnt: ‘, this.name);
-                            };
-                        };
+    var Adresse = {
+        name: ‘Müller‘,
+        bewohnerAusgeben: function() {
+            console.log(‘Hier wohnt: ‘, this.name);
+        };
+    };
                     </pre>
                 </figure>
                 <p>
@@ -338,18 +342,18 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        function ErzeugeAdresse(eingabe) {
-                            this.name = eingabe;
-                            this.bewohnerAusgeben = function {
-                                console.log('Hier wohnt: ', this.name);
-                            };
-                        }
+    function ErzeugeAdresse(eingabe) {
+        this.name = eingabe;
+        this.bewohnerAusgeben = function {
+            console.log('Hier wohnt: ', this.name);
+        };
+    }
 
-                        //Erzeugen einer Instanz
-                        var neueAdresse1 = new ErzeugeAdresse('Maxim');
-    
-                        //Aufruf der Instanzmethoden
-                        neueAdresse1.bewohnerAusgeben();
+    //Erzeugen einer Instanz
+    var neueAdresse1 = new ErzeugeAdresse('Maxim');
+
+    //Aufruf der Instanzmethoden
+    neueAdresse1.bewohnerAusgeben();
                     </pre>
                 </figure>
                 <p>
@@ -366,14 +370,14 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        function Hund () {}
+    function Hund () {}
 
-                        Hund.prototype.wuff = function () {
-                            alert("Wuff!");
-                        };
+    Hund.prototype.wuff = function () {
+        alert("Wuff!");
+    };
 
-                        var bello = new Hund();
-                        bello.wuff();
+    var bello = new Hund();
+    bello.wuff();
                     </pre>
                 </figure>
                 <p>
@@ -387,7 +391,7 @@
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="dom">
-                <h4 class="mt-5">DOM - Document Object Model</h4>
+                <h4 class="mt-5">DOM: Document Object Model</h4>
                 <p class="mt-4">
                     Das <b>D</b>ocument <b>O</b>bject <b>M</b>odel ist eine Repäsentation der Dokumentenstruktur.
                     Diese wird vom Browser erstellt und im Arbeitsspeicher abgelegt. <b>DOM</b> ist die Schnittstelle
@@ -475,7 +479,7 @@
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="jquery">
-                <h4 class="mt-5">jQuery - DOM-Handling</h4>
+                <h4 class="mt-5">jQuery: DOM-Handling</h4>
                 <p class="mt-4">
                     <b>jQuery</b> ist die mit Abstand meistverwendete Javascript-Bibliothek, laut W3C nutzt die Hälfte
                     der Webseiten jQuery. Daher wird es auch in viele CM-Systemen (z.B. Wordpress) und Webframeworks
@@ -516,7 +520,7 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&lt;/script>
+    &lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">&lt;/script>
                     </pre>
                 </figure>
                 <p>
@@ -548,25 +552,25 @@
                 <figure class="code-box">
                     <pre class="code-text">
 
-                        HTML:
-                            &lt;button type="button" class="submit-btn" id="sendcomment">Absenden&lt;/button>
-                            &lt;textarea class="form-control" id="commentinput" cols="30" rows="10"
-                                 placeholder="Kommentartext">&lt;/textarea>
-                            &lt;p id="commentoutput"></p>
+    HTML:
+        &lt;button type="button" class="submit-btn" id="sendcomment">Absenden&lt;/button>
+        &lt;textarea class="form-control" id="commentinput" cols="30" rows="10"
+            placeholder="Kommentartext">&lt;/textarea>
+        &lt;p id="commentoutput"></p>
 
-                        Javascript:
-                            var sendcomment = document.getElementById('sendcomment');
-                            var commentinput = document.getElementById('commentinput');
-                            var commentouput = document.getElementById('commentouput');
+    Javascript:
+        var sendcomment = document.getElementById('sendcomment');
+        var commentinput = document.getElementById('commentinput');
+        var commentouput = document.getElementById('commentouput');
 
-                            sendbutton.onclick = function () {
-                                commentouput.innerHTML = commentinput.value;
-                            };
-                        
-                        Javascript mit jQuery:
-                            $('#sendcomment').onclick(function () {
-                                $('#commentoutput').innerHTML = $('#commentinput').value;
-                            });
+        sendbutton.onclick = function () {
+            commentouput.innerHTML = commentinput.value;
+        };
+
+    Javascript mit jQuery:
+        $('#sendcomment').onclick(function () {
+            $('#commentoutput').innerHTML = $('#commentinput').value;
+        });
                     </pre>
                 </figure>
                 <p>
@@ -602,7 +606,7 @@
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="ajax">
-                <h4 class="mt-5">Ajax - Asynchronous JavaScript and XML</h4>
+                <h4 class="mt-5">Ajax: Asynchronous JavaScript and XML</h4>
                 <p class="mt-4">
                     Asynchrones Javascript and XML oder <b>Ajax</b> verspricht interaktivere, reaktionsschnellere und
                     einfacher nutzbare Webanwendungen, die sich wie Desktopanwendungen anfühlen. Dies soll durch eine
@@ -727,25 +731,77 @@
                     hineinzuversetzen.
                 </p>
             </div>
-            <div class="col-xl-12 text-justify align-content-center" id="streamsundserialisierung">
-                <h4 class="mt-5">Dynamik im Web: serverseitige Technologien</h4>
+            <div class="col-xl-12 text-justify align-content-center" id="serverside">
+                <h4 class="mt-5">Serverseitige Technologien: Dynamik im Web</h4>
                 <p class="mt-4">
                     placeholder
                 </p>
             </div>
-            <div class="col-xl-12 text-justify align-content-center" id="serverside">
-                <h4 class="mt-5">Streams, Serialisierung und Datei E/A</h4>
+            <div class="col-xl-12 text-justify align-content-center" id="streamsundserialisierung">
+                <h4 class="mt-5">Serialisierung und Streams</h4>
                 <p class="mt-4">
-                    - Objektzustände
                     Während eines Programmablaufs werden die Objekte und Klassen des Programms instanziert. In der
                     Vorlesung beschäftigten wir uns mit dem Beispiel eines Charakters in einem Adventure Games. Um die
                     Fortschritte zu Speichern muss der aktuelle Zustand des Objekts Charakter festgehalten werden. Zur
-                    Differenzierung das Verhalten eines Objekts steckt in den Methoden innerhalb der Klasse, der
-                    Zustand wiederrum steckt in den Variablen der Instanz des Objekts.
-                    - Objekte serialisieren
-                    - Input- und Outputströme
+                    Differenzierung das Verhalten eines Objekts steckt in den Funktionen innerhalb der Klasse, der
+                    Zustand wiederrum steckt in den Variablen der Instanz des Objekts. Im Kontext einer Klasse
+                    beziehungsweise eines Objektes heißen die Variablen Eigenschaften und die Funktionen Methoden. Um
+                    diese zu Speichern und später wiederherzustellen, müssen die Eigenschaften der Instanz in eine Datei
+                    geschrieben werden.
+                </p>
+                <p>
+                    In der Objektorientierung muss nicht jeder Wert einzeln in die Datei geschrieben werden, man kann
+                    eine Instanz seriealisieren. Hierbei wird der vollständige Zustand eines Objektes und alle
+                    referenzierten Objekte in einen Datenstrom umgewandelt, der anschließend auf ein Speichermedium
+                    geschrieben werden kann. Nach diesem Prozess liegt das Objekt mehrfach vor. Die serialisierte
+                    Abbildung des Objekts als Datei und die urspüngliche Instanz im Arbeitsspeicher. Änderungen im
+                    laufenden Programm werden nur am Objekt im Arbeitsspeicher vorgenommen und haben keine Auswirkungen
+                    auf das serialisierte Objekt. Bedingung für die Seriealisierung eines Objektes ist, die Klasse auf
+                    der das Objekt basiert muss die Schnittstelle Serializable implementieren. Der Prozess kann zur
+                    Wiederherstellung des Objekts umgekehrt werden, dies nennt man Deserialisierung.
+                </p>
+                <p>
+                    Zunächst mehr zu den erwähnten Datenströmen. Für die Seraliserung eines Objekt muss zuerst ein
+                    FileOutputStream, mit der Zieldatei als Parameter geöffnet werden. Danach kann ein
+                    ObjectOutputStream, mit dem FileOutputStream als Parameter geöffnet werden. Die Eigenschaften des
+                    Objekts werden also erst über einen ObjectOutputStream in den FileOutputStream gespeist und von
+                    diesem anschließend in die Datei geschrieben. Implementiert sieht das Ganze so aus:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    try {
+        // Streams öffnen
+        ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("Spiel.ser"));
+        // objekt schreiben 
+        os.writeObject(dasTeam);
+        // Streams schließen
+        os.close();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+                        </pre>
+                </figure>
+                <p>
+
+                </p>
+                <p>
                     - Objekte deserialisieren
+                </p>
+                <p>
                     - Textdateien schreiben und lesen
+                </p>
+            </div>
+            <div class="col-xl-12 text-justify align-content-center" id="threads">
+                <h4 class="mt-5">Threads</h4>
+                <p class="mt-4">
+                    placeholder
+                </p>
+            </div>
+            <div class="col-xl-12 text-justify align-content-center" id="sockets">
+                <h4 class="mt-5">Sockets</h4>
+                <p class="mt-4">
+                    placeholder
                 </p>
             </div>
         </div>
