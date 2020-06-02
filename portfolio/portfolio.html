@@ -66,10 +66,10 @@
             <li><a href="#jquery" style="text-decoration: none;">jQuery: DOM-Handling</a></li>
             <li><a href="#ajax" style="text-decoration: none;">Ajax: Asynchronous JavaScript and XML</a></li>
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
-            <li><a href=#serverside style="text-decoration: none;">Serverseitige Technologien</a></li>
             <li><a href=#streamsundserialisierung style="text-decoration: none;">Serialisierung und Streams</a></li>
-            <li><a href=#sockets style="text-decoration: none;">Sockets</a></li>
+            <li><a href=#sockets style="text-decoration: none;">Client-Server-Kommunikation mit Sockets</a></li>
             <li><a href=#threads style="text-decoration: none;">Threads</a></li>
+            <li><a href=#phpmysql style="text-decoration: none;">PHP & MySQL</a></li>
         </ul>
     </nav>
 
@@ -731,12 +731,6 @@
                     hineinzuversetzen.
                 </p>
             </div>
-            <div class="col-xl-12 text-justify align-content-center" id="serverside">
-                <h4 class="mt-5">Serverseitige Technologien: Dynamik im Web</h4>
-                <p class="mt-4">
-                    placeholder
-                </p>
-            </div>
             <div class="col-xl-12 text-justify align-content-center" id="streamsundserialisierung">
                 <h4 class="mt-5">Serialisierung und Streams</h4>
                 <p class="mt-4">
@@ -783,30 +777,150 @@
                         </pre>
                 </figure>
                 <p>
+                    Möchte man ein zuvor gespeichertes Objekt wiederherstellen, muss die Datei in der das Serilisierte
+                    Objekt gespeichert ist eingelesenen werden. Anschließend wird die Klasse gesucht und zugewiesen. Der
+                    Konstruktor wird hierbei nicht ausgeführt, was ein neues Objekt erzeugen würden. Es werden lediglich
+                    die Konstruktoren aller Superklassen ausgeführt die nicht Serializable implementieren.
+                    Schlussendlich werden den Instanzvariablen des nun deserialisierten Objektes die Werte des zuvor
+                    gespeicherten Objektes zugewiesen.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
 
-                </p>
+    try {
+        // Deserialisierun von Spiel.ser in wiederhergestellte Team-Instanz
+        // "dasTeamWiederhergestellt"
+        ObjectInputStream is = new ObjectInputStream(new FileInputStream("Spiel.ser"));
+        Team dasTeamWiederhergestellt = (Team) is.readObject();
+        is.close();
+
+        // Ausgeben verschiedener Instanzvariablen um erfolgreiche
+        // Serialisierung/Deserialisierung zu testen
+        System.out.println(
+                dasTeamWiederhergestellt.getName() + " besteht aus:\n" + dasTeamWiederhergestellt.getMembers());
+    } catch (Exception e) {
+        // Wenn nicht funktioniert Stacktrace ausgeben
+        e.printStackTrace();
+                        </pre>
+                </figure>
                 <p>
-                    - Objekte deserialisieren
-                </p>
-                <p>
+                    placeholder
                     - Textdateien schreiben und lesen
                 </p>
+            </div>
+            <div class="col-xl-12 text-justify align-content-center" id="sockets">
+                <h4 class="mt-5">Client-Server-Kommunikation mit Sockets</h4>
+                <p class="mt-4">
+                    Läuft eine Anwendung auf einem verteilten System beispielsweise Client und Server kommunizieren die
+                    einzelnen Hardwarekomponente über Sockets. Socket bezeichnet die Verbindung zweier Anwendungen oder
+                    zweier Teile einer Anwendung. Für den verbindungsaufbau bzw. Anfragen an den Server muss der Client
+                    die IP-Adresse und die Portnummer der Serverandwendung wissen. Einem Port wird immer genau eine
+                    Anwendung zugewiesen, so können auf dem Server mehrere Anwendungen laufen die von verschiedenen
+                    Clients über den Port direkt angesprochen werden können. Hierbei sind die Ports 0 bis 1023 für
+                    geläufige Dienste reserviert. <br>
+                    Im Beispiel gibt der Server mehrere Strings in jeweils einer Zeile aus. Diese können vom Client so
+                    empfangen werden:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+    try {
+        // Mit IP und Port des Servers Verbindung aufbauen
+        Socket s = new Socket("127.0.0.1", 4243);
+
+        // Empfangen des Inputstreams mit einem BufferedReader
+        BufferedReader reader = new BufferedReader(new InputStreamReader(s.getInputStream()));
+
+        // Zeilen einzeln aus Reader einlesen und in String speichern
+        String zeile = reader.readLine();
+
+        // Drei der eingelesenen Zeilen auf der Konsole ausgeben
+        while (int i < 3) {
+            System.out.println(zeile);
+            i++;
+        }
+
+        // Schließen des Readers und Inputstreams
+        reader.close();
+        // Schließen des Sockets bzw. der Verbindung zum Server
+        s.close();
+
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+                    </pre>
+                </figure>
+                <p>
+                    Der Ablauf ist wie folgt:
+                </p>
+                <ol>
+                    <li>Im Inputstream wird die Antwort des Servers in Bytes empfangen</li>
+                    <li>Der Inputstreamreader nimmt die Bytes entgegen und wandelt sie in Textdaten um</li>
+                    <li>Ein Bufferedreader wird genutzt um effizienteres der Zeichen und Zeilen zu ermöglichen</li>
+                </ol>
+                <p>
+                    Ein Reader erzeugt für jeden Request einen Request des darunterliegenden Stream. Der Bufferedreader
+                    fasst diese zusammen was ihn wesentlich effizienter macht.
+                </p>
+                <p>
+                    Auf Seiten des Servers wurde ein Serversocket mit dezidierter Portnummer erzeugt. Auf diesem Port
+                    erwartet er nun Anfragen des Clients. Sobald diese erfolgen sendet er dem Client über die
+                    Socketverbindung die angeforderten Daten:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+    try {
+        // Erstellen des Serversocket
+        ServerSocket serverSock = new ServerSocket(4243);
+
+        while (true) {
+            // Öffnen der Verbindung auf Anfrage
+            Socket sock = serverSock.accept();
+
+            // Erstellen des Writer der Daten an Client ausgibt
+            PrintWriter writer = new PrintWriter(sock.getOutputStream());
+
+            // Statusmeldung
+            System.out.println("Server running");
+
+            // Erzeugen der Daten die Client anfordert
+            int i = 1;
+            while (i < 3) {
+                String tipp = getTipp();
+                writer.println(tipp);
+                System.out.println(tipp);
+                i++;
+            }
+
+            // Writer schließen
+            writer.close();
+            // Sockerverbindung schließen
+            sock.close();
+
+            //Statusmeldung
+            System.out.println("Server closed");
+
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+                    </pre>
+                </figure>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="threads">
                 <h4 class="mt-5">Threads</h4>
                 <p class="mt-4">
-                    placeholder
+                    In größeren Applikationen kommt man nicht drum herum Prozesse der Anwendung parallel laufen zu
+                    lassen. Dies wird durch Threads ermöglicht. Ein Thread wird mit der Klasse <i>Thread</i>
                 </p>
             </div>
-            <div class="col-xl-12 text-justify align-content-center" id="sockets">
-                <h4 class="mt-5">Sockets</h4>
+            <div class="col-xl-12 text-justify align-content-center" id="phpmysql">
+                <h4 class="mt-5">PHP & MySQL</h4>
                 <p class="mt-4">
                     placeholder
                 </p>
             </div>
         </div>
     </div>
-    <div class="mt-5"></div>
 
     <!--Footer-->
     <footer class="page-footer font-small mygrey pt-4">
