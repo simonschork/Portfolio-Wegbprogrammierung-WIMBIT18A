@@ -60,319 +60,346 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-qw text-justify" id="intro">
-                <h3 class="mt-5 text-center">Einleitung</h3>
-                <p class="mt-4">
-                    Im Folgenden möchte ich auf die Grundlagen des implementierten Modells eingehen. Zuerst wird
-                    erläutert was Künstliche Neurale Netze sind und welche Art von neuralem Netz sich für die
-                    Verarbeitung von Sprache eignet. Anschließend gehe ich auf den Teilbereich des maschinellen Lernens
-                    ein der sich mit Sprachen befasst und welche Methoden es zur Umwandlung von Sprache gibt. Am Ende
-                    erkläre ich die Implementierung des Modells und Schwierigkeiten, die dabei auftraten.
-                </p>
-            </div>
-            <div class="col-lg-12 text-justify" id="deeplearning">
-                <h3 class="mt-5 text-center">Deep Learning</h3>
-                <p class="mt-4">
-                    <b>Deep Learning (DL)</b> ist ein Bereich des <b>Machine Learning(ML)</b>, indem <b>künstliche
-                        neurale
-                        Netzwerke (NN)</b> verwendet werden, um die gewünschten Ergebnisse zu erzielen. Ein solches Netz
-                    besteht aus mehreren <b>Layern</b>. Ein Layer wiederum besteht aus mehren <b>Neuronen</b>, welche
-                    die kleinste Struktur im Netzwerk darstellen. Jedes Neuron besteht im wesentlichen aus einer
-                    Funktion, die mit dem Input eine mathematische Berechnung durchführt. Für diese Berechnungen müssen
-                    die Daten <b>vektorisiert</b> werden, da ein NN mit Vektoren und Matrizen arbeitet. Der erste Layer
-                    eines Netzwerkes ist der <b>Input Layer</b>. Er erhält
-                    den Input vom
-                    Entwickler, meistens in Form eines Datensatzes, bestehend aus Beispielen. Dieser wird <b>Train
-                        Set</b> genannt. Der letzte Layer, der <b>Output Layer</b>, kann je nach Art des Netzwerks
-                    unterschiedlich aussehen. Im Unten angewendeten Fall entspricht die Anzahl der Neuronen im Output
-                    Layer den möglichen Klassifizierungen, also sieben. Zwischen diesen beiden können
-                    theoretisch unendlich viele <b>Hidden Layer</b> liegen, praktisch wird die Anzahl durch die
-                    verfügbare Rechenleistung eingeschränkt. So wird im Idealfall das Ergebnis mit jedem Layer genauer.
-                </p>
-                <div class="row">
-                    <div class="col-2"></div>
-                    <div class="col-10">
-                        <figure role="group" style="width: 70%;">
-                            <img src="../bilder/simple-nn.png" alt="Basic Neural Network">
-                            <figcaption class="text-center">Quelle: <a target="_blank"
-                                    href="https://de.wikipedia.org/wiki/K%C3%BCnstliches_neuronales_Netz#/media/Datei:Neural_network.svg">
-                                    Wikipedia</a>
+            <div class="col-lg-12 text-justify" id="architekur">
+                <h2 class="mt-5">1. Architektur</h2>
+                <h3 class="">1.1 Context View</h3>
+                <div class="d-flex justify-content-center">
+                    <figure role=" group" class="text-center">
+                        <img src="../bilder/flutter/Views-Context.png" alt="Context View">
+                        <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                    </figure>
+                </div>
+                <h3 class="">1.2 Functional View</h3>
+                <div class="d-flex justify-content-center">
+                    <figure role="group" class="text-center">
+                        <img src="../bilder/flutter/Views-Functional.png" alt="Context View">
+                        <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                    </figure>
+                </div>
+                <h3 class="">1.3 Hardware View</h3>
+                <div class="d-flex justify-content-center">
+                    <figure role="group" class="text-center">
+                        <img src="../bilder/flutter/Views-Hardware.png" alt="Context View">
+                        <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                    </figure>
+                </div>
+                <div class="col-lg-12 text-justify" id="flutter1">
+                    <h2 class="mt-5">2. Flutter</h2>
+                    <h3 class="">2.1 Was ist Flutter?</h3>
+                    <p>
+                        Das Framework Flutter wurde 2018 von Google vorgestellt. Es basiert auf der Programmiersprache
+                        Dart, welche ebenfalls von Google entwickelt wurde. Ziel des Frameworks ist es die
+                        Entwicklungszeiten zu verkürzen, eine schnelle Ausführungsgeschwindigkeit zu erzielen und dabei
+                        die „native user experience“ zu erhalten. Mit Flutter lassen sich Anwendungen für das Web,
+                        Windows, macOS, Linux, Google Fuchsia, Android und iOS schreiben. Programme für Windows, Linux,
+                        macOS, Android und iOS werden für die Zielplattform kompiliert und dann in der Dart-VM
+                        ausgeführt. Web-Anwendungen werden in Javascript übersetzt.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <figure role="group" class="text-center">
+                            <img src="../bilder/flutter/cross_plattform.png" alt="flutter_cross_plattform.png">
+                            <figcaption class="text-center mt-3">Quelle: <a
+                                    href="https://miro.medium.com/max/1400/1*xVpQxeBOJ6IND3d9m9vHGA.png">https://miro.medium.com/max/1400/1*xVpQxeBOJ6IND3d9m9vHGA.png</a>
                             </figcaption>
                         </figure>
                     </div>
+                    <p>
+                        Das Framework selbst ist in C++ geschrieben was die üblichen Performanzvorteile gegenüber
+                        anderen Programmiersprachen mit sich bringt.
+                    </p>
                 </div>
-                <p>
-                    Diese Überlegung und die dazugehörigen Algorithmen existieren schon sehr lange, das Konzept kam zum
-                    ersten Mal 1943 auf und orientiert sich am Aufbau eines menschlichen Gehirns. Doch
-                    damals war es unmöglich das Konzept umzusetzen. Heutzutage haben wir nicht nur genügend Rechenkraft,
-                    um
-                    künstliche neurale Netzwerke zu realisieren, die Menge an verfügbaren Daten ist drastisch gestiegen,
-                    was das Training solcher Strukturen erst möglich macht.
-                </p>
-
-                <figure role="group" style="width: 70%;" class="float-left mr-4">
-                    <img src="../bilder/precision-nn.PNG" alt="Precision DL & ML">
-                    <figcaption class="text-center">Quelle: Eigene Darstellung</figcaption>
-                </figure>
-                <p>
-                    Im Gegensatz zu klassischen Algorithmen des maschinellen Lernens kann der Grenzwert, dem sich die
-                    Präzision des Algorithmus annähert, durch Hinzufügen von Hidden Layern gesteigert werden. Nachteil
-                    hierbei ist jedoch: Je größer das NN, desto mehr Zeit wird für das Training benötigt.
-                </p>
-            </div>
-            <div class="col-lg-12 text-justify" id="rnn">
-                <h3 class="mt-5 text-center">Recurrent Neural Network</h3>
-                <p class="mt-4">
-                    Bei einem <b>Recurrent Neural Network (RNN)</b> handelt es sich um eine Art Neurales Netzwerk, das
-                    sich
-                    besonders gut zur Verarbeitung unstrukturierter, sequenzieller Daten eignet, wie es zum Beispiel
-                    Sprache bzw. Schrift ist. Die Beudeutung eines neuen Wortes hängt stark von dem vorherigen Wort ab.
-                    Ein RNN merkt sich das Ergebnis der Berechnung, also den Output Layer und verwendet ihn also
-                    zusätzlichen Input.
-                </p>
-                <figure role="group" style="width: 70%;" class="float-right ml-4">
-                    <img src="../bilder/rnn-simple.PNG" alt="Simplified RNN">
-                    <figcaption class="text-center">Quelle: <a href="https://www.youtube.com/watch?v=UNmqTiOnRfg"
-                            target="_blank">Luis
-                            Serrano</a></figcaption>
-                </figure>
-                <p>
-                    Die Pfeile stellen verschiedene Rechenoperationen dar, welche von der Art des NN abhängen und vorher
-                    festgelegt werden. Während die Kreise die vektorisierten Inputdaten darstellen. Sie könnten z.B. für
-                    ein Wort in einem Satz stehen. Die erste Reihe Vektoren ist der Input Layer.
-                </p>
-                <p>Dieser wird mit einer vorher festgelegte Matrix mutlipliziert, die beim Beispiel Wörter für eine
-                    Gewichtung der verschiedenen Wörter in einem Satz stehen kann (ein <i>und</i> hat wahrscheinlich
-                    weniger Einfluss auf die Bedeutung des Satzen als ein Adjektiv).
-                </p>
-                <p>
-                    Anschließend werden die Ergebnisse addiert, um auf einen Entscheidungsvektor zu kommen, der die
-                    Inputdaten beider Quellen mit einbezieht. Dieser wird in eine nicht-lineare Funktion eingefügt,
-                    welche für den höchsten Wert eine <b>1</b> und für alle anderen Werte eine <b>0</b> zurückgibt.
-                    Somit werden unwichtige Komponenten eliminiert (an dieser Stelle könnte das <i>und</i> vollständig
-                    elimniert werden, wenn es auf den Sinn des Satzes keinen Einfluss hat). Die
-                    Mergemap verbindet schlussendlich die Ergebnisverktoren beider Inputs und gibt den Output, welcher
-                    erneut als Input genutzt wird.
-                </p>
-            </div>
-            <div class="col-lg-12 text-justify" id="nlp">
-                <h3 class="mt-5 text-center">Natural Language Processing</h3>
-                <p class="mt-4">
-                    <b>Natural Language Processing (NLP)</b> befasst sich mit Aufgabe, die menschliche Kommunikation,
-                    für Maschinen verständlich zu machen. Die Schwierigkeit liegt vor allem darin einer Maschine, die
-                    nach mathematischen Prinzipien arbeitet, die oft subjektiven und selten eindeutigen Regeln unserer
-                    Sprache beizubringen. Dennoch gelang es bisher vielen Entwicklern in den Bereichen Klassifizierung
-                    und Übersetzung beeindruckende Ergebnis zu erzielen.
-                </p>
-                <blockquote class="blockquote">
-                    <p class="mb-0" style="color: #6c757d;"><i>"Natural Language Processing is a theoretically motivated
-                            range of computational techniques for analyzing and representing naturally occurring texts
-                            at one or more levels of linguistic analysis for the purpose of achieving human-like
-                            language processing for a range of tasks or applications."</i></p>
-                    <footer class="blockquote-footer text-center">Liddy, Elizabeth D. <cite title="Source Title"><a
-                                href="https://surface.syr.edu/cgi/viewcontent.cgi?article=1019&context=cnlp"
-                                target="_blank" rel="noopener noreferrer">"Natural language
-                                processing"</a> (2001)
-                        </cite>
-                    </footer>
-                </blockquote>
-                <p>
-                    Für das verwenden von Sprache in Algorithmen muss sie eine mathematische Aussage umgewandelt werden.
-                    Das sind drei der beliebtesten Ansätze um diesen Prozess zu erreichen:
-                </p>
-                <ul>
-                    <li><b>Tokenization</b> bricht den Text in einzelne Wörter herunter. Hierzu können verschiedene
-                        Zeichen als Trennung fungieren. Am beliebtesten ist das Leerzeichen
-                    </li>
-                    <br>
-                    <li><b>Stemming</b> schneidet Teile von abgeleiteten Wörtern ab. Aus <i>Frei-heit</i> wird
-                        <i>Frei</i>. Dadurch erhalten manche Wörter jedoch eine anderen Bedeutung als eigentlich die
-                        Intention war.</li>
-                    <br>
-                    <li>Mit <b>N-Grams</b> unterteilt man einen Satz in n Ausdrücke. Ein <i>unigram</i>-Modell
-                        würde einen Satz in jeweils ein Wort unterteilen. Ein <i>bigram</i>-Modell würde
-                        jeweils Wortpaare bilden usw.</li>
-                    <br>
-                    <li><b>TF-IDF</b> gibt den zuvor unterteilten Ausdrücken nun jeweils ein Gewicht, dass sich aus der
-                        <i>Term Frequenzy (TF)</i>, wie oft ein Ausdruck in einem Dokument vorkommt und der
-                        <i>Inverse Document Frequenzy (IDF)</i>, wie viel Information ein Audruck hergibt,
-                        zusammensetzt</li>
-                    <br>
-                    <li><b>One-Hot Encoding</b> stellt Wörter in einer Matrix dar. Die Spalten sind hier die
-                        Ausdrücke des untersuchten Satzes und die Zeilen, die bekannten Vokabeln. Überschneidungen
-                        werden mit dem Wert <b>1</b> belegt, ansonsten ist der Wert <b>0</b>.</li>
-                    <br>
-                </ul>
-                <p>
-                    Dies ist nur ein kleiner und stark vereinfachter Auszug der möglichen Ansätze und soll einen
-                    Eindruck
-                    verschaffen wie sich Worte in Terme umwandeln lassen.
-                </p>
-            </div>
-            <div class="col-lg-12 text-justify" id="toxicitydetection">
-                <h3 class="mt-5 text-center">Toxicity Detection by tfjs/models</h3>
-                <p class="mt-4">
-                    Google bietet mit <b>Tensorflow</b> ein Framework, was bei der Implementierung von NNs unterstützt.
-                    Außerdem stellen sie seit neustem trainierte Modelle zur Verfügung, die nur noch in eine
-                    Webanwendung eingebunden werden müssen. Zur Zeit stehen auf der <span><a
-                            href="https://www.tensorflow.org/js/models/?hl=de"
-                            target="_blank">Tensorflow.js-Webseite</a></span> acht
-                    Modelle zur Verfügung. Unter anderem ein "Text toxicity detection"-Modell. Mit Hilfe dieses Modells
-                    möchte ich den Ansatz einer Kommentarfunktion umsetzen, welche
-                    den Nutzer warnt,
-                    wenn er einen möglicherweise beleidigenden Text verfasst und ihn an der Veröffentlichung des
-                    Kommentars hindert. Der Code des Modells ist
-                    vollständig auf <span><a href="https://github.com/tensorflow/tfjs-models/tree/master/toxicity"
-                            target="_blank">Github</a></span>
-                    verfügbar und musste nur noch auf folgende Weisen angepasst werden:
-                </p>
-                <p class="text-center">
-                    Der Eingabewert des Textfeldes wurde einem Array zugewiesen, nur so kann das Modell den Text
-                    verarbeiten.
-                </p>
-                <figure class="code-box">
-                    <pre class="code-text">
-
-    async function kommentarSenden() {
-        var kommentartext = document.getElementById('commentinput').value;
-        var kommentar = Array(kommentartext);
-                    </pre>
-                </figure>
-                <p class="text-center">
-                    Anschließend wurde ein Grenzwert festgelegt (das Modell muss sich zu 0.9 sicher sein, dass die
-                    Klassifizierung stimmt, erst dann wird sie zurückgegeben) und ein Objekt deklariert, welches später
-                    die Ergebnisse in Form eines JSON-Objektes enthält.
-                </p>
-                <figure class="code-box">
-                    <pre class="code-text">
-
-        //Minimale Vorhersagesicherheit
-        const grenzwert = 0.9;
-        //Objekt für Klassifizierung deklarieren
-        var classification = new Object();
-                    </pre>
-                </figure>
-                <p class="text-center">
-                    Nun musste das Modell mit dem festgelegten Grenzwert und Input geladen
-                </p>
-                <figure class="code-box">
-                    <pre class="code-text">
-
-        classification = await toxicity.load(grenzwert).then(async model => {
-            //Kommentar als modelinput
-            var saetze = kommentar;
-            var modeloutput = new Object();
-                    </pre>
-                </figure>
-                <p class="text-center">
-                    und schließlich die Klassifizierung des Kommentars durchgeführt und zurückgegeben werden.
-                </p>
-                <figure class="code-box">
-                    <pre class="code-text">
-
-            //Vorhersage
-            modeloutput = await model.classify(saetze);
-            //Vorhersage übergeben
-            return modeloutput;
-        });
-                    </pre>
-                </figure>
-                <p class="text-center">
-                    Nachdem die Klassifizierung erfolgreich durchgeführt wurde wird geprüft, ob eine der möglichen
-                    Kategorien ein <i>match == true</i> hat. Ist dies der Fall wird der Nutzer benachrichtigt,
-                    wenn nicht wird sein Kommentar veröffentlicht.
-                </p>
-                <figure class="code-box">
-                    <pre class="code-text">
-
-        //Toxicity prüfen
-        if (classification[0].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else if (classification[1].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else if (classification[2].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else if (classification[3].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else if (classification[4].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else if (classification[5].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else if (classification[6].results[0].match == true) {
-            alert('Entschuldigung, Ihr Kommentar wird nicht veröffentlicht, da er als Beleidigung interpretiert werden könnte!')
-        } else {
-            //Kommentar veröffentlichen
-            document.getElementById('commentoutput').innerHTML = kommentar;
-        }
-    }
-                    </pre>
-                </figure>
-                <p>
-                    Die größte Herrausforderung stellte für mich das Übergeben des Modelloutputs dar. Mir war zu Anfang
-                    nicht klar, das diese Implementierung nur in einer asynchronen Funktion funktioniert, in der man mit
-                    dem Schlüsselwort <i>await</i>, auf die erfolgreiche Ausführung des Modells warten kann. Ohne diese
-                    Anpassung
-                    konnte der Output nicht aus der Funktion übergeben werden.
-                </p>
-            </div>
-            <div class="col-lg-12 text-justify" id="quellen">
-                <h3 class="mt-5">Quellen</h3>
-                <ul class="mt-4">
-                    <li><a href="https://www.udemy.com/course/machine-learning-komplett/" target="_blank"
-                            rel="noopener noreferrer">Machine Learning </a>[Onlinekurs]</li>
-                    <li><a href="https://www.youtube.com/playlist?list=PLR0bgGon_WTKXxEhSDLwSkDl8SCCCaPoA"
-                            target="_blank" rel="noopener noreferrer">Neural Network (Deep Learning)</a> [Video]</li>
-                    <li><a href="https://github.com/tensorflow/tfjs-models/tree/master/toxicity" target="_blank"
-                            rel="noopener noreferrer">Text toxicity detection</a></li>
-                    <li><a href="https://www.tensorflow.org/js/guide" target="_blank"
-                            rel="noopener noreferrer">Tensorflow Documentation</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=UNmqTiOnRfg" target="_blank"
-                            rel="noopener noreferrer">A friendly introduction to Recurrent Neural Networks </a>[Video]
-                    </li>
-                    <li><a href="https://towardsdatascience.com/natural-language-processing-from-basics-to-using-rnn-and-lstm-ef6779e4ae66"
-                            target="_blank" rel="noopener noreferrer">Natural Language Processing: From Basics to using
-                            RNN and LSTM </a>[Artikel]</li>
-                </ul>
-            </div>
-            <div class="mt-5"><br></div>
-        </div>
-    </div>
-
-    <!--Footer-->
-    <footer class="mt-5 page-footer font-small mygrey pt-4">
-        <div class="container text-center text-md-left">
-            <div class="row">
-                <div class="col-md-9 mt-md-0 mt-3">
-                    <h5 class="text-uppercase white footer-font">Portfolio zur Vorlesung Webprogrammierung</h5>
-                    <p class="white footer-font">Diese Webseite wurde im Rahmen einer Prüfungsleistung erstellt. Der
-                        Code ist
-                        vollständig auf Github verfügbar. Zur Erstellung wurde das Framework Bootstrap genutzt,
-                        angepasst und ergänzt.</p>
+                <div class="col-lg-12 text-justify" id="flutter2">
+                    <h3 class="">2.2 UI Rendering</h3>
+                    <p>
+                        Flutter ist für schnelleres Rendering bekannt und beliebt. Die Benutzeroberfläche einer
+                        Flutterapplikation lässt sich in ihre Widgets unterteilen. Jeder Baustein ist ein Widget, sogar
+                        die App selbst, aber dazu später mehr Details.
+                        Wirft man einen Blick in die Widgetklasse die vom Framework zu Verfügung gestellt wird fällt die
+                        Bemerkung „@immutable“ ins Auge. Dies bedeutet alle Eigenschaften eines Widgets müssen als
+                        „final“ deklariert werden und können somit nach der Instanzierung nicht verändert werden.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <figure role="group" class="text-center">
+                            <img src="../bilder/flutter/widget_class.png" alt="widget_class.png">
+                            <figcaption class="text-center mt-3">Quelle: <a
+                                    href="https://miro.medium.com/max/1400/0*eOwZhDfg8SXAb8tf">https://miro.medium.com/max/1400/0*eOwZhDfg8SXAb8tf</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <p>
+                        Dieses Konzept macht für eine Benutzeroberfläche keinen Sinn. Flutter löst dieses Problem durch
+                        verschiedene Status in denen sich das UI befinden kann. Neben dem Widget-Baum, der für den
+                        Entwickler sichtbar und von ihm geschrieben ist, gibt es in Flutter einen Element- und einen
+                        RenderObject-Baum.
+                        Beim Starten der Applikation erstellt Flutter direkt aus dem Code den Widget-Baum. Anschließend
+                        wird die createElement()-Methode jedes Widgets aufgerufen und ein korrespondierender
+                        Element-Baum aufgebaut. Der RenderObject-Baum entsteht durch das Aufrufen der
+                        createRenderObject()-Methode eines jeden Elements und beinhaltet die Objekte die schlussendlich
+                        auf dem Display angezeigt werden. Ein RenderObject beinhaltet alle Eigenschaften die Größe,
+                        Position, Farbgebung, usw. bestimmen und ist somit sehr aufwendig zu instanzieren.
+                        Bisher hört es sich an als würde dieses Verfahren alles nur noch komplizierter machen, der
+                        Nutzen wird deutlich, wenn man die Veränderung eines Widgets im „Flutter Inspector“ beobachtet.
+                        Verändert man ein Text-Widget, beispielsweise durch einen Knopfdruck, baut Flutter kein neues
+                        RenderObject, das Element vergleicht die Eigenschaften des Widgets und des RenderObjects. Wenn
+                        diese sich nur marginal unterscheiden bzw. sind vom selben Typ wird kein neues Objekt
+                        instanziert, sondern lediglich die nötigen Eigenschaften erneuert. Bei einem Text-Widget wäre
+                        das z.B. die Eigenschaft „…text: „Hallo Welt…““ => „…text: „Ciao Welt“…“. Eigenschaften wie
+                        Größe und Position bleiben unberührt. Dies geschieht durch die updateRenderObject()-Methode.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <figure role="group" class="text-center">
+                            <img src="../bilder/flutter/flutter_trees.png" alt="flutter_trees.png">
+                            <figcaption class="text-center mt-3">Quelle: <a
+                                    href="https://miro.medium.com/max/1302/0*gJw9tUyadnETEx0Q">https://miro.medium.com/max/1302/0*gJw9tUyadnETEx0Q</a>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <p>
+                        Bedingt dadurch, dass eine Flutter-Anwendung aus hunderten von Widgets besteht wäre das Erneuern
+                        des gesamten Baums sehr aufwendig. Das oben beschriebene Vorgehen erklärt warum Flutter
+                        verglichen mit anderen Frameworks UI-Objekte schneller rendert.
+                    </p>
                 </div>
-                <hr class="clearfix w-100 d-md-none pb-3">
-                <div class="col-md-3 mb-md-0 mb-3">
-                    <h5 class="text-uppercase white footer-font">Links</h5>
-                    <ul class="list-unstyled white">
-                        <li><a class="white footer-font" href="https://github.com/simonschork/webprog-portfolio"
-                                target="_blank">Github</a></li>
-                        <li><a class="white footer-font" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
-                        </li>
+                <div class="col-lg-12 text-justify" id="flutter3">
+                    <h3 class="">2.3 Projektaufbau</h3>
+                    <p>
+                        Ein Flutter-Projekt wird über eine Konsole der Wahl initialisiert.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <figure role="group" class="text-center">
+                            <img src="../bilder/flutter/create_project.png" alt="create_project.png">
+                            <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                        </figure>
+                    </div>
+                    <p>
+                        Anschließend erstellt Flutter eine Reihe von Ordnern und Dateien, die im späteren Projekt
+                        gebraucht werden.
+                    </p>
+                    <p>
+                        Zum Schluss wird „flutter doctor“ ausgeführt, um auf mögliche fehlende Anwendungen hinzuweisen.
+                    </p>
+                    <div class="d-flex justify-content-center">
+                        <figure role="group" class="text-center">
+                            <img src="../bilder/flutter/flutter_doctor.png" alt="flutter_doctor.png">
+                            <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                        </figure>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-5">
+                            <p>
+                                Das Ergebnis ist ein Projekt mit der rechts sichtbaren Struktur.Ich möchte hier nur auf
+                                die
+                                wichtigsten Elemente eingehen. In den Ordnern „android“ und „ios“ befinden später die
+                                automatisch generierten Dateien, die für die Veröffentlichung der App auf der jeweiligen
+                                Plattform benötigt werden. In der „pubspec.yaml“ werden Versionen der Pakete und externe
+                                Pakete
+                                festgelegt, die mit dem Kommandozeilenbefehl „flutter pub get“ installiert werden. Unter
+                                „lib“
+                                werden alle „*.dart“-Dateien abgelegt die unseren Code enthalten. Wie zuvor beschrieben
+                                startet
+                                die Datei „main.dart“ unsere App.
+                                In den folgenden Abschnitten möchten wir interessante Aspekte unserer Anwendung
+                                hervorheben
+                                wir
+                                werden nicht auf den gesamten Code eingehen.
+                            </p>
+                        </div>
+                        <div class="col-6">
+                            <figure role="group" class="ml-4">
+                                <img src="../bilder/flutter/project_structure.png" alt="project_structure.png">
+                                <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-justify">
+                        <h3>2.4 Programmieren mit Widgets</h3>
+                        <p>
+                            In Flutter hört man ständig das Wort Widget, doch was genau ist das und wie programmiert man
+                            damit eine Applikation?
+                            Diese Fragestellung möchten wir mit Hilfe unserer App versuchen zu erklären.
+                            Vorerst ein paar allgemeine Punkte. Wie zuvor beschrieben ist Flutter ein Framework,
+                            dementsprechend kommt es out-of-the-box mit einer großen Auswahl an Klassen, die nur noch
+                            implementiert werden müssen. Diese Klassen sind Widgets, sie erben alle entweder von der
+                            Superklasse „StatelessWidget“ oder „StatefulWidget“. Ein StatelessWidget kann sich während
+                            der Laufzeit nicht verändern. Typische Beispiele sind Text() oder Icon(). Um eine
+                            interaktive Benutzeroberfläche zu gestalten benötigt man ein „stateful Widget“. Es erbt von
+                            „StatefulWidget“ und „State“. Der aktuelle Zustand eines solchen Widgets wird in einem
+                            „State“ Objekt gespeichert. Sobald sich das Widget verändert wird die setState() Methode
+                            dieses Objekts aufgerufen und so der Zustand aktualisiert.
+                            Um das besser zu veranschaulichen hier der HomeScreen unserer App:
+                            Um den Homescreen zu zeigen müssen wir die Klasse „HomeScreen“ aufrufen, sie erbt von
+                            „StatefulWidget“. Diese Beziehung definiert sie als Widget dessen Aufbau in einem
+                            „State“-Objekt gespeichert ist. Um das Objekt zu instanzieren muss die createState() Methode
+                            aufgerufen und ein „State“ initiiert werden. Diesen „State“ bildet die Klasse
+                            „_HomeScreenState“, welche von State mit Datentyp HomeScreen erbt. In dieser Klasse
+                            überschreiben wir die build() Methode. In einem Widget vergleichbar mit einem Kontruktor.
+                            Jedoch nicht im klassischen Sinn, da sie zwar ein Objekt zurückgibt, dieses aber
+                            gleichzeitig die Darstellung enthält und mit dem in 2.2 UI Rendering beschriebenen Prozess
+                            visualisiert wird. Dieses HomeScreen-Widget setzt sich aus Folgenden, ineinander
+                            verschachtelten Widgets zusammen (es hilft sich die Widgets als Baum vorzustellen):
+                        </p>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul>
+                                    <li>
+                                        <em>Scaffold</em> ist der Hintergrund der App, hier kann die
+                                        Hintergrundfarbe definiert werden. Im Parameter „body“ kann ein weiteres Widget
+                                        mitgegeben werden.
+                                    </li>
+                                    <br>
+                                    <li><em>SafeArea</em> hilft mit clientspezifischen Anforderungen, z.B.
+                                        Notches
+                                        umzugehen.
+                                        Minimum legt den minimalen Abstand fest, der zum Bildschirmrand eingehalten
+                                        werden muss.</li>
+                                    <br>
+                                    <li><em>EdgeInset</em> setzt einen bestimmten Abstand zu jeder Seite einer
+                                        Box. Hier
+                                        zwischen
+                                        Bildschirmrand und SafeArea.</li>
+                                    <br>
+                                    <li><em>Column</em> ist das erste Layout Widget im Homescreen, es ordnet
+                                        alle
+                                        Kind-Widgets
+                                        wie in einer Spalte untereinander an.</li>
+                                    <br>
+                                    <li><em>Padding</em> legt einen Abstand zu beliebigen Seiten fest.</li>
+                                    <br>
+                                    <li><em>Center</em> zentriert das Kind-Widget.</li>
+                                    <br>
+                                    <li><em>Text</em> stellt einen String dar, welcher mit dem Parameter „stlye“
+                                        beliebig
+                                        visualisiert und mit „textAlign“ ausgerichtet werden kann.</li>
+                                </ul>
+                                <p>Zum Schluss wird noch die Klasse „HomeNavBar“ aufgerufen welche mehrere Buttons
+                                    zurückgibt. Dieses Widget ist selbst kreiert aber in eine andere Klasse ausgelagert.
+                                    Durch die child oder children Parameter der Widgets wird deutlich dass es ich auf
+                                    Programmebene tatsächlich um einen Baum handelt der von der Dart-VM gerendert wird.
+                                </p>
+                            </div>
+                            <div class="col-6">
+                                <figure role="group" class="ml-4">
+                                    <img src="../bilder/flutter/home_view.png" alt="home_view.png">
+                                    <figcaption class="text-center mt-3">Quelle: Eigene Darstellung</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                        <h3>2.5 Screens und Routing</h3>
+                        <p>
+                            Unsere App soll aus mehreren Screens bestehen für eine dynamische Navigation, die
+                            unseren Designvorstellungen entspricht, implementieren wir „named Routes“. Navigation
+                            lässt sich in Flutter auf mehrere Arten lösen. Neben der oben genannten wäre es auch
+                            möglich das NavBar-oder PageView-Widget zu verwenden. Beide würden aber auch mit
+                            Restriktionen kommen. Unsere App hat zurzeit drei verschiedene Screens. Diese werden in
+                            ihrer eigenen Klasse definiert, die in der build()-Methode den Screen als Widget
+                            zurückgibt.
+                            Mit einem „MaterialPageRoute“-Widget können wir nun eine „Route“ generieren die uns von
+                            egal wo in der Applikation immer auf den „HomeScreen“ bringt.
+                        </p>
+                        <figure class="text-center" role="group" class="ml-4">
+                            <img src="../bilder/flutter/router_class.png" alt="router_class.png">
+                            <figcaption class="mt-3">Quelle: Eigene Darstellung</figcaption>
+                        </figure>
+                        <p>
+                            Wir verpacken das Ganze in die Klasse „Router“ und die Funktion „createRoute“. Als
+                            Mitgabewert wählen wir die Variable „settings“ die bestimmt welche Route generiert wird.
+                            Wenn wir in „createRoute“ die Variable homeRoute geben, werden wir zum „HomeScreen“
+                            geleitet.
+                            Um die Navigation zu implementieren müssen wir, wie in Abbildung 7 gezeigt, im
+                            „MaterialApp“-Widget der Eigenschaft „onGenerateRoute“ unsere „createRoute“-Methode
+                            mitgeben.
+                        </p>
+                        <figure class="text-center" role="group" class="ml-4">
+                            <img src="../bilder/flutter/set_routing.png" alt="set_routing.png">
+                            <figcaption class="mt-3">Quelle: Eigene Darstellung</figcaption>
+                        </figure>
+                        <p>
+                            Da der „HomeScreen“ gleichzeitig der Startbildschirm unserer App sein soll setzen wir
+                            die erste Route auf „homeRoute“.
+                        </p>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-12 text-justify" id="quellen">
+                    <h3 class="mt-5">Quellen</h3>
+                    <ul class="mt-4">
+                        <li><a href="hhttps://flutter.dev/" target="_blank" rel="noopener noreferrer">flutter.dev</a>
+                            [Dokumentation]</li>
+                        <li><a href="https://dart.dev/" target="_blank" rel="noopener noreferrer">dart.dev</a>
+                            [Dokumentation]</li>
+                        <li><a href="https://www.flutterinternals.org//" target="_blank"
+                                rel="noopener noreferrer">Flutter Internals</a>
+                            [Community Dokumentation]</li>
+                        <li><a href="https://medium.com/flutter-community/clean-navigation-in-flutter-using-generated-routes-891bd6e000df"
+                                target="_blank" rel="noopener noreferrer">Clean Navigation in Flutter Using Generated
+                                Routes</a>
+                            [Artikel]</li>
+                        <li><a href="https://medium.com/flutter-community/flutter-effectively-scale-ui-according-to-different-screen-sizes-2cb7c115ea0a"
+                                target="_blank" rel="noopener noreferrer">Flutter — Effectively scale UI according to
+                                different screen sizes</a>
+                            [Artikel]</li>
+                        <li><a href="https://www.freecodecamp.org/news/why-mobile-apps-makers-are-in-love-with-flutter/"
+                                target="_blank" rel="noopener noreferrer">Google Flutter Review – Why Mobile App
+                                Developers Love Flutter</a>
+                            [Artikel]</li>
+                        <li><a href="https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51"
+                                target="_blank" rel="noopener noreferrer">Parsing complex JSON in Flutter
+                            </a> [Artikel]</li>
+                        <li><a href="https://www.melvinvivas.com/flutter-listview-example-using-data-from-a-rest-api/"
+                                target="_blank" rel="noopener noreferrer">Implement a Flutter ListView using data from a
+                                REST API</a>
+                            [Artikel]</li>
+                        <li><a href="https://blog.smartnsoft.com/an-automatic-search-bar-in-flutter-flappy-search-bar-a470bc67fa1f"
+                                target="_blank" rel="noopener noreferrer">An automatic Search
+                                Bar in Flutter : flappy_search_bar</a>
+                            [Artikel]</li>
                     </ul>
                 </div>
+                <div class="mt-5"><br></div>
             </div>
         </div>
-        <div class="footer-copyright text-center py-3 white footer-font">© 2019 Copyright:
-            <span>Simon Schork</span>
-        </div>
-    </footer>
 
-    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
-        data-toggle="tooltip" data-placement="left"><i class="material-icons">arrow_upward</i></a>
+        <!--Footer-->
+        <footer class="mt-5 page-footer font-small mygrey pt-4">
+            <div class="container text-center text-md-left">
+                <div class="row">
+                    <div class="col-md-9 mt-md-0 mt-3">
+                        <h5 class="text-uppercase white footer-font">Portfolio zur Vorlesung Webprogrammierung</h5>
+                        <p class="white footer-font">Diese Webseite wurde im Rahmen einer Prüfungsleistung erstellt.
+                            Der
+                            Code ist
+                            vollständig auf Github verfügbar. Zur Erstellung wurde das Framework Bootstrap genutzt,
+                            angepasst und ergänzt.</p>
+                    </div>
+                    <hr class="clearfix w-100 d-md-none pb-3">
+                    <div class="col-md-3 mb-md-0 mb-3">
+                        <h5 class="text-uppercase white footer-font">Links</h5>
+                        <ul class="list-unstyled white">
+                            <li><a class="white footer-font" href="https://github.com/simonschork/webprog-portfolio"
+                                    target="_blank">Github</a></li>
+                            <li><a class="white footer-font" href="https://getbootstrap.com/"
+                                    target="_blank">Bootstrap</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright text-center py-3 white footer-font">© 2019 Copyright:
+                <span>Simon Schork</span>
+            </div>
+        </footer>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/custom.js"></script>
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
+            data-toggle="tooltip" data-placement="left"><i class="material-icons">arrow_upward</i></a>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/custom.js"></script>
 </body>
 
 </html>
