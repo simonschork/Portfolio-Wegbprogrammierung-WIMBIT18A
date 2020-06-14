@@ -20,7 +20,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainnav">
         <div class="container">
-            <a class="navbar-brand" href="#">Web-Programmierung</a>
+            <a class="navbar-brand" href="#">Webprogrammierung und Verteilte Systeme</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,8 +33,13 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="portfolio.html">Portfolio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../schwerpunkt/schwerpunkt.html">Schwerpunkt</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toogle" href="#" role="button" id="navbarDropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schwerpunkt</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="/schwerpunkt/tensorflowjs.html" class="dropdown-item">Toxicity Detection</a>
+                            <a href="/schwerpunkt/flutter.html" class="dropdown-item">Flutter Applikation</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../kommentare/kommentare.html">Kommentare</a>
@@ -68,7 +73,7 @@
             <li><a href=#webdesign style="text-decoration: none;">Inhaltliche Gestaltung von Web-Content</a></li>
             <li><a href=#streamsundserialisierung style="text-decoration: none;">Serialisierung und Streams</a></li>
             <li><a href=#sockets style="text-decoration: none;">Client-Server-Kommunikation mit Sockets</a></li>
-            <li><a href=#threads style="text-decoration: none;">Threads</a></li>
+            <li><a href=#threads style="text-decoration: none;">Nebenläufigkeit mit Threads</a></li>
             <li><a href=#phpmysql style="text-decoration: none;">PHP & MySQL</a></li>
         </ul>
     </nav>
@@ -803,10 +808,6 @@
         e.printStackTrace();
                         </pre>
                 </figure>
-                <p>
-                    placeholder
-                    - Textdateien schreiben und lesen
-                </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="sockets">
                 <h4 class="mt-5">Client-Server-Kommunikation mit Sockets</h4>
@@ -907,20 +908,253 @@
                 </figure>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="threads">
-                <h4 class="mt-5">Threads</h4>
+                <h4 class="mt-5">Nebenläufigkeit mit Threads</h4>
                 <p class="mt-4">
                     In größeren Applikationen kommt man nicht drum herum Prozesse der Anwendung parallel laufen zu
-                    lassen. Dies wird durch Threads ermöglicht. Ein Thread wird mit der Klasse <i>Thread</i>
+                    lassen. Dies wird durch Threads ermöglicht. Ein Thread wird mit der Klasse Thread instanziert,
+                    welche die Schnittstelle Runnable implementieren muss. In der run() Methode befindet sich der Code,
+                    den der Thread ausführt sobald er startet.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    public class ZweiThreads implements Runnable {
+
+        public static void main(String[] args) {
+            // Instanziert Klasse
+            ZweiThreads aufgabe = new ZweiThreads();
+
+            // Erstellt Threads und weißt Aufgaben zu
+            Thread alpha = new Thread(aufgabe);
+            Thread beta = new Thread(aufgabe);
+
+            // Gibt Threads eindeutige Namen
+            alpha.setName("alpha");
+            beta.setName("beta");
+
+            // Startet Threads
+            alpha.start();
+            beta.start();
+
+        }
+
+        // Methode die von Threads bei Start aufgerufen wird
+        @Override
+        public void run() {
+            // Lässt keine parallele Bearbeitung des Codes zu
+            synchronized (this) {
+                // Ausgabe des aktuellen Threads
+                for (int i = 0; i < 10; i++) {
+                    String threadName = Thread.currentThread().getName();
+                    System.out.println("jetzt läuft " + threadName);
+
+                    try {
+                        // Benachrichtigt anderen Thread
+                        notify();
+                        // Wird inaktiv und wartet auf Benachrichtigung
+                        wait();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+        }
+    }
+                    </pre>
+                </figure>
+                <p>
+                    In dem oben gezeigten Beispiel wird deutlich, dass parallele Auführung des Codes sehr nützlich ist,
+                    abe auch Risiken birgt. Werden z.B. in einem Buchungssystem gleichzeitig Transaktionen auf ein
+                    Objekt ausgeführt kann das zu Doppelbuchungen oder Fehlern führen. Deshalb gibt es die Möglichkeit
+                    Code in einen "synchronized" Block zu schreiben, oder eine Funktion als "synchronized" zu
+                    kennzeichnen. Dieser Codeblock oder diese Funktion kann nur von einem Thread gleichzeitig bearbeitet
+                    werden. Durch das Benachrichtigen und anschließende warten in der "for"-Schleife, wechseln sich die
+                    Threads im Programmablauf immer wieder ab.
+                </p>
+                <p>
+                    Im foglenden Abschnitt ist ein etwas praxistauglicheres Beispiel. Ein simpler Chatclient und
+                    Chatserver. Um den Eingang von Nachrichten zu bestätigen muss ein Thread erzeugt werden, der
+                    aufpasst und wenn eine Nachricht eingeht diese ausgibt.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    public class EingehendReader implements Runnable {
+
+        public void run() {
+            String nachricht;
+            try {
+                while ((nachricht = reader.readLine()) != null) {
+                    System.out.println("gelesen: " + nachricht);
+                    eingehend.append(nachricht + "\n");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+                    </pre>
+                </figure>
+                <p>
+                    Nicht nur in Messagern und Buchungssystemen, sondern in ziemlich allen größeren und kleineren
+                    Anwendungen wird von Threads Gebrauch gemacht. Die Möglichkeit Teile des Programms parallel laufen
+                    zu lassen ist enorm nützlich,selbst wenn es sich nur um Errorhandling handelt. Man könnte z.B. einen
+                    Thread implementieren der bei Drücken eines Knopfes auf dessen Rückgabe warten. Falls diese nicht
+                    kommt oder zu lange braucht bekommt der Nutzer eine Benachrichtigung und weiß über das Problem
+                    Bescheid. Jedoch muss man sich unbedingt der Risiken bewusst sein und kritische Pfade entsprechend
+                    kennzeichnen um Fehler zu vermeiden.
                 </p>
             </div>
             <div class="col-xl-12 text-justify align-content-center" id="phpmysql">
                 <h4 class="mt-5">PHP & MySQL</h4>
                 <p class="mt-4">
-                    placeholder
+                    In diesem Abschnitt der Vorlesung wurde uns dass klassische Client-Server-Konzept einer Webanwendung
+                    näher gebracht. Ziel war es Daten aus einem .html Formular mit Hilfe eines serverseitigen Skripts zu
+                    empfangen und zu verarbeiten. Hierzu nutzen wir ein Eingabeformular in Form einer HTML-Seite, die
+                    vom Apache Webserver unter "index.htm"l aufgrufen wird. Das Formular beinhaltet verschiedenste Arten
+                    von Eingabefeldern, unter anderem Textfelder und Radiobuttons. Hier der "body" der HTML-Datei als
+                    Auszug:
                 </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    &lt;body>
+        &lt;h2>Von Aliens entf�hrt &ndash; eine Entf�hrung melden&lt;/h2>
+        &lt;p>Die Geschichte Ihrer Alienentf�hrung:&lt;/p>
+        &lt;form action="meldung.php">
+            &lt;label for="vorname">Vorname:&lt;/label>
+            &lt;input type="text" id="vorname" name="vorname" />&lt;br />
+            &lt;label for="nachname">Nachname:&lt;/label>
+            &lt;input type="text" id="nachname" name="nachname" />&lt;br />
+            &lt;label for="email">Wie lautet Ihre E-Mail-Adresse?&lt;/label>
+            &lt;input type="text" id="email" name="email" />&lt;br />
+            &lt;label for="wanngeschahes">Wann geschah es?&lt;/label>
+            &lt;input type="text" id="wanngeschahes" name="wanngeschahes" />&lt;br />
+            &lt;label for="wielange">Wie lange waren Sie unterwegs?&lt;/label>
+            &lt;input type="text" id="wielange" name="wielange" />&lt;br />
+            &lt;label for="wieviele">Wie viele haben Sie gesehen?&lt;/label>
+            &lt;input type="text" id="wieviele" name="wieviele" />&lt;br />
+            &lt;label for="alienbeschreibung">Wie sahen die Aliens aus:&lt;/label>
+            &lt;input type="text" id="alienbeschreibung" name="alienbeschreibung" size="32" />&lt;br />
+            &lt;label for="wassietaten">Was wurde mit Ihnen gemacht?&lt;/label>
+            &lt;input type="text" id="wassietaten" name="wassietaten" size="32" />&lt;br />
+            &lt;label for="fanggesehen">Haben Sie Fang gesehen?&lt;/label>
+            Ja &lt;input id="fanggesehen" name="fanggesehen" type="radio" value="Ja" />
+            Nein &lt;input id="fanggesehen" name="fanggesehen" type="radio" value="Nein" />&lt;br />
+            &lt;img src="fang.jpg" width="100" height="175" alt="Mein entf�hrter Hund Fang." />&lt;br />
+            &lt;label for="weiteres">Weitere Bemerkungen:&lt;/label>
+            &lt;textarea id="weiteres" name="weiteres">&lt;/textarea>&lt;br />
+            &lt;input type="submit" value="Entf�hrung melden" name="submit" />
+        &lt;/form>
+    &lt;/body>
+                    </pre>
+                </figure>
+                <p>
+                    Durch das Bestätigen des "submit" Buttons wird das serverseitige PHP-Skript ausgeführt welches die
+                    Eingaben verarbeitet. Das Skript rendert als Ausgabe erneut eine HTML-Seite und ist entsprechend
+                    aufgebaut:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    &lt;html xmlns="http://www.w3.org/1999/xhtml" xml:lang="de" lang="de">
+    &lt;head>
+        &lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        &lt;title>Von Aliens entführt – eine Entführung melden&lt;/title>
+    &lt;/head>
+
+        &lt;body>
+            &lt;h2>Von Aliens entführt – eine Entführung melden&lt;/h2>
+
+            &lt;?php
+            ...
+            ?>
+
+        &lt;/body>
+    &lt;/html>
+                    </pre>
+                </figure>
+                <p>
+                    Innerhalb des PHP-Tags (&lt;?php ... ?>) kann PHP geschrieben werden. Zuerst müssen wir die Eingabe
+                    der HTML-Datei in Variablen speicher, um später damit arbeiten zukönnen. Dies ist möglich in dem wir
+                    einen "POST" ausführen, auf die ID des jeweiligen Eingabeelements zugreifen und den Wert in einer
+                    Variable abspeichern:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    $vorname = $_POST['vorname'];
+    $nachname = $_POST['nachname'];
+    $wie_viele = $_POST['wieviele'];
+    $was_sie_taten = $_POST['wassietaten'];
+    $weiteres = $_POST['weiteres'];
+    $wann_es_geschah = $_POST['wanngeschahes'];
+    $wie_lange = $_POST['wielange'];
+    $alien_beschreibung = $_POST['alienbeschreibung'];
+    $fang_gesehen = $_POST['fanggesehen'];
+    $email = $_POST['email'];
+                    </pre>
+                </figure>
+                <p>
+                    Nun haben wir die Eingabe im Arbeitsspeicher des Webservers gesichert. Dieser ist aber nur temporär,
+                    viele Webanwendungen haben allerdings den Anspruch Eingabedaten dauerhaft zu speicher. Der beste Weg
+                    ist diese in einer Datenbank abzulegen. Wir verwendeten XAMPP, ein Paket das zusätzlich zum Apache
+                    Webserver auch das MySQL DBMS enthält. Über das "phpMyAdmin"-Portal war es sehr intuitiv eine
+                    Datenbank und passende Tabelle für unsere Daten anzulegen. <br> Im nächsten Schritt müssen wir nun
+                    die Variablen in der Datenbank speichern. Hierzu ist zu aller erst eine Verbindung zur Datenbank
+                    nötig. PHP macht es uns leicht wir können mysqli_connect() aufrufen und müssen lediglich die
+                    Parameter spezifizieren:
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    $db = mysqli_connect('localhost','root','','aliendatenbank') 
+                or die('Fehler beim Verbinden mit MYSQL-Server.');
+                    </pre>
+                </figure>
+                <p>
+                    Jetzt da die Verbindung steht können wir die Daten mit einem SQL Statement einfügen. Best Practice
+                    ist es das Statement nicht direkt in mysqli_query() zu schreiben, sondern vorher in einer Variable
+                    zu speicher und diese später der Funktion mitzugeben. So schützen wir unsere Anwendung vor
+                    potentieller SQL-Injection. Nach erfolgreichem SQL-Statement kann die Verbindung geschlossen werden.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    $sql = "INSERT INTO alien_entfuehrung VALUES ('$vorname', '$nachname', '$wann_es_geschah', '$wie_lange', '$wie_viele', '$alien_beschreibung', '$was_sie_taten', '$fang_gesehen', '$weiteres', '$email')";
+    $ergebnis = mysqli_query($db, $sql) or die('Fehler bei Datenabfrage.');
+
+    mysqli_close($db);
+                    </pre>
+                </figure>
+                <p>
+                    Zum Schluss rendern wir noch die HTML-Seite, der Nutzer nach erfolgreicher Eingabe und
+                    Datenspeicherung angezeigt bekommnt. Diese bezieht ihre Daten allerdings nicht aus der Datenbank
+                    sonder simpel aus den Variablen im PHP-Skript.
+                </p>
+                <figure class="code-box">
+                    <pre class="code-text">
+
+    echo 'Vielen Dank für den Bericht.&lt;br />'; 
+    echo 'Sie wurden ' . $wann_es_geschah;
+    echo ' entführt und waren ' . $wie_lange . ' weg&lt;br />';
+    echo 'Anzahl Aliens: '.$wie_viele.'&lt;br />';
+    echo 'Beschreiben Sie sie: ' . $alien_beschreibung . '&lt;br />';
+    echo 'Was die Aliens machten: '.$was_sie_taten . '&lt;br />';
+    echo 'Was die Aliens machten: ' . $was_sie_taten . '&lt;br />';
+    echo 'War Fang da? ' . $fang_gesehen . '&lt;br />';
+    echo 'Weitere Bemerkungen: ' . $weiteres . '&lt;br />';
+    echo 'Ihre E-Mail-Adresse: ' . $email;
+                    </pre>
+                </figure>
             </div>
         </div>
     </div>
+
+    <div class="mt-5"></div>
 
     <!--Footer-->
     <footer class="page-footer font-small mygrey pt-4">
