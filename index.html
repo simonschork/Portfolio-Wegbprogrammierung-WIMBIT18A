@@ -18,7 +18,7 @@
     <!-- Navigation -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark" id="mainnav">
         <div class="container">
-            <a class="navbar-brand" href="#">Web-Programmierung</a>
+            <a class="navbar-brand" href="#">Webprogrammierung und Verteilte Systeme</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
                 aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -31,8 +31,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio/portfolio.html">Portfolio</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="schwerpunkt/schwerpunkt.html">Schwerpunkt</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toogle" href="#" role="button" id="navbarDropdown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schwerpunkt</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a href="/schwerpunkt/tensorflowjs.html" class="dropdown-item">Toxicity Detection</a>
+                            <a href="/schwerpunkt/flutter.html" class="dropdown-item">Flutter Applikation</a>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="kommentare/kommentare.html">Kommentare</a>
@@ -47,8 +52,7 @@
 
     <!--Cards-->
     <div class="row">
-        <div class="container col-2 mt-5"></div>
-        <div class="container col-2 mt-5">
+        <div class="container col-3 mt-5">
             <div class="card mt-5" style="width: 18rem;">
                 <img class="card-img-top" src="bilder/card-portfolio-16-9.jpg" alt="Card image cap">
                 <div class="card-body">
@@ -58,17 +62,27 @@
                 </div>
             </div>
         </div>
-        <div class="container col-2 mt-5">
+        <div class="container col-3 mt-5">
             <div class="card mt-5" style="width: 18rem;">
-                <img class="card-img-top" src="bilder/card-schwerpunkt-16-9.jpg" alt="Card image cap">
+                <img class="card-img-top" src="bilder/tensorflowjs.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Schwerpunkt</h5>
-                    <p class="card-text">Intensiv behandeltes Thema.</p>
-                    <a href="schwerpunkt/schwerpunkt.html" class="btn btn-primary">Zum Schwerpunkt</a>
+                    <h5 class="card-title mt-3">Toxicity Detection</h5>
+                    <p class="card-text mt-4">Intensiv behandeltes Thema.</p>
+                    <a href="schwerpunkt/tensorflowjs.html" class="btn btn-primary">Zum Schwerpunkt</a>
                 </div>
             </div>
         </div>
-        <div class="container col-2 mt-5">
+        <div class="container col-3 mt-5">
+            <div class="card mt-5" style="width: 18rem;">
+                <img class="card-img-top" src="bilder/flutter_logo.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Flutter Applikation</h5>
+                    <p class="card-text">Intensiv behandeltes Thema.</p>
+                    <a href="schwerpunkt/flutter.html" class="btn btn-primary">Zum Schwerpunkt</a>
+                </div>
+            </div>
+        </div>
+        <div class="container col-3 mt-5">
             <div class="card mt-5" style="width: 18rem;">
                 <img class="card-img-top" src="bilder/card-kommentare-16-9.jpg" alt="Card image cap">
                 <div class="card-body">
@@ -78,7 +92,6 @@
                 </div>
             </div>
         </div>
-        <div class="container col-2 mt-5"></div>
     </div>
     <div class="cotainer-sm mt-5"></div>
 
