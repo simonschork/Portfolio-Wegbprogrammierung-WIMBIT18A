@@ -319,87 +319,111 @@
                             Da der „HomeScreen“ gleichzeitig der Startbildschirm unserer App sein soll setzen wir
                             die erste Route auf „homeRoute“.
                         </p>
+                        <h3>2.6 Datenhaltung und Queries</h3>
+                        <p>
+                            Am Anfang des Projektes haben wir nur wenige Daten in-memory angelegt, das reichte um
+                            Basisfunktionen zu
+                            befüllen und Flutter Funktionen zu erproben. Ausgelöst durch die Implementierung einer
+                            Listen Funktion
+                            in Flutter waren wir dazu angehalten eine Prototyp Datenbank anzulegen und diese mit ersten
+                            Daten zu
+                            befüllen. Wir schwankten erst zwischen SQLite und Postgres haben uns dann aber
+                            richtigerweise für
+                            letztere entschieden. Da SQLite keine guten Funktionen bietet im Kontext von verteilten
+                            Systemen eine
+                            gewisse separation-of-concerns vorzunehmen und die DB auf einem Server statt Cleintseitig
+                            laufen zu
+                            lassen. Die Anbindung der Datenbank haben wir innerhalb von python mit dem psycopg2
+                            erledigt. Um eine
+                            Liste aus der Datenbank auszugeben haben wir eine Query-File angelegt welche von einer API
+                            aus
+                            aufgerufen wird.
+                        </p>
+                        <figure class="text-center" role="group" class="ml-4">
+                            <img src="../bilder/flutter/queries.png" alt="queries.py">
+                            <figcaption class="mt-3">Quelle: Eigene Darstellung</figcaption>
+                        </figure>
                     </div>
-
-
                 </div>
 
-                <div class="col-lg-12 text-justify" id="quellen">
-                    <h3 class="mt-5">Quellen</h3>
-                    <ul class="mt-4">
-                        <li><a href="hhttps://flutter.dev/" target="_blank" rel="noopener noreferrer">flutter.dev</a>
-                            [Dokumentation]</li>
-                        <li><a href="https://dart.dev/" target="_blank" rel="noopener noreferrer">dart.dev</a>
-                            [Dokumentation]</li>
-                        <li><a href="https://www.flutterinternals.org//" target="_blank"
-                                rel="noopener noreferrer">Flutter Internals</a>
-                            [Community Dokumentation]</li>
-                        <li><a href="https://medium.com/flutter-community/clean-navigation-in-flutter-using-generated-routes-891bd6e000df"
-                                target="_blank" rel="noopener noreferrer">Clean Navigation in Flutter Using Generated
-                                Routes</a>
-                            [Artikel]</li>
-                        <li><a href="https://medium.com/flutter-community/flutter-effectively-scale-ui-according-to-different-screen-sizes-2cb7c115ea0a"
-                                target="_blank" rel="noopener noreferrer">Flutter — Effectively scale UI according to
-                                different screen sizes</a>
-                            [Artikel]</li>
-                        <li><a href="https://www.freecodecamp.org/news/why-mobile-apps-makers-are-in-love-with-flutter/"
-                                target="_blank" rel="noopener noreferrer">Google Flutter Review – Why Mobile App
-                                Developers Love Flutter</a>
-                            [Artikel]</li>
-                        <li><a href="https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51"
-                                target="_blank" rel="noopener noreferrer">Parsing complex JSON in Flutter
-                            </a> [Artikel]</li>
-                        <li><a href="https://www.melvinvivas.com/flutter-listview-example-using-data-from-a-rest-api/"
-                                target="_blank" rel="noopener noreferrer">Implement a Flutter ListView using data from a
-                                REST API</a>
-                            [Artikel]</li>
-                        <li><a href="https://blog.smartnsoft.com/an-automatic-search-bar-in-flutter-flappy-search-bar-a470bc67fa1f"
-                                target="_blank" rel="noopener noreferrer">An automatic Search
-                                Bar in Flutter : flappy_search_bar</a>
-                            [Artikel]</li>
+
+            </div>
+
+            <div class="col-lg-12 text-justify" id="quellen">
+                <h3 class="mt-5">Quellen</h3>
+                <ul class="mt-4">
+                    <li><a href="hhttps://flutter.dev/" target="_blank" rel="noopener noreferrer">flutter.dev</a>
+                        [Dokumentation]</li>
+                    <li><a href="https://dart.dev/" target="_blank" rel="noopener noreferrer">dart.dev</a>
+                        [Dokumentation]</li>
+                    <li><a href="https://www.flutterinternals.org//" target="_blank" rel="noopener noreferrer">Flutter
+                            Internals</a>
+                        [Community Dokumentation]</li>
+                    <li><a href="https://medium.com/flutter-community/clean-navigation-in-flutter-using-generated-routes-891bd6e000df"
+                            target="_blank" rel="noopener noreferrer">Clean Navigation in Flutter Using Generated
+                            Routes</a>
+                        [Artikel]</li>
+                    <li><a href="https://medium.com/flutter-community/flutter-effectively-scale-ui-according-to-different-screen-sizes-2cb7c115ea0a"
+                            target="_blank" rel="noopener noreferrer">Flutter — Effectively scale UI according to
+                            different screen sizes</a>
+                        [Artikel]</li>
+                    <li><a href="https://www.freecodecamp.org/news/why-mobile-apps-makers-are-in-love-with-flutter/"
+                            target="_blank" rel="noopener noreferrer">Google Flutter Review – Why Mobile App
+                            Developers Love Flutter</a>
+                        [Artikel]</li>
+                    <li><a href="https://medium.com/flutter-community/parsing-complex-json-in-flutter-747c46655f51"
+                            target="_blank" rel="noopener noreferrer">Parsing complex JSON in Flutter
+                        </a> [Artikel]</li>
+                    <li><a href="https://www.melvinvivas.com/flutter-listview-example-using-data-from-a-rest-api/"
+                            target="_blank" rel="noopener noreferrer">Implement a Flutter ListView using data from a
+                            REST API</a>
+                        [Artikel]</li>
+                    <li><a href="https://blog.smartnsoft.com/an-automatic-search-bar-in-flutter-flappy-search-bar-a470bc67fa1f"
+                            target="_blank" rel="noopener noreferrer">An automatic Search
+                            Bar in Flutter : flappy_search_bar</a>
+                        [Artikel]</li>
+                </ul>
+            </div>
+            <div class="mt-5"><br></div>
+        </div>
+    </div>
+
+    <!--Footer-->
+    <footer class="mt-5 page-footer font-small mygrey pt-4">
+        <div class="container text-center text-md-left">
+            <div class="row">
+                <div class="col-md-9 mt-md-0 mt-3">
+                    <h5 class="text-uppercase white footer-font">Portfolio zur Vorlesung Webprogrammierung</h5>
+                    <p class="white footer-font">Diese Webseite wurde im Rahmen einer Prüfungsleistung erstellt.
+                        Der
+                        Code ist
+                        vollständig auf Github verfügbar. Zur Erstellung wurde das Framework Bootstrap genutzt,
+                        angepasst und ergänzt.</p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <h5 class="text-uppercase white footer-font">Links</h5>
+                    <ul class="list-unstyled white">
+                        <li><a class="white footer-font" href="https://github.com/simonschork/webprog-portfolio"
+                                target="_blank">Github</a></li>
+                        <li><a class="white footer-font" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                        </li>
                     </ul>
                 </div>
-                <div class="mt-5"><br></div>
             </div>
         </div>
+        <div class="footer-copyright text-center py-3 white footer-font">© 2019 Copyright:
+            <span>Simon Schork</span>
+        </div>
+    </footer>
 
-        <!--Footer-->
-        <footer class="mt-5 page-footer font-small mygrey pt-4">
-            <div class="container text-center text-md-left">
-                <div class="row">
-                    <div class="col-md-9 mt-md-0 mt-3">
-                        <h5 class="text-uppercase white footer-font">Portfolio zur Vorlesung Webprogrammierung</h5>
-                        <p class="white footer-font">Diese Webseite wurde im Rahmen einer Prüfungsleistung erstellt.
-                            Der
-                            Code ist
-                            vollständig auf Github verfügbar. Zur Erstellung wurde das Framework Bootstrap genutzt,
-                            angepasst und ergänzt.</p>
-                    </div>
-                    <hr class="clearfix w-100 d-md-none pb-3">
-                    <div class="col-md-3 mb-md-0 mb-3">
-                        <h5 class="text-uppercase white footer-font">Links</h5>
-                        <ul class="list-unstyled white">
-                            <li><a class="white footer-font" href="https://github.com/simonschork/webprog-portfolio"
-                                    target="_blank">Github</a></li>
-                            <li><a class="white footer-font" href="https://getbootstrap.com/"
-                                    target="_blank">Bootstrap</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright text-center py-3 white footer-font">© 2019 Copyright:
-                <span>Simon Schork</span>
-            </div>
-        </footer>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
+        data-toggle="tooltip" data-placement="left"><i class="material-icons">arrow_upward</i></a>
 
-        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Zurück zum Anfang"
-            data-toggle="tooltip" data-placement="left"><i class="material-icons">arrow_upward</i></a>
-
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="../js/bootstrap.bundle.min.js"></script>
-        <script src="../js/bootstrap.js"></script>
-        <script src="../js/custom.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/custom.js"></script>
 </body>
 
 </html>
